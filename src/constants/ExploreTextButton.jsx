@@ -1,7 +1,13 @@
 import React, { useRef } from "react";
 import { gsap } from "gsap";
+import { Link } from "react-router-dom";
 
-function ExploreTextButton({ text = "Explore live cohorts", svg, className,to }) {
+function ExploreTextButton({
+  text = "Explore live cohorts",
+  svg,
+  className,
+  to,
+}) {
   const overlayRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -23,7 +29,7 @@ function ExploreTextButton({ text = "Explore live cohorts", svg, className,to })
   };
 
   return (
-    <a
+    <Link
       href={to}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -43,7 +49,7 @@ function ExploreTextButton({ text = "Explore live cohorts", svg, className,to })
         }}
       ></div>
       <p className="z-10 whitespace-nowrap text-white">{text}</p>
-    </a>
+    </Link>
   );
 }
 

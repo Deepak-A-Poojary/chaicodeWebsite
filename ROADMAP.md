@@ -138,3 +138,5 @@ This project is open-sourced and shared for educational purposes. Creator holds 
 
 ---
 
+#### In my mind features 
+    404 error page, also make animate it like a webdevs engineering fixing it 
