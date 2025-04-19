@@ -1,0 +1,97 @@
+/* Below fonts are taken from googlefonts */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Pacifico&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  overflow-x: hidden;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.full-height {
+  height: 100lvh;
+}
+
+.text-gradient {
+  height: fit-content;
+  background: linear-gradient(
+    270deg,
+    #ff6ec4,
+    #7873f5,
+    #4ade80,
+    #38bdf8,
+    #f472b6,
+    #ff6ec4
+  );
+  background-size: 600% 600%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.divider {
+  height: 2px; /* h-0.5 = 2px */
+  margin-bottom: 1.5rem;
+  margin-left: auto; /* mx-auto => horizontal centering */
+  margin-right: auto;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #a855f7,
+    transparent
+  ); /* via-purple-500 */
+}
+
+.tweetCard .react-tweet-theme {
+  --tweet-container-margin: 0rem;
+  --tweet-body-font-size: 0.9rem;
+  max-width: 400px;
+  min-height: 530px;
+}
+
+.react-tweet-theme ._root_g9tkv_1 ._image_g9tkv_43 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 400px;
+  aspect-ratio: 1/1;
+  background-size: auto;
+}
+
+.react-tweet-theme ._root_g9tkv_1 ._image_g9tkv_43 img {
+  width: 400px;
+  background-size: cover;
+}
+
+.tweetCard .react-tweet-theme ._root_g9tkv_1 {
+  max-height: 200px;
+}
+
+.tweetCard .react-tweet-theme ._root_1xq52_1 {
+  text-align: start;
+  --tweet-body-line-height: 1.2rem;
+}

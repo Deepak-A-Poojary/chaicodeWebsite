@@ -1,0 +1,172 @@
+import { create } from "zustand";
+
+// All your theme color definitions here
+const themeColors = {
+  dark: {
+    MainThemeColor: "rgba(40, 40, 40, 1)", //Yes
+    background:
+      "linear-gradient(162deg, rgba(40, 40, 40, 1) 0%, rgba(30, 30, 30, 1) 25%, rgba(20, 20, 20, 1) 50%, rgba(20, 20, 20, 1) 75%)", //Yes
+    backgroundColor: "rgba(40, 40, 40, 1)",
+    secondryBg:
+      "linear-gradient(180deg,  rgba(20, 20, 20, 1)  33%, rgba(10, 10, 10, 1) 73%)", //Yes
+    text: "#dcdcdc", //Yes
+    secondryText: "#c2cad0", //yes
+    borderColor: "#5a6268", //Yes
+    buttonColor: "#0b0916",
+    buttonRemoveColorBg: "rgba(200, 0, 0, 0.9)",
+    buttonRemoveColorText: "rgba(255, 255, 255, 1)",
+    accentColor: "rgba(0, 150, 255, 1)",
+    linkColor: "rgba(0, 150, 255, 1)",
+    linkHoverColor: "rgba(0, 120, 220, 1)",
+    borderColorLight: "rgba(255, 255, 255, 0.4)",
+    shadowColor: "rgba(0, 0, 0, 0.4)",
+    successColor: "rgba(67, 160, 71, 1)",
+    errorColor: "rgba(244, 67, 54, 1)",
+    warningColor: "rgba(255, 202, 40, 1)",
+    disabledBgColor: "rgba(180, 180, 180, 0.5)",
+    disabledTextColor: "rgba(120, 120, 120, 0.6)",
+    overlayColor: "rgba(0, 0, 0, 0.6)",
+
+    // Navbar styles
+    navbarBgColor: "rgba(20, 20, 20, 0.95)", //Yes
+    navbarTextColor: "rgba(220, 220, 220, 0.87)",
+    navbarLinkColor: "#FFA726",
+    navbarLinkHoverColor: "rgba(0, 120, 220, 1)",
+    navbarHeight: "60px",
+    navbarShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
+    navbarBorderBottom: "1px solid rgba(0, 0, 0, 0.3)",
+
+    // Card styles
+    cardBgColor: "rgba(30, 30, 30, 1)", //yes
+    cardSecondaryBgColor: "rgba(31,41,55, 1)", //yes
+    cardTextColor: "rgba(220, 220, 220, 0.87)",
+    cardSecondryText: "#d5ebf4",
+    cardBorderColor: "rgba(80, 80, 80, 0.8)",
+
+    // Button styles
+    buttonBg: "rgba(20, 20, 20, 0.95)", //yes
+    buttonBgHover: "#e1e1e1",
+    buttonTextColor: "#ffffff",
+    buttonBorderColor: "#22d3ee",
+    buttonShadowColor: "rgba(14,165,233,0.6)",
+    buttonActiveBg: "#0091ff",
+    buttonDisabledBg: "#444547",
+    buttonDisabledTextColor: "#646464",
+    buttonCloseButtonColor: "#969696",
+
+    // MenuBar styles
+    MenuBarBgColor: "rgba(20, 20, 20, 1)", //yes
+    MenuBarBorderColor: "#4A5568",
+    MenuBarTextColor: "#E2E8F0",
+    MenuBarHoverBgColor: "#4A5568",
+    MenuBarHoverBorderColor: "#CBD5E0",
+
+    //other colors
+    cursorBg: "linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11))", //yes
+
+    ratingColor: "#facc15",
+  },
+  light: {
+    MainThemeColor: "rgba(255, 255, 255, 0.95)",
+    background:
+      "linear-gradient(162deg, rgba(230, 230, 250, 1) 0%, rgba(255, 255, 255, 1) 100%)",
+    secondryBg:
+      "linear-gradient(180deg, rgba(250, 250, 250, 0)  0%, rgba(250, 250, 250, 0)  50%, rgba(250, 250, 250, 1) 73%)", //Yes
+    text: "#1c1e21",
+    secondryText: "#3a3f44",
+    borderColor: "#99b3e6",
+    buttonColor: "#f8faf7",
+    buttonRemoveColorBg: "rgba(255, 100, 100, 0.8)",
+    buttonRemoveColorText: "rgba(30, 30, 30, 1)",
+    accentColor: "rgba(0, 120, 230, 1)",
+    linkColor: "rgba(0, 120, 230, 1)",
+    linkHoverColor: "rgba(0, 100, 200, 1)",
+    borderColorLight: "rgba(255, 255, 255, 0.5)",
+    shadowColor: "rgba(0, 0, 0, 0.08)",
+    successColor: "rgba(70, 165, 75, 1)",
+    errorColor: "rgba(229, 73, 70, 1)",
+    warningColor: "rgba(255, 185, 5, 1)",
+    disabledBgColor: "rgba(245, 245, 245, 0.6)",
+    disabledTextColor: "rgba(150, 150, 150, 0.7)",
+    overlayColor: "rgba(0, 0, 0, 0.04)",
+
+    // Navbar styles
+    navbarBgColor: "rgba(255, 255, 255, 0.95)",
+    navbarTextColor: "rgba(30, 30, 30, 0.87)",
+    navbarLinkColor: "#FFA726",
+    navbarLinkHoverColor: "rgba(0, 100, 200, 1)",
+
+    // Card styles
+    cardBgColor: "rgba(250, 250, 250, 1)",
+    cardSecondaryBgColor: "rgba(228,229,229, 1)",
+    cardTextColor: "rgba(30, 30, 30, 0.87)",
+    cardSecondryText: "#37374c",
+    cardBorderColor: "rgba(190, 190, 200, 0.6)",
+
+    // Button styles
+    buttonBg: "rgba(255, 255, 255, 1)",
+    buttonBgHover: "#0056b3",
+    buttonTextColor: "#ffffff",
+    buttonBorderColor: "#b4b4b4",
+    buttonShadowColor: "rgba(0, 0, 0, 0.5)",
+    buttonActiveBg: "#0056b3",
+    buttonDisabledBg: "#eaeaea",
+    buttonDisabledTextColor: "#a0a0a0",
+    buttonCloseButtonColor: "#646464",
+
+    // MenuBar button styles
+    MenuBarBgColor: "#F3F4F6",
+    MenuBarBorderColor: "#E5E7EB",
+    MenuBarTextColor: "#1F2937",
+    MenuBarHoverBgColor: "#E5E7EB",
+    MenuBarHoverBorderColor: "#D1D5DB",
+
+    //Other color
+    cursorBg:
+      "radial-gradient(circle, rgba(192, 79, 219, 0.1) 0%, rgba(0,0,0,0) 50%)",
+    ratingColor: "#cf9106",
+  },
+};
+
+// Utility function to get system theme
+const getSystemTheme = () => {
+  if (typeof window === "undefined") return "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+// Create the Zustand store
+const useStore = create((set, get) => {
+  const initialTheme =
+    typeof window !== "undefined"
+      ? localStorage.getItem("theme") || getSystemTheme()
+      : "light";
+
+  return {
+    theme: initialTheme,
+    colors: themeColors[initialTheme],
+
+    // Toggle between light and dark theme
+    toggleTheme: () => {
+      const currentTheme = get().theme;
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      localStorage.setItem("theme", newTheme);
+      document.documentElement.classList.toggle("dark", newTheme === "dark");
+
+      set({
+        theme: newTheme,
+        colors: themeColors[newTheme],
+      });
+    },
+
+    // Helper method to get current theme colors
+    getCurrentThemeColors: () => {
+      const currentTheme = get().theme;
+      return themeColors[currentTheme] || themeColors.light;
+    },
+  };
+});
+
+export default useStore;
