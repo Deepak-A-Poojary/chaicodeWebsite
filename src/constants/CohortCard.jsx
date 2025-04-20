@@ -1,4 +1,4 @@
-import React, {useRef } from "react";
+import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useThemeColors } from "../hooks/useThemeColors";
@@ -21,6 +21,9 @@ const CohortCard = ({
 }) => {
   const cardRef = useRef(null);
   const themeColors = useThemeColors();
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+
+  const handleIframeLoad = () => setIframeLoaded(true);
 
   // Used to animate entry of cards
   useGSAP(() => {
@@ -34,7 +37,7 @@ const CohortCard = ({
           opacity: 1,
           duration: 1,
           scrollTrigger: {
-            scrub:2,
+            scrub: 2,
             trigger: el,
             start: "top 90%",
             end: "top 40%",
@@ -63,6 +66,9 @@ const CohortCard = ({
     >
       {/* Video Section */}
       <div className="relative aspect-video rounded-md bg-black/50 h-[280px] overflow-hidden m-0">
+        {!iframeLoaded && (
+          <div className="absolute inset-0 bg-gray-500/50 animate-pulse z-10 rounded-2xl" />
+        )}
         <iframe
           className="w-full h-full rounded-md"
           src={iframeUrl}
@@ -158,7 +164,16 @@ const CohortCard = ({
 
 // Icons (unchanged)
 const CalendarIcon = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    viewBox="0 0 24 24"
+  >
     <path d="M8 2v4"></path>
     <path d="M16 2v4"></path>
     <rect width="18" height="18" x="3" y="4" rx="2"></rect>
@@ -167,14 +182,32 @@ const CalendarIcon = (props) => (
 );
 
 const ClockIcon = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    viewBox="0 0 24 24"
+  >
     <circle cx="12" cy="12" r="10"></circle>
     <polyline points="12 6 12 12 16 14"></polyline>
   </svg>
 );
 
 const TerminalIcon = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    viewBox="0 0 24 24"
+  >
     <polyline points="4 17 10 11 4 5"></polyline>
     <line x1="12" y1="19" x2="20" y2="19"></line>
   </svg>
