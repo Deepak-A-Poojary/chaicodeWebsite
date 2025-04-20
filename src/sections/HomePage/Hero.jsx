@@ -5,7 +5,6 @@ import { useThemeColors } from "../../hooks/useThemeColors";
 import AnimatedText from "../../constants/AnimatedText";
 import AnimatedAuroraText from "../../constants/AnimatedAuroraText";
 import PixelArtButton from "../../constants/PixelArtButton";
-import { Link } from "react-router-dom";
 import ExploreTextButton from "../../constants/ExploreTextButton";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
