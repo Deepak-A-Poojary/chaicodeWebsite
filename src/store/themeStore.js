@@ -39,6 +39,8 @@ const themeColors = {
     // Card styles
     cardBgColor: "rgba(30, 30, 30, 1)", //yes
     cardSecondaryBgColor: "rgba(31,41,55, 1)", //yes
+    BenifitCardBgColor: "rgba(28,28,28, 1)", //yes
+    UdemyCardBgColor: "rgba(28,28,28, 1)", //yes
     cardTextColor: "rgba(220, 220, 220, 0.87)",
     cardSecondryText: "#d5ebf4",
     cardBorderColor: "rgba(80, 80, 80, 0.8)",
@@ -63,8 +65,11 @@ const themeColors = {
 
     //other colors
     cursorBg: "linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11))", //yes
+    cursorCardBg:
+      "linear-gradient(to right, rgba(249, 115, 22, 0.2), rgb(250, 250, 250, 0))",
+    ratingColor: "#cf9106",//yes
+    terminalBg:"#262626",
 
-    ratingColor: "#facc15",
   },
   light: {
     MainThemeColor: "rgba(255, 255, 255, 0.95)",
@@ -99,6 +104,8 @@ const themeColors = {
     // Card styles
     cardBgColor: "rgba(250, 250, 250, 1)",
     cardSecondaryBgColor: "rgba(228,229,229, 1)",
+    BenifitCardBgColor: "rgba(238,239,239, 1)",
+    UdemyCardBgColor: "rgba(238,239,239, 1)",
     cardTextColor: "rgba(30, 30, 30, 0.87)",
     cardSecondryText: "#37374c",
     cardBorderColor: "rgba(190, 190, 200, 0.6)",
@@ -123,8 +130,11 @@ const themeColors = {
 
     //Other color
     cursorBg:
-      "radial-gradient(circle, rgba(192, 79, 219, 0.1) 0%, rgba(0,0,0,0) 50%)",
+      "linear-gradient(162deg, rgba(192, 79, 219, 1) 50%, rgba(255, 255, 255, 1) 100%)",
+    cursorCardBg:
+      "linear-gradient(162deg, rgba(192, 79, 219, 0.2) 0%, rgba(255, 255, 255, 0) 70%)",
     ratingColor: "#cf9106",
+    terminalBg:"#fcfbfb",
   },
 };
 

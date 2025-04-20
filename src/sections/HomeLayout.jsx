@@ -4,7 +4,7 @@ import TweetLove from "./HomePage/TweetLove";
 import CohortSection from "./HomePage/CohortSection";
 import StudentProof from "./HomePage/StudentProof";
 import StudenFeedback from "./HomePage/StudenFeedback";
-import UdemyProof from "./HomePage/UdemyProof";
+import UdemyCourse from "./HomePage/UdemyCourse";
 import CohortBenefits from "./HomePage/CohortBenefits";
 
 const sections = [
@@ -12,9 +12,9 @@ const sections = [
   TweetLove,
   StudentProof,
   CohortSection,
-  StudenFeedback,
   CohortBenefits,
-  UdemyProof,
+  StudenFeedback,
+  UdemyCourse,
 ];
 
 function HomeLayout() {

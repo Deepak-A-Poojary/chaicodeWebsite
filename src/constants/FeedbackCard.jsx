@@ -31,7 +31,7 @@ const FeedbackCard = ({ name, avatar, rating, feedback }) => {
 
   return (
     <div
-      className="feedbackCard max-w-sm w-full rounded-2xl shadow-lg p-6 space-y-4 "
+      className="feedbackCard h-full max-w-sm w-full rounded-2xl shadow-lg p-6 space-y-4 "
       style={{
         background: themeColors.cardSecondaryBgColor,
         color: themeColors.text,

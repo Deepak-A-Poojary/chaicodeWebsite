@@ -106,7 +106,7 @@ const Hero = () => {
         <div
           className="sticky pointer-events-none w-[500px] h-[500px] rounded-full opacity-10 blur-[100px] top-0 left-0"
           style={{
-            background:themeColors.cursorBg,
+            background: themeColors.cursorBg,
             transform: "translateX(50px) translateY(-50px)",
             willChange: "transform",
           }}
@@ -261,28 +261,23 @@ const Hero = () => {
       </div>
       {/* Live cohort button */}
       <div className="flex justify-center mt-10 md:mt-20 gap-4">
-        <Link
+        <ExploreTextButton
           to={"https://courses.chaicode.com/learn/view-all?show=batch&type=17"}
-          id="ExploreAnimButton"
-        >
-          <ExploreTextButton
-            to={"https://courses.chaicode.com/learn/view-all?show=batch&type=17"}
-            svg={
-              <svg
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                className="stroke-current z-10"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-            }
-          />
-        </Link>
+          svg={
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              className="stroke-current z-10"
+              strokeWidth="2"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          }
+        />
       </div>
       <div className="flex justify-center mt-10 md:mt-15 w-full p-5">
         <iframe

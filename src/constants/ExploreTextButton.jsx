@@ -30,7 +30,7 @@ function ExploreTextButton({
 
   return (
     <Link
-      href={to}
+      to={to}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`relative text-white  py-3 px-6 text-center rounded-lg flex items-center gap-5 text-lg font-semibold shadow-md overflow-hidden cursor-pointer bg-[#B24B4A] hover:scale-[1.02] transition-transform duration-300 ${className}`}

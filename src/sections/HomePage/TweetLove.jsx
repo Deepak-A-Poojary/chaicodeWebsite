@@ -1,164 +1,118 @@
 import { useThemeColors } from "../../hooks/useThemeColors";
 import AnimatedAuroraText from "../../constants/AnimatedAuroraText";
 import TweetCard from "../../constants/TweetCard";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useResponsive from "../../hooks/useResponsive";
 import PixelArtButton from "../../constants/PixelArtButton";
 import Divider from "../../constants/Divider";
+import { useEffect, useMemo } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Only ids are enoguh to render the tweets 
+const TWEET_IDS = [
+  "1906393735203836076",
+  "1906390359841640771",
+  "1905574126112153860",
+  "1907045909394788416",
+];
+
+// Helper: Get random tweet IDs
+const getRandomTweetIds = (count = 3) => {
+  return [...TWEET_IDS].sort(() => 0.5 - Math.random()).slice(0, count);
+};
+
+// Helper: Animate with ScrollTrigger
+const animateTweetCard = (selector, options) => {
+  gsap.from(selector, {
+    ...options,
+    scrollTrigger: {
+      trigger: selector,
+      scroller: "body",
+      start: "top 90%",
+      end: "top 40%",
+      scrub: 2,
+      ...options.scrollTrigger,
+    },
+  });
+};
+
 const TweetLove = () => {
   const themeColors = useThemeColors();
-  const { isMobile, isDesktop, isTablet } = useResponsive();
+  const { isMobile, isTablet, isDesktop } = useResponsive();
 
-  //All random tweets ids
-  const returnThreeTweetIds = () => {
-    const tweetIds = [
-      "1906393735203836076",
-      "1906390359841640771",
-      "1905574126112153860",
-      "1907045909394788416",
-    ];
+  const randomTweetIds = useMemo(() => getRandomTweetIds(isTablet?2:3), []);
 
-    // Shuffle and pick 3
-    const getRandomIds = (arr, count) => {
-      const shuffled = [...arr].sort(() => 0.5 - Math.random());
-      return shuffled.slice(0, count);
-    };
+  useEffect(() => {
+    if (isMobile) {
+      animateTweetCard(".tweetCardOne", {
+        translateX: -445,
+        duration: 1,
+        delay: 0.5,
+        rotate: 10,
+        opacity: 1,
+      });
+      animateTweetCard(".tweetCardTwo", {
+        translateX: -445,
+        duration: 0.5,
+        delay: 0.5,
+        rotate: 10,
+        opacity: 1,
+        scrollTrigger: { scrub: 2 },
+      });
+      animateTweetCard(".tweetCardThree", {
+        translateX: -445,
+        duration: 0.5,
+        delay: 0.5,
+        rotate: 10,
+        opacity: 1,
+        scrollTrigger: { scrub: 2 },
+      });
+    }
 
-    return getRandomIds(tweetIds, 3);
-  };
+    if (isTablet) {
+      animateTweetCard(".tweetCardOne", {
+        translateX: -445,
+        duration: 1,
+        opacity: 1,
+        ease: "power3.out",
+      });
 
-  useGSAP(() => {
-    const cardAnimation = gsap.context(() => {
-      if (isMobile) {
-        gsap.from(".tweetCardOne", {
-          translateX: -445,
-          duration: 1,
-          delay: 0.5,
-          opacity: 1,
-          rotate: 10,
-          scrollTrigger: {
-            trigger: ".tweetCardOne",
-            scroller: "body",
-            scrub: 2,
-            start: "top 90%",
-            end: "top 40%",
-          },
-        });
-        gsap.from(".tweetCardTwo", {
-          translateX: -445,
-          duration: 0.5,
-          delay: 0.5,
-          opacity: 1,
-          rotate: 10,
-          scrollTrigger: {
-            trigger: ".tweetCardTwo",
-            scroller: "body",
-            scrub: 2,
-            start: "top 90%",
-            end: "top 40%",
-          },
-        });
-        gsap.from(".tweetCardThree", {
-          translateX: -445,
-          duration: 0.5,
-          delay: 0.5,
-          opacity: 1,
-          rotate: 10,
-          scrollTrigger: {
-            trigger: ".tweetCardThree",
-            scroller: "body",
-            scrub: 2,
-            start: "top 90%",
-            end: "top 40%",
-          },
-        });
-      }
+      animateTweetCard(".tweetCardTwo", {
+        translateX: 445,
+        duration: 1,
+        opacity: 1,
+        ease: "power3.out",
+      });
+    }
 
-      if (isTablet) {
-        gsap.from(".tweetCardOne", {
-          translateX: -445,
-          duration: 1,
-          delay: 0.5,
-          opacity: 1,
-          rotate: 10,
-          scrollTrigger: {
-            trigger: ".tweetCardOne",
-            scroller: "body",
-            scrub: 2,
-            start: "top 90%",
-            end: "top 40%",
-          },
-        });
-        gsap.from(".tweetCardTwo", {
-          translateX: 445,
-          duration: 0.5,
-          delay: 0.5,
-          opacity: 1,
-          rotate: -10,
-          scrollTrigger: {
-            trigger: ".tweetCardTwo",
-            scroller: "body",
-            scrub: 2,
-            start: "top 90%",
-            end: "top 40%",
-          },
-        });
-        gsap.from(".tweetCardThree", {
-          translateY: 445,
-          duration: 0.5,
-          delay: 0.5,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: ".tweetCardThree",
-            scroller: "body",
-            scrub: 2,
-            start: "top 90%",
-            end: "top 40%",
-          },
-        });
-      }
+    if (isDesktop) {
+      animateTweetCard(".tweetCardOne", {
+        translateX: 445,
+        duration: 1,
+        delay: 0.5,
+        rotate: -10,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".tweetCards",
+          start: "top 80%",
+        },
+      });
 
-      if (isDesktop) {
-        gsap.from(".tweetCardOne", {
-          translateX: 445,
-          duration: 1,
-          delay: 0.5,
-          opacity: 1,
-          rotate: -10,
-          scrollTrigger: {
-            trigger: ".tweetCards",
-            scroller: "body",
-            scrub: 2,
-            start: "top 80%",
-            end: "top 40%",
-          },
-        });
-        gsap.from(".tweetCardThree", {
-          translateX: -445,
-          duration: 1,
-          delay: 0.5,
-          opacity: 1,
-          rotate: 10,
-          scrollTrigger: {
-            trigger: ".tweetCards",
-            scroller: "body",
-            scrub: 2,
-            start: "top 80%",
-            end: "top 40%",
-          },
-        });
-      }
-    });
-
-    return () => cardAnimation.revert(); // ✅ Proper cleanup for all tweens and ScrollTriggers
-  }, []);
-
-  const randomTweetIds = returnThreeTweetIds();
+      animateTweetCard(".tweetCardThree", {
+        translateX: -445,
+        duration: 1,
+        delay: 0.5,
+        rotate: 10,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".tweetCards",
+          start: "top 80%",
+        },
+      });
+    }
+  }, [isMobile, isTablet, isDesktop]);
 
   return (
     <div
@@ -168,26 +122,27 @@ const TweetLove = () => {
       <Divider className="mt-5" />
       <p className="pt-5">Love that we get from our community</p>
       <AnimatedAuroraText
-        text={"Tweet Love"}
+        text="Tweet Love"
         className="md:h-16 mt-5 md:text-5xl"
       />
+
       <div
         id="tweetContainer"
         className="min-h-screen flex md:flex-row flex-wrap flex-col items-center justify-center p-4 gap-10"
       >
-        <div className="tweetCards tweetCardOne">
-          <TweetCard tId={randomTweetIds[0]} />
-        </div>
-        <div className="tweetCards tweetCardTwo">
-          <TweetCard tId={randomTweetIds[1]} />
-        </div>
-        <div className="tweetCards tweetCardThree">
-          <TweetCard tId={randomTweetIds[2]} />
-        </div>
+        {randomTweetIds.map((id, idx) => (
+          <div
+            key={id}
+            className={`tweetCards tweetCard${["One", "Two", "Three"][idx]}`}
+          >
+            <TweetCard tId={id} />
+          </div>
+        ))}
       </div>
+
       <PixelArtButton
-        to={"https://courses.chaicode.com/learn/view-all?show=batch&type=17"}
-        text={"Join Cohorts Live Classes"}
+        to="https://courses.chaicode.com/learn/view-all?show=batch&type=17"
+        text="Join Cohorts Live Classes"
         className="text-md mt-5 md:mt-0 md:text-xl p-5"
         svg={
           <svg

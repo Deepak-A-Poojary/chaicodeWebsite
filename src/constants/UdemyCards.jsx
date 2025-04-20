@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import useResponsive from "../hooks/useResponsive";
 import { useGSAP } from "@gsap/react";
 import { useThemeColors } from "../hooks/useThemeColors";
-import ExploreTextButton from './ExploreTextButton'
+import ExploreTextButton from "./ExploreTextButton";
 
 const UdemyCards = ({ courseData }) => {
   const containerRef = useRef(null);
@@ -17,6 +17,17 @@ const UdemyCards = ({ courseData }) => {
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
   const themeColors = useThemeColors();
+  const [iframeLoaded, setIframeLoaded] = useState(
+    Array(allSlides.length).fill(false)
+  );
+
+  const handleIframeLoad = (index) => {
+    setIframeLoaded((prev) => {
+      const updated = [...prev];
+      updated[index] = true;
+      return updated;
+    });
+  };
 
   const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, i) => (
@@ -86,8 +97,11 @@ const UdemyCards = ({ courseData }) => {
 
   return (
     <div
-      className="relative mx-auto rounded-2xl"
-      style={{ width: `${slideWidth}px` }}
+      className="relative mx-auto rounded-2xl shadow-2xl"
+      style={{
+        width: `${slideWidth}px`,
+        background: themeColors.UdemyCardBgColor,
+      }}
     >
       {/* Carousel container */}
       <div className="overflow-hidden rounded-lg shadow-lg">
@@ -102,14 +116,14 @@ const UdemyCards = ({ courseData }) => {
           {allSlides.map((item, i) => (
             <div
               key={i}
-              className="flex-none border rounded-lg overflow-hidden p-4"
+              className="flex-none rounded-lg overflow-hidden p-4"
               style={{
                 width: `${slideWidth}px`,
                 height: isMobile ? "100%" : "400px",
               }}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 h-full gap-4">
-                <div className="flex flex-col justify-evenly gap-4">
+                <div className="flex flex-col order-2 md:order-1  justify-evenly gap-4">
                   <div>
                     <h1 className="text-xl md:text-[28px] font-bold">
                       <span className="text-amber-600">Course: </span>
@@ -134,7 +148,8 @@ const UdemyCards = ({ courseData }) => {
                         <div className="text-xs font-semibold text-orange-400">
                           Save{" "}
                           {Math.round(
-                            ((item.originalMRP - item.discountedPrice) / item.originalMRP) *
+                            ((item.originalMRP - item.discountedPrice) /
+                              item.originalMRP) *
                               100
                           )}
                           %
@@ -154,14 +169,25 @@ const UdemyCards = ({ courseData }) => {
                       </div>
                     </div>
                   </div>
-                  <ExploreTextButton text="Check in Udemy" className={'w-fit self-center md:self-auto text-[15px]'} to={"https://hitesh.ai/udemy"} />
+                  <ExploreTextButton
+                    text="Check in Udemy"
+                    className={"w-fit self-center md:self-auto text-[15px]"}
+                    to={"https://hitesh.ai/udemy"}
+                  />
                 </div>
-                <div className="p-2 border-2 rounded-md flex flex-col border-slate-600">
+                <div
+                  className="order-1 md:order-2 rounded-2xl overflow-hidden flex flex-col relative"
+                  style={{ borderColor: themeColors.cardBorderColor }}
+                >
+                  {!iframeLoaded[i] && (
+                    <div className="absolute inset-0 bg-gray-500/50 animate-pulse z-10 rounded-2xl" />
+                  )}
                   <iframe
-                    className="h-full rounded-md"
+                    className="h-full w-full relative z-20"
                     src={item.iFrameUrl}
                     loading="lazy"
                     title={item.title}
+                    onLoad={() => handleIframeLoad(i)}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
                     allowFullScreen
                   ></iframe>
