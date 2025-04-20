@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AnimatedAuroraText from "../../constants/AnimatedAuroraText";
 import UdemyCards from "../../constants/UdemyCards";
 
-function UdemyProof() {
+function UdemyCourse() {
   const courseData = [
     {
       title: "Complete web development course",
@@ -72,4 +72,4 @@ function UdemyProof() {
   );
 }
 
-export default UdemyProof;
+export default UdemyCourse;
