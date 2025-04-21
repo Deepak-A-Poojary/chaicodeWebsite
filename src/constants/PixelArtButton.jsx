@@ -3,18 +3,27 @@ import gsap from "gsap";
 import { useThemeColors } from "../hooks/useThemeColors";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
+import useStore from "../store/themeStore";
 
 function PixelArtButton({ text = "text", svg, className, to }) {
   const buttonRef = useRef(null);
   const themeColors = useThemeColors();
+  const theme = useStore((state) => state.theme);
+
+  const borderColor = theme === "dark" ? "#f59e0b" : "#a855f7";
 
   useGSAP(() => {
     const button = buttonRef.current;
 
+    const glowStart =
+      theme === "dark" ? "rgba(251, 146, 60, 0.3)" : "rgba(168, 85, 247, 0.3)";
+    const glowEnd =
+      theme === "dark" ? "rgba(251, 146, 60, 0.1)" : "rgba(168, 85, 247, 0.1)";
+
     const handleMouseEnter = () => {
       gsap.to(button, {
-        borderColor: "#22d3ee", // cyan-400
-        boxShadow: "0 0 20px 10px rgba(14,165,233,0.6)", // sky-500 glow
+        borderColor: borderColor,
+        boxShadow: `0 0 20px 10px ${glowStart}`,
         duration: 0.3,
         ease: "power2.out",
       });
@@ -22,7 +31,7 @@ function PixelArtButton({ text = "text", svg, className, to }) {
 
     const handleMouseLeave = () => {
       gsap.to(button, {
-        borderColor: "#0ea5e9", // sky-500
+        borderColor: borderColor,
         boxShadow: "none",
         duration: 0.3,
         ease: "power2.out",
@@ -32,7 +41,7 @@ function PixelArtButton({ text = "text", svg, className, to }) {
     const handleMouseDown = () => {
       gsap.to(button, {
         scale: 0.95,
-        boxShadow: "0 0 10px 5px rgba(14,165,233,0.4)",
+        boxShadow: `0 0 10px 5px ${glowEnd}`,
         duration: 0.2,
         ease: "power2.out",
       });
@@ -41,7 +50,7 @@ function PixelArtButton({ text = "text", svg, className, to }) {
     const handleMouseUp = () => {
       gsap.to(button, {
         scale: 1,
-        boxShadow: "0 0 20px 10px rgba(14,165,233,0.6)",
+        boxShadow: `0 0 20px 10px ${glowStart}`,
         duration: 0.2,
         ease: "power2.out",
       });
@@ -58,24 +67,28 @@ function PixelArtButton({ text = "text", svg, className, to }) {
       button.removeEventListener("mousedown", handleMouseDown);
       button.removeEventListener("mouseup", handleMouseUp);
     };
-  }, []);
+  }, [theme]);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center hover:scale-102 transition-transform duration-500">
       <Link
         to={to}
         ref={buttonRef}
         style={{
           background: themeColors.buttonBg,
           color: themeColors.text,
+          borderColor: borderColor,
         }}
-        className={`relative cursor-pointer p-3 font-semibold rounded-lg border border-sky-500 group ${className}`}
+        className={`relative cursor-pointer p-3 font-semibold rounded-lg border group ${className}`}
       >
         <span className="flex items-center space-x-2">
           {svg}
           <span>{text}</span>
         </span>
-        <span className="absolute inset-0 rounded-lg pointer-events-none bg-gradient-to-r from-sky-500/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+        <span
+          className="absolute inset-0 rounded-lg pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{ borderColor: borderColor }}
+        ></span>
       </Link>
     </div>
   );
