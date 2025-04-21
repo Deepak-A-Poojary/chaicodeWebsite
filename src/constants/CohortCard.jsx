@@ -23,8 +23,6 @@ const CohortCard = ({
   const themeColors = useThemeColors();
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
-  const handleIframeLoad = () => setIframeLoaded(true);
-
   // Used to animate entry of cards
   useGSAP(() => {
     const el = cardRef.current;
@@ -65,13 +63,14 @@ const CohortCard = ({
       className="opacity-0 p-2 backdrop-blur-sm border rounded-xl overflow-hidden relative group flex flex-col md:h-[650px] md:min-w-[470px]"
     >
       {/* Video Section */}
-      <div className="relative aspect-video rounded-md bg-black/50 h-[280px] overflow-hidden m-0">
+      <div className="relative aspect-video rounded-md bg-black/50 w-full overflow-hidden m-0">
         {!iframeLoaded && (
-          <div className="absolute inset-0 bg-gray-500/50 animate-pulse z-10 rounded-2xl" />
+          <div className="absolute inset-0 bg-gray-500/50 animate-pulse z-10 " />
         )}
         <iframe
-          className="w-full h-full rounded-md"
+          className="w-full h-full z-20  bg-black/50"
           src={iframeUrl}
+          onLoad={() => setIframeLoaded(true)}
           loading="lazy"
           title="Full Stack Data Science 1.0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
@@ -114,10 +113,6 @@ const CohortCard = ({
             <ClockIcon className="h-3 w-3 mr-1 text-orange-400" />
             <span>{courseDuration}</span>
           </div>
-          <div className="absolute top-0 right-4 z-20 flex items-center">
-            <div className="w-3 h-3 bg-red-500 rounded-full mr-2 scale-110 animate-pulse"></div>
-            <span className="text-xs font-semibold text-red-500">LIVE</span>
-          </div>
         </div>
 
         {/* Terminal */}
@@ -137,7 +132,7 @@ const CohortCard = ({
           </div>
         </div>
 
-        <div className="mt-auto">
+        <div className="mt-auto relative">
           <div className="flex items-center justify-between mb-4">
             <div>
               <div className="flex items-center">
@@ -150,6 +145,11 @@ const CohortCard = ({
                 Save {discontInPercentage}%
               </div>
             </div>
+          </div>
+
+          <div className="absolute top-0 right-4 z-20 flex items-center">
+            <div className="w-3 h-3 bg-red-500 rounded-full mr-2 scale-110 animate-pulse"></div>
+            <span className="text-xs font-semibold text-red-500">LIVE</span>
           </div>
           <a href={courseLink}>
             <button className="inline-flex cursor-pointer items-center justify-center gap-2 text-sm font-medium w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white py-3 mb-2 h-auto rounded-lg">

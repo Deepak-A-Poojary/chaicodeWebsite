@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useThemeColors } from "../../hooks/useThemeColors";
@@ -14,6 +14,7 @@ const Hero = () => {
   const cursorRef = useRef();
   const themeColors = useThemeColors();
   const heroRef = useRef(null);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   //Below is used to animate cursor animation
   useGSAP(() => {
@@ -116,7 +117,7 @@ const Hero = () => {
       {/* Hero text contents */}
       <div className="z-1 flex flex-col items-center gap-10">
         <div
-          className="heroTextRef text-[12px] mt-10 md:mt-28 md:text-[14px] font-semibold flex gap-1 border-2 p-2 px-5 rounded-md"
+          className="heroTextRef text-[12px] mt-10 md:text-[14px] font-semibold flex gap-1 border-2 p-2 px-5 rounded-md"
           style={{
             borderColor: themeColors.borderColor,
           }}
@@ -131,16 +132,16 @@ const Hero = () => {
           </svg>
         </div>
         <div className="heroTextRef place-items-center text-4xl md:text-6xl font-semibold w-60 md:w-full">
-          <AnimatedText text={"Consistency and Community"} />
+          <AnimatedText text={"Consistency and Community"} className={""}/>
         </div>
         <div className="heroTextRef text-2xl text-center font-semibold">
           <AnimatedAuroraText
             text={"An unmatched Learning Experience for coding courses."}
-            className="md:h-16 md:text-4xl"
+            className="md:h-16 md:text-2xl"
           />
         </div>
         <p
-          className="heroTextRef text-md md:text-lg text-center px-5 md:max-w-[60vw] font-semibold"
+          className="heroTextRef text-sm md:text-md text-center md:max-w-[60vw] font-semibold"
           style={{ color: themeColors.secondryText }}
         >
           Content is everywhere, but we provide a learning experience that is
@@ -149,7 +150,7 @@ const Hero = () => {
         </p>
       </div>
       {/* extra tags */}
-      <div className="flex justify-center mt-20 gap-4 flex-wrap">
+      <div className="flex justify-center mt-10 md:mt-15 gap-4 flex-wrap">
         <PixelArtButton
           to=""
           text="Peer learning"
@@ -259,7 +260,7 @@ const Hero = () => {
         />
       </div>
       {/* Live cohort button */}
-      <div className="flex justify-center mt-10 md:mt-20 gap-4">
+      <div className="flex justify-center mt-10 md:*:mt-5 gap-4">
         <ExploreTextButton
           to={"https://courses.chaicode.com/learn/view-all?show=batch&type=17"}
           svg={
@@ -278,19 +279,26 @@ const Hero = () => {
           }
         />
       </div>
-      <div className="flex justify-center mt-10 md:mt-15 w-full p-5">
-        <iframe
-          width="90%"
-          loading="lazy"
+      <div className="flex justify-center  mt-10 md:mt-15 ">
+        <div
+          className="self-center relative justify-center w-fit"
           id="latestVideo"
-          className="flex justify-center rounded md:rounded-xl w-[80dvw] md:w-[764px] aspect-video"
-          src="https://www.youtube.com/embed/VNb_LawBBWU?si=_N7VN-ZwBQ6CIMRP"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
+        >
+          {!iframeLoaded && (
+            <div className="absolute inset-0 bg-gray-500/50 animate-pulse z-20 rounded-2xl" />
+          )}
+          <iframe
+            width=""
+            onLoad={() => setIframeLoaded(true)}
+            loading="lazy"
+            className="flex relative justify-center rounded md:rounded-xl w-[80dvw] md:w-[764px] aspect-video"
+            src="https://www.youtube.com/embed/VNb_LawBBWU?si=_N7VN-ZwBQ6CIMRP"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
     </div>
   );
