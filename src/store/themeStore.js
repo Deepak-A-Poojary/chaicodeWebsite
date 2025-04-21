@@ -41,6 +41,7 @@ const themeColors = {
     cardSecondaryBgColor: "rgba(31,41,55, 1)", //yes
     BenifitCardBgColor: "rgba(28,28,28, 1)", //yes
     UdemyCardBgColor: "rgba(28,28,28, 1)", //yes
+    AlumniBgColor: "rgba(20, 20, 20, 0.95)", //Yes
     cardTextColor: "rgba(220, 220, 220, 0.87)",
     cardSecondryText: "#d5ebf4",
     cardBorderColor: "rgba(80, 80, 80, 0.8)",
@@ -63,13 +64,21 @@ const themeColors = {
     MenuBarHoverBgColor: "#4A5568",
     MenuBarHoverBorderColor: "#CBD5E0",
 
+    // youtube section colors
+    ytProfileBg: "#2b2a2a", //yes
+    ytCardBg: "#1b1a1a", //yes
+    ytTextColor: "#ededed", //yes
+    ytLinkColor: "#FF7043", //yes
+    ytLinkHoverColor: "#FF7043", //yes
+    ytBorderColor: "#3b3b3b", //yes
+
     //other colors
     cursorBg: "linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11))", //yes
     cursorCardBg:
       "linear-gradient(to right, rgba(249, 115, 22, 0.2), rgb(250, 250, 250, 0))",
-    ratingColor: "#cf9106",//yes
-    terminalBg:"#262626",
-
+    ratingColor: "#cf9106", //yes
+    terminalBg: "#262626",
+    alumniPlanentBg: "rgba(238,239,239, 1)",
   },
   light: {
     MainThemeColor: "rgba(255, 255, 255, 0.95)",
@@ -106,9 +115,10 @@ const themeColors = {
     cardSecondaryBgColor: "rgba(228,229,229, 1)",
     BenifitCardBgColor: "rgba(238,239,239, 1)",
     UdemyCardBgColor: "rgba(238,239,239, 1)",
+    AlumniBgColor: "rgba(255, 255, 255, 0.95)",
     cardTextColor: "rgba(30, 30, 30, 0.87)",
     cardSecondryText: "#37374c",
-    cardBorderColor: "rgba(190, 190, 200, 0.6)",
+    cardBorderColor: "rgba(190, 190, 200, 0.6)",//yes
 
     // Button styles
     buttonBg: "rgba(255, 255, 255, 1)",
@@ -128,13 +138,22 @@ const themeColors = {
     MenuBarHoverBgColor: "#E5E7EB",
     MenuBarHoverBorderColor: "#D1D5DB",
 
+    // youtube section colors
+    ytProfileBg: "#dfe1e1",
+    ytCardBg: "#ededed",
+    ytTextColor: "#010101",
+    ytLinkColor: "#FFA726",
+    ytLinkHoverColor: "#FF7043",
+    ytBorderColor: "#d1d5db",
+
     //Other color
     cursorBg:
       "linear-gradient(162deg, rgba(192, 79, 219, 1) 50%, rgba(255, 255, 255, 1) 100%)",
     cursorCardBg:
       "linear-gradient(162deg, rgba(192, 79, 219, 0.2) 0%, rgba(255, 255, 255, 0) 70%)",
     ratingColor: "#cf9106",
-    terminalBg:"#fcfbfb",
+    terminalBg: "#fcfbfb",
+    alumniPlanentBg: "#83059d",
   },
 };
 

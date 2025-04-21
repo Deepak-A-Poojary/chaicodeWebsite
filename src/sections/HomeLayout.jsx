@@ -6,6 +6,9 @@ import StudentProof from "./HomePage/StudentProof";
 import StudenFeedback from "./HomePage/StudenFeedback";
 import UdemyCourse from "./HomePage/UdemyCourse";
 import CohortBenefits from "./HomePage/CohortBenefits";
+import AlumniNetworkCard from "./HomePage/AlumniNetwork";
+import WhyChaiCode from "./HomePage/WhyChaiCode";
+import YoutubeSection from "./HomePage/YoutubeSection";
 
 const sections = [
   Hero,
@@ -15,6 +18,9 @@ const sections = [
   CohortBenefits,
   StudenFeedback,
   UdemyCourse,
+  AlumniNetworkCard,
+  WhyChaiCode,
+  YoutubeSection,
 ];
 
 function HomeLayout() {

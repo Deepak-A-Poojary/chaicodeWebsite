@@ -55,18 +55,19 @@ function CohortBenefits() {
   ];
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-5">
       <AnimatedAuroraText
         text="Key Benefits of Cohorts"
         className={'text-5xl font-["Outfit"]'}
       />
-      <p className="text-xl font-semibold font-['outfit']">
+      <p className="text-xl p-5 text-center font-semibold font-['outfit']">
         Cohorts are best way to learn because you finish the course in a timely
         manner
       </p>
       <div className="flex gap-10 p-6 flex-wrap justify-center">
-        {benfitData.map((item) => (
+        {benfitData.map((item, index) => (
           <BenefitCard
+            key={index}
             title={item.title}
             description={item.description}
             codeSnippet={item.codeSnippet}

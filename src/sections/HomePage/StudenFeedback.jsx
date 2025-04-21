@@ -100,7 +100,7 @@ const StudentFeedback = () => {
           </div>
         ))}
       </div>
-      <Divider className="my-5" />
+      <Divider className="mt-5" />
     </div>
   );
 };

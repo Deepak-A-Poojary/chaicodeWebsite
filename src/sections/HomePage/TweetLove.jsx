@@ -163,7 +163,7 @@ const TweetLove = () => {
           </svg>
         }
       />
-      <Divider className="my-15" />
+      <Divider className="mt-10" />
     </div>
   );
 };

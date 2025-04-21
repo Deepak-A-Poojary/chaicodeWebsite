@@ -36,7 +36,7 @@ function StudentProof() {
   };
 
   return (
-    <div className="text-center flex flex-col items-center gap-10 font-semibold p-5">
+    <div className="text-center flex flex-col items-center gap-10 font-semibold mt-5 p-5">
       <p className="text-md md:text-xl px-5 md:max-w-[60%] ">
         Our students are not only working at top tech companies, but are also
         becoming founders of funded startups and creators of innovative products
@@ -62,7 +62,6 @@ function StudentProof() {
           ))}
         </div>
       </div>
-      {/* <Divider /> */}
     </div>
   );
 }

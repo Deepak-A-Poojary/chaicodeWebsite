@@ -9,8 +9,8 @@ const UdemyCards = ({ courseData }) => {
   const containerRef = useRef(null);
   const [current, setCurrent] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
-  const { isMobile } = useResponsive();
-  const slideWidth = isMobile ? 300 : 1000;
+  const { isMobile, isSmall, isMedium } = useResponsive(); // Assuming your hook provides isMedium
+  const slideWidth = isMobile ? 300 : isSmall ? 600 : 1000; // Adjusted slideWidth for isSmall
   const totalSlides = courseData.length;
   const allSlides = [courseData[totalSlides - 1], ...courseData, courseData[0]];
   const intervalRef = useRef(null);
@@ -20,6 +20,8 @@ const UdemyCards = ({ courseData }) => {
   const [iframeLoaded, setIframeLoaded] = useState(
     Array(allSlides.length).fill(false)
   );
+
+  console.log();
 
   const handleIframeLoad = (index) => {
     setIframeLoaded((prev) => {
@@ -71,7 +73,7 @@ const UdemyCards = ({ courseData }) => {
 
   useGSAP(() => {
     gsap.set(containerRef.current, { x: -slideWidth * current });
-  }, []);
+  }, [slideWidth]); // Re-run layout if slideWidth changes
 
   useEffect(() => {
     if (courseData.length > 1) {
@@ -90,7 +92,7 @@ const UdemyCards = ({ courseData }) => {
 
   const handleTouchEnd = () => {
     const distance = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = 50;
+    const minSwipeDistance = isMobile ? 30 : 50; // Adjust swipe distance for mobile
     if (distance > minSwipeDistance) nextSlide();
     else if (distance < -minSwipeDistance) prevSlide();
   };
@@ -123,7 +125,7 @@ const UdemyCards = ({ courseData }) => {
               }}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 h-full gap-4">
-                <div className="flex flex-col order-2 md:order-1  justify-evenly gap-4">
+                <div className="flex flex-col order-2 md:order-1 justify-evenly gap-4">
                   <div>
                     <h1 className="text-xl md:text-[28px] font-bold">
                       <span className="text-amber-600">Course: </span>
@@ -171,7 +173,9 @@ const UdemyCards = ({ courseData }) => {
                   </div>
                   <ExploreTextButton
                     text="Check in Udemy"
-                    className={"w-fit self-center md:self-auto text-[15px]"}
+                    className={`w-fit self-center md:self-auto text-[${
+                      isMobile ? '14px' : '15px'
+                    }]`} // Smaller text on mobile
                     to={"https://hitesh.ai/udemy"}
                   />
                 </div>
