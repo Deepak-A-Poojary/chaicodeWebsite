@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useThemeColors } from "../../hooks/useThemeColors";
 import { Link } from "react-router-dom";
+import TopicsOnCloud from "../../constants/TopicsOnCloud";
 
 function YoutubeSection() {
   const themeColors = useThemeColors();
 
   return (
-    <div className="flex flex-col items-center font-['Outfit'] p-5 lg:p-10">
+    <div className="flex flex-col items-center font-['Outfit'] lg:p-10 ">
       <h2
         className="text-3xl lg:text-4xl font-bold font-['Outfit'] text-center"
         style={{
@@ -16,10 +17,10 @@ function YoutubeSection() {
         Subscribe Now and Turn Your Screen Time into Skill Time.
       </h2>
 
-      <div className="grid sm:grid-cols-1 lg:grid-cols-[35%_65%] p-5 lg:p-10 gap-10 items-center place-content-stretch">
+      <div className="grid sm:grid-cols-1 lg:grid-cols-[35%_65%] p-2 md:p-5 lg:p-10 gap-10 items-center place-content-stretch">
         {/* Histesh sir Profile pic  */}
         <div
-          className="relative w-full aspect-square translate-x-0 lg:-translate-x-4 border-2 rounded-full shadow-2xl overflow-hidden"
+          className="relative w-full aspect-square translate-x-0 lg:-translate-x-4 border-2 rounded-full shadow-xl overflow-hidden"
           style={{
             borderColor: themeColors.cardBorderColor,
             background: themeColors.ytCardBg,
@@ -34,9 +35,10 @@ function YoutubeSection() {
         {/* Channles  */}
         <div className="flex flex-col gap-5">
           <Link
-            to={"https://youtube.com/@chaiaurcode"}
+            // have use complete profile url, because sometimes redirect is not happing to exact profile in mobile
+            to={"https://youtube.com/@chaiaurcode?si=W88GcJ7VZ_6rMubd"}
             id="channelTwo"
-            className={`rounded-xl p-6 sm:p-8 shadow-md flex flex-col m-2 gap-4 hover:outline-2 hover:-translate-y-1 transition-transform duration-200`}
+            className={`rounded-xl p-4 sm:p-8 shadow-md flex flex-col m-2 gap-4 hover:outline-2 hover:-translate-y-1 transition-transform duration-200`}
             style={{
               outlineColor: themeColors.ytLinkHoverColor,
               background: themeColors.ytCardBg,
@@ -77,18 +79,22 @@ function YoutubeSection() {
               </p>
             </div>
 
-            <p
-              className={`font-mono text-sm lg:text-base leading-relaxed opacity-70`}
-            >
-              A channel dedicated to chai and coding in HINDI. A lot happens
-              over chai and I’m a big-time chai lover. Let’s sip tea and write
-              some code and some chit-chat.
+            <p className="font-mono text-sm lg:text-base leading-relaxed opacity-70 z-1">
+              A channel dedicated to chai and coding in{" "}
+              <span
+                className={`text-amber-500 font-bold text-xl font-['Pacifico']`}
+              >
+                हिन्दी
+              </span>
+              . A lot happens over chai and I'm a big-time chai lover. Let's sip
+              tea and write some code and some chit-chat.
             </p>
           </Link>
           <Link
-            to={"https://www.youtube.com/@Hiteshcodelab"}
+            // have use complete profile url, because sometimes redirect is not happing to exact profile in mobile
+            to={"https://youtube.com/@hiteshcodelab?si=WWlF8VkVpxxThsw_"}
             id="channelTwo"
-            className={`rounded-xl p-6 sm:p-8 shadow-md flex flex-col m-2 gap-4 hover:outline-2 hover:-translate-y-1 transition-transform duration-200`}
+            className={`rounded-xl p-4 sm:p-8 shadow-md flex flex-col m-2 gap-4 hover:outline-2 hover:-translate-y-1 transition-transform duration-200`}
             style={{
               outlineColor: themeColors.ytLinkHoverColor,
               background: themeColors.ytCardBg,
@@ -132,12 +138,22 @@ function YoutubeSection() {
             <p
               className={`font-mono text-sm lg:text-base leading-relaxed opacity-70`}
             >
-              English tech videos exploring programming (JS, Python, PHP &
-              more), the latest trends, frameworks, and exciting open-source
-              projects! Subscribe to stay updated on tech.
+              <span
+                className={`text-amber-500 font-bold text-xl font-['DynaPuff']`}
+              >
+                English
+              </span>{" "}
+              tech videos exploring programming (JS, Python, PHP & more), the
+              latest trends, frameworks, and exciting open-source projects!
+              Subscribe to stay updated on tech.
             </p>
           </Link>
         </div>
+      </div>
+      <div className="overflow-hidden w-dvw flex flex-col gap-5">
+        <TopicsOnCloud direction="left"/>
+        <TopicsOnCloud direction="right"/>
+        <TopicsOnCloud direction="left"/>
       </div>
     </div>
   );
