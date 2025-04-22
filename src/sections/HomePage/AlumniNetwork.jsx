@@ -26,12 +26,11 @@ const initialPlanetAngles = {
 const AlumniNetwork = () => {
   const containerRef = useRef(null);
   const topicRefs = useRef([]);
-  const anglesRef = useRef([]);
   const speedFactor = 0.2;
-  const { isMobile } = useResponsive();
+  const { isMobile, isTablet } = useResponsive();
   const sunRadius = isMobile ? 30 : 50;
   const orbitRadii = [50, 120, 190]; // Define the 3 orbital radii
-  const width = isMobile ? 350 : 900;
+  const width = isMobile ? 350 : isTablet ? 600 : 900;
   const height = 400;
   const themeColors = useThemeColors();
   const theme = useStore((state) => state.theme);
@@ -83,7 +82,7 @@ const AlumniNetwork = () => {
     >
       {/* Solor System */}
       <div
-        className="relative solarSystemContainer"
+        className="relative solarSystemContainer "
         style={{ width: `${width}px`, height: `${height}px` }}
         ref={containerRef}
       >
