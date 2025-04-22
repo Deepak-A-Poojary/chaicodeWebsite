@@ -10,7 +10,7 @@ import { useEffect, useMemo } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Only ids are enoguh to render the tweets 
+// Only ids are enoguh to render the tweets
 const TWEET_IDS = [
   "1906393735203836076",
   "1906390359841640771",
@@ -18,20 +18,16 @@ const TWEET_IDS = [
   "1907045909394788416",
 ];
 
-// Helper: Get random tweet IDs
 const getRandomTweetIds = (count = 3) => {
   return [...TWEET_IDS].sort(() => 0.5 - Math.random()).slice(0, count);
 };
 
-// Helper: Animate with ScrollTrigger
 const animateTweetCard = (selector, options) => {
   gsap.from(selector, {
     ...options,
     scrollTrigger: {
       trigger: selector,
       scroller: "body",
-      start: "top 90%",
-      end: "top 40%",
       scrub: 2,
       ...options.scrollTrigger,
     },
@@ -42,88 +38,38 @@ const TweetLove = () => {
   const themeColors = useThemeColors();
   const { isMobile, isTablet, isDesktop } = useResponsive();
 
-  const randomTweetIds = useMemo(() => getRandomTweetIds(isTablet?2:3), []);
+  const randomTweetIds = useMemo(
+    () => getRandomTweetIds(3),
+    [useResponsive]
+  );
 
   useEffect(() => {
-    if (isMobile) {
-      animateTweetCard(".tweetCardOne", {
-        translateX: -445,
-        duration: 1,
-        delay: 0.5,
-        rotate: 10,
-        opacity: 1,
-      });
-      animateTweetCard(".tweetCardTwo", {
-        translateX: -445,
-        duration: 0.5,
-        delay: 0.5,
-        rotate: 10,
-        opacity: 1,
-        scrollTrigger: { scrub: 2 },
-      });
-      animateTweetCard(".tweetCardThree", {
-        translateX: -445,
-        duration: 0.5,
-        delay: 0.5,
-        rotate: 10,
-        opacity: 1,
-        scrollTrigger: { scrub: 2 },
-      });
-    }
-
-    if (isTablet) {
-      animateTweetCard(".tweetCardOne", {
-        translateX: -445,
-        duration: 1,
-        opacity: 1,
-        ease: "power3.out",
-      });
-
-      animateTweetCard(".tweetCardTwo", {
-        translateX: 445,
-        duration: 1,
-        opacity: 1,
-        ease: "power3.out",
-      });
-    }
-
-    if (isDesktop) {
-      animateTweetCard(".tweetCardOne", {
-        translateX: 445,
-        duration: 1,
-        delay: 0.5,
-        rotate: -10,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".tweetCards",
-          start: "top 80%",
-        },
-      });
-
-      animateTweetCard(".tweetCardThree", {
-        translateX: -445,
-        duration: 1,
-        delay: 0.5,
-        rotate: 10,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".tweetCards",
-          start: "top 80%",
-        },
-      });
-    }
-  }, [isMobile, isTablet, isDesktop]);
+    animateTweetCard(".tweetCards", {
+      translateY: 100,
+      duration: 1,
+      delay: 0.5,
+      opacity: 0,
+      stagger:0.4,
+      scrollTrigger: {
+        trigger: ".tweetCards",
+        start: "top 90%",
+        end: "top 70%",
+      },
+    });
+  }, []);
 
   return (
     <div
-      className="text-center pt-10 overflow-hidden"
+      className="text-center overflow-hidden"
       style={{ background: themeColors.secondryBg }}
     >
-      <Divider className="mt-5" />
-      <p className="pt-5">Love that we get from our community</p>
+      <Divider className="" />
+      <p className="pt-5 text-sm md:text-base ">
+        Love that we get from our community
+      </p>
       <AnimatedAuroraText
         text="Tweet Love"
-        className="md:h-16 mt-5 md:text-5xl"
+        className="md:h-16 mt-0 text-4xl md:text-5xl "
       />
 
       <div
@@ -133,7 +79,7 @@ const TweetLove = () => {
         {randomTweetIds.map((id, idx) => (
           <div
             key={id}
-            className={`tweetCards tweetCard${["One", "Two", "Three"][idx]}`}
+            className={`tweetCards`}
           >
             <TweetCard tId={id} />
           </div>

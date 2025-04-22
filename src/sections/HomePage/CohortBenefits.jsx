@@ -58,7 +58,7 @@ function CohortBenefits() {
     <div className="flex flex-col items-center mt-5">
       <AnimatedAuroraText
         text="Key Benefits of Cohorts"
-        className={'text-5xl font-["Outfit"]'}
+        className={'text-4xl md:text-5xl font-["Outfit"]'}
       />
       <p className="text-xl p-5 text-center font-semibold font-['outfit']">
         Cohorts are best way to learn because you finish the course in a timely

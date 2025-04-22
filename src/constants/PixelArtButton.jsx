@@ -79,7 +79,7 @@ function PixelArtButton({ text = "text", svg, className, to }) {
           color: themeColors.text,
           borderColor: borderColor,
         }}
-        className={`relative cursor-pointer p-3 font-semibold rounded-lg border group ${className}`}
+        className={`relative cursor-pointer font-semibold rounded-lg border group ${className}`}
       >
         <span className="flex items-center space-x-2">
           {svg}

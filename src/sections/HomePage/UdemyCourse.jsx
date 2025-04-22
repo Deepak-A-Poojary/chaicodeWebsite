@@ -62,7 +62,7 @@ function UdemyCourse() {
   ];
 
   return (
-    <div className=" flex flex-col items-center">
+    <div className=" flex flex-col items-center" id="udemy">
       <AnimatedAuroraText
         text="Our Courses on Udemy"
         className={'text-2xl md:text-5xl font-["DynaPuff"] p-4'}

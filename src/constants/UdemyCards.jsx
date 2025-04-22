@@ -99,7 +99,7 @@ const UdemyCards = ({ courseData }) => {
 
   return (
     <div
-      className="relative mx-auto rounded-2xl shadow-2xl"
+      className="relative mx-auto rounded-2xl shadow-md"
       style={{
         width: `${slideWidth}px`,
         background: themeColors.UdemyCardBgColor,

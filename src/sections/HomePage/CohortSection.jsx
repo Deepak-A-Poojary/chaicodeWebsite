@@ -111,7 +111,9 @@ function CohortSection() {
 
   return (
     <div className="flex flex-col items-center">
-      <AnimatedAuroraText className="text-5xl" text={"Cohorts"} />
+      <div id="cohorts">
+        <AnimatedAuroraText className="text-5xl" text={"Cohorts"} />
+      </div>
       <h4 className="text-[1rem]">Live training classes</h4>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-dvw p-2 md:p-10 gap-6">
         {cohortCardsData.map((card, index) => (
