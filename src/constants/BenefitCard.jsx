@@ -61,26 +61,26 @@ const GsapCard = ({
       ></div>
 
       {/* Header */}
-      <div className="flex items-start gap-4 mb-4 w-fit relative z-10">
-        <div className="rounded-lg overflow-hidden w-16 h-16 bg-gray-800 flex-shrink-0 ">
-          <div className="relative w-full h-full">
-            <img
-              src={imageUrl}
-              alt={title}
-              className="object-cover rounded-lg absolute inset-0 w-full h-full"
-            />
-          </div>
+      <div className="grid grid-cols-[25%_75%] items-start gap-3 mb-4 z-10">
+        <div className="rounded-lg overflow-hidden w-full h-full">
+          <img
+            src={imageUrl}
+            alt={title}
+            className="object-cover rounded-lg w-20 h-full"
+          />
         </div>
-        <div>
-          <h3 className="text-lg font-bold mb-2 text-orange-400">{title}</h3>
-          <p className="text-sm leading-relaxed font-['outfit']">{description}</p>
+        <div className="mr-2">
+          <h3 className="text-[1.1em]  md:text-lg font-bold mb-2 text-orange-400">{title}</h3>
+          <p className="text-sm leading-relaxed font-['outfit']">
+            {description}
+          </p>
         </div>
       </div>
 
       {/* Code snippet */}
       <div className="mt-4 pt-4 border-t w-fit border-gray-800 z-10">
         <div
-          className="rounded-md  p-3 font-mono text-sm text-orange-400 overflow-x-auto"
+          className="rounded-md p-3 font-mono text-sm text-orange-400 overflow-x-auto"
           style={{
             background: themeColors.terminalBg,
           }}
