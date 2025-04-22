@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import useStore from "../store/themeStore";
 import { useThemeColors } from "../hooks/useThemeColors";
 import useResponsive from "../hooks/useResponsive";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import CohortIcon from "./customIcon/CohortIcon";
-import BookIcon from "./customIcon/BookIcon";
-import DocsIcon from "./customIcon/DocsIcon";
-import ReviewIcon from "./customIcon/ReviewIcon";
+import {
+  CohortIcon,
+  BookIcon,
+  DocsIcon,
+  ReviewIcon,
+} from "../components/customIcon/index";
 import ButtonText from "../constants/ButtonText";
 import logoWhite from "../../src/assets/chaicode-white.png";
 import logoBlack from "../../src/assets/chaicode-black.png";
@@ -71,20 +74,47 @@ function Navbar() {
     };
   }, [isSidebarOpen, isMobile]);
 
+  //When click on logo go back to top
+
+  const handleLogoClick = () => {
+    // Smooth scroll to the top using GSAP ScrollToPlugin
+    gsap.to(window, {
+      scrollTo: 0,
+      duration: 1, // 1 second for smooth scrolling
+      ease: "power2.out", // Smooth easing
+    });
+  };
+
   const NavLinks = () => (
     <>
-      <Link
+      <HashLink
         className="hover:text-[#FE9332] transition duration-200"
-        // to={"https://www.chaicode.com/#cohorts"}
+        smooth
+        scroll={(el) => {
+          const yOffset = -90; // change this to control the offset
+          const y =
+            el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }}
+        to="/#cohorts"
       >
         <CohortIcon />
-      </Link>
-      <Link
-        // to={"https://www.chaicode.com/#udemy"}
+      </HashLink>
+      <HashLink
+        to={"/#udemy"}
+        smooth
+        scroll={(el) => {
+          const yOffset = -90; // change this to control the offset
+          const y =
+            el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }}
         className="hover:text-[#FE9332] transition duration-200"
       >
         <BookIcon />
-      </Link>
+      </HashLink>
       <Link
         to={"https://docs.chaicode.com/"}
         className="hover:text-[#FE9332] transition duration-200"
@@ -143,7 +173,7 @@ function Navbar() {
         style={{ background: themeColors.navbarBgColor }}
         ref={navbarRef}
       >
-        <Link to="/">
+        <Link to="/" onClick={handleLogoClick}>
           {isMobile ? (
             <img
               id="logo"
