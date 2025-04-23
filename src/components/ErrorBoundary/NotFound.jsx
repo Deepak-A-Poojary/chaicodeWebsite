@@ -143,7 +143,7 @@ const NotFound = () => {
   return (
     <div
       ref={containerRef}
-      className="absolute top-0 h-[100vh] w-full flex flex-col items-center gap-10 justify-center py-4 overflow-hidden p-10"
+      className="top-0 min-h-[100vh] w-full flex flex-col items-center gap-10 justify-center py-4 overflow-hidden p-10"
     >
       {/* 404 Header */}
       <div className="text-center text-5xl font-semibold z-10">
@@ -173,7 +173,7 @@ const NotFound = () => {
 
       {/* Home Link */}
       <div className="text-center z-10">
-        <PixelArtButton text="Return to home" className="text-xl" to={"/"} />
+        <PixelArtButton text="Return to home" className="text-xl p-3" to={"/"} />
       </div>
     </div>
   );
