@@ -120,3 +120,21 @@ body {
 .animate-glow {
   animation: glow 1.5s ease-in-out infinite alternate; /* Apply the animation */
 }
+
+.text-gradient-orange {
+  background: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-black {
+  background: linear-gradient(
+    162deg,
+    rgb(126, 2, 157) 50%,
+    rgb(203, 30, 247) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

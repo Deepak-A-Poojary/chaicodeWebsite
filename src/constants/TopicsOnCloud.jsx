@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { Link } from "react-router-dom";
+import { useThemeColors } from "../hooks/useThemeColors";
 
 function TopicsOnCloud(
   { topics = [1, 2, 3, 4, 5], direction = "left" },
@@ -8,6 +10,7 @@ function TopicsOnCloud(
 ) {
   const containerRef = useRef(null);
   const tweenRef = useRef(null);
+  const themeColors = useThemeColors();
 
   useGSAP(() => {
     const container = containerRef.current;
@@ -58,15 +61,19 @@ function TopicsOnCloud(
           ref={containerRef}
           className="flex gap-10 w-max logo-carousel group "
         >
-          {[...topics, ...topics].map((logo, index) => (
-            <div
+          {[...topics, ...topics].map((video, index) => (
+            <Link
+              to={video.link}
               key={index}
-              className="rounded-xl overflow-hidden relative cursor-pointer border-2 h-10 w-40 border-amber-200 transition-all duration-300 group-hover:blur-[3px] hover:border-amber-600 hover:!blur-none hover:scale-102"
+              style={{
+                background: themeColors.topicsCardBg,
+              }}
+              className="rounded-xl overflow-hidden relative cursor-pointer border-2 h-10 p-6 border-transparent transition-transform duration-300 group-hover:blur-[3px] hover:border-amber-600 hover:!blur-none hover:scale-102"
             >
-              <div className="w-full h-full flex items-center justify-center text-xl font-bold">
-                Logo {logo}
+              <div className="w-full h-full flex items-center justify-center text-lg shadow">
+                {video.name}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

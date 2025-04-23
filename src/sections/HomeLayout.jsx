@@ -16,11 +16,11 @@ const sections = [
   StudentProof,
   CohortSection,
   CohortBenefits,
-  StudenFeedback,
   UdemyCourse,
   AlumniNetworkCard,
   WhyChaiCode,
   YoutubeSection,
+  StudenFeedback,
 ];
 
 function HomeLayout() {

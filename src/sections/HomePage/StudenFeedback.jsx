@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import AnimatedAuroraText from "../../constants/AnimatedAuroraText";
 import FeedbackCard from "../../constants/FeedbackCard";
 import Divider from "../../constants/Divider";
@@ -9,8 +9,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const StudentFeedback = () => {
-  const cardsRef = useRef([]);
-
   const feedbackData = [
     {
       name: "Aarav Sharma",
@@ -57,20 +55,17 @@ const StudentFeedback = () => {
   ];
 
   useGSAP(() => {
-    cardsRef.current.forEach((card, index) => {
-      gsap.from(card, {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        delay: index * 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 90%",
-          end: "top 60%",
-          toggleActions: "play none none reverse",
-        },
-      });
+    gsap.from(".feedbackCard", {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: ".feedbackCard",
+        start: "top 95%",
+        end: "top 60%",
+        scrub: 2,
+      },
     });
   }, []);
 
@@ -86,11 +81,7 @@ const StudentFeedback = () => {
       </p>
       <div className="flex gap-6 p-3 flex-wrap justify-center">
         {feedbackData.map((item, index) => (
-          <div
-            key={index}
-            ref={(el) => (cardsRef.current[index] = el)}
-            className="feedbackCard"
-          >
+          <div key={index} className="feedbackCard">
             <FeedbackCard
               name={item.name}
               avatar={item.avatar}

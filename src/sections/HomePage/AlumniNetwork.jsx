@@ -14,7 +14,7 @@ const allTopics = [
   "Showcase",
 ];
 
-const initialPlanetAngles = {
+const planetAngles = {
   Jobs: 0,
   Events: Math.PI / 3,
   Discussion: (2 * Math.PI) / 3,
@@ -23,26 +23,26 @@ const initialPlanetAngles = {
   Showcase: (5 * Math.PI) / 3,
 };
 
+const topicAssignments = {
+  Jobs: 1,
+  Connect: 1,
+  Discussion: 1,
+  Events: 2,
+  Showcase: 1,
+  Spotlight: 2,
+};
+
 const AlumniNetwork = () => {
   const containerRef = useRef(null);
   const topicRefs = useRef([]);
   const speedFactor = 0.2;
   const { isMobile, isTablet } = useResponsive();
   const sunRadius = isMobile ? 30 : 50;
-  const orbitRadii = [50, 120, 190]; // Define the 3 orbital radii
-  const width = isMobile ? 350 : isTablet ? 600 : 900;
+  const orbitRadii = [50, 120, 190];
+  const width = isMobile ? 350 : isTablet ? 600 : 800;
   const height = 400;
   const themeColors = useThemeColors();
   const theme = useStore((state) => state.theme);
-  const [topicAssignments, setTopicAssignments] = useState(() => ({
-    Jobs: 1,
-    Connect: 1,
-    Discussion: 1,
-    Events: 2,
-    Showcase: 1,
-    Spotlight: 2,
-  }));
-  const [planetAngles, setPlanetAngles] = useState(initialPlanetAngles);
 
   useEffect(() => {
     const centerX = width / 2;
@@ -77,7 +77,7 @@ const AlumniNetwork = () => {
 
   return (
     <div
-      className="mt-10 grid grid-cols-1 md:grid-cols-2 w-full h-full bg-black overflow-hidden"
+      className="mt-10 grid grid-cols-1 p-5 md:grid-cols-2 w-full h-full bg-black overflow-hidden"
       style={{ background: themeColors.AlumniBgColor }}
     >
       {/* Solor System */}

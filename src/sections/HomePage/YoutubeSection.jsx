@@ -6,6 +6,75 @@ import TopicsOnCloud from "../../constants/TopicsOnCloud";
 function YoutubeSection() {
   const themeColors = useThemeColors();
 
+  const firstSectionData = [
+    {
+      name: "AI is 90% Marketing and 10 % reality",
+      link: "https://youtu.be/KnIye1fJF80?si=uX6w0vCT05IWn13H",
+    },
+    {
+      name: "Build a SAAS with AI",
+      link: "https://youtu.be/1i8R-iJiEi8?si=io8MZs_8HJtgVFjz",
+    },
+    {
+      name: "New Junior Developers Can’t Actually Code",
+      link: "https://youtu.be/BQTaBibVbo4?si=0xuu1kVzvvHqxI3D",
+    },
+    {
+      name: "What a great definition for AI model",
+      link: "https://youtu.be/2Ye3cnOb2ug?si=y2v1YRuGrL9z96ZB",
+    },
+    {
+      name: "Ultimate AI ML Roadmap for beginners",
+      link: "https://youtu.be/6dqAwh2MCg0?si=kZoJeGEWCxSfUgPR",
+    },
+  ];
+
+  const secondSectionData = [
+    {
+      name: "Chai aur numpy",
+      link: "https://youtu.be/x7ULDYs4X84?si=U5_C4gWmBbI-OS60",
+    },
+    {
+      name: "Chai aur Jupyter Notebook",
+      link: "https://youtube.com/playlist?list=PLu71SKxNbfoAvRjhCwrRx39NssrrHt95G&si=56hzatwsC14kidWC",
+    },
+    {
+      name: "Chai aur Django",
+      link: "https://youtube.com/playlist?list=PLu71SKxNbfoDOf-6vAcKmazT92uLnWAgy&si=J11IPMrBNxVStOSv",
+    },
+    {
+      name: "Chai aur full stack NextJS",
+      link: "https://youtube.com/playlist?list=PLu71SKxNbfoBAaWGtn9GA2PTw0HO0tXzq&si=Yn7YTCIE6YSAoNlQ",
+    },
+    {
+      name: "Chai aur Python",
+      link: "https://youtube.com/playlist?list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s&si=mLItmQiF-2Vmw6Be",
+    },
+  ];
+
+  const thirdSectionData = [
+    {
+      name: "Complete Streamlit course for python developers",
+      link: "https://youtu.be/yKTEC1Y5bEQ?si=xxDGYz3s8suIvrk8",
+    },
+    {
+      name: "Don't create virtual environment in python in 2025",
+      link: "https://youtu.be/8mk85fyzevc?si=TRzQSO-LJkixyhia",
+    },
+    {
+      name: "FAST API crash course",
+      link: "https://youtu.be/foGklduxhM0?si=XpwuLQbw87R63ZzZ",
+    },
+    {
+      name: "What are MCP servers | Explained in Hindi",
+      link: "https://youtu.be/dZyQNy3-HjU?si=aLaLFb5hsO7ws8U3",
+    },
+    {
+      name: "Behind the scene of I build a SAAS with AI",
+      link: "https://youtu.be/1i8R-iJiEi8?si=thrl9KPScKkWyTNk",
+    },
+  ];
+
   return (
     <div className="flex flex-col items-center font-['Outfit'] lg:p-10 ">
       <h2
@@ -150,10 +219,10 @@ function YoutubeSection() {
           </Link>
         </div>
       </div>
-      <div className="overflow-hidden w-dvw flex flex-col gap-5">
-        <TopicsOnCloud direction="left"/>
-        <TopicsOnCloud direction="right"/>
-        <TopicsOnCloud direction="left"/>
+      <div className="overflow-hidden w-dvw flex flex-col gap-10">
+        <TopicsOnCloud direction="left" topics={firstSectionData}/>
+        <TopicsOnCloud direction="right" topics={secondSectionData}/>
+        <TopicsOnCloud direction="left" topics={thirdSectionData}/>
       </div>
     </div>
   );
