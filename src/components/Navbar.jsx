@@ -19,6 +19,42 @@ import logoForMobile from "../../src/assets/chai-gray.png";
 
 gsap.registerPlugin(useGSAP);
 
+const SunSVG = (props) => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="12" r="5" />
+    <line x1="12" y1="1" x2="12" y2="3" />
+    <line x1="12" y1="21" x2="12" y2="23" />
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+    <line x1="1" y1="12" x2="3" y2="12" />
+    <line x1="21" y1="12" x2="23" y2="12" />
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+  </svg>
+);
+
+const MoonSVG = (props) => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  </svg>
+);
+
 function Navbar() {
   const themeColors = useThemeColors();
   const toggleTheme = useStore((state) => state.toggleTheme);
@@ -209,13 +245,17 @@ function Navbar() {
             </nav>
             <section className="flex gap-3 font-semibold">
               <button
-                className="px-4 rounded-md py-2 cursor-pointer text-center duration-500 transition-all hover:text-[#f9ba32] text-nowrap"
+                className="px-3 rounded-md py-2 cursor-pointer text-center duration-500 transition-all hover:text-[#f9ba32] text-nowrap"
                 onClick={toggleTheme}
                 style={{
                   border: `1px solid ${themeColors.borderColor}`,
                 }}
               >
-                {theme === "dark" ? "🌙 Dark" : "☀️ Light"}
+                {theme === "light" ? (
+                  <MoonSVG className="h-5 w-5 fill-current text-white dark:text-black" />
+                ) : (
+                  <SunSVG className="h-5 w-5 fill-current text-black dark:text-white" />
+                )}
               </button>
               <ButtonText className={"max-w-28"} text={"Login"} />
             </section>
