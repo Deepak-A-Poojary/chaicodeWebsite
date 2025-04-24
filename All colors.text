@@ -1,0 +1,164 @@
+I have mentioned //Yes whichever is need please keep those only in dark and light mode and remove all others and provide the cleaned code 
+
+which color in dark is mentioned as //yes same color from light also to be kept, and vice-varsa 
+
+const themeColors = {
+  dark: {
+    MainThemeColor: "rgba(40, 40, 40, 1)", //Yes
+    background:
+      "linear-gradient(162deg, rgba(40, 40, 40, 1) 0%, rgba(30, 30, 30, 1) 25%, rgba(20, 20, 20, 1) 50%, rgba(20, 20, 20, 1) 75%)", //Yes
+    backgroundColor: "rgba(40, 40, 40, 1)",
+    secondryBg:
+      "linear-gradient(180deg,  rgba(20, 20, 20, 1)  33%, rgba(10, 10, 10, 1) 73%)", //Yes
+    text: "#dcdcdc", //Yes
+    secondryText: "#c2cad0", //yes
+    borderColor: "#5a6268", //Yes
+    buttonColor: "#0b0916",
+    buttonRemoveColorBg: "rgba(200, 0, 0, 0.9)",
+    buttonRemoveColorText: "rgba(255, 255, 255, 1)",
+    accentColor: "rgba(0, 150, 255, 1)",
+    linkColor: "rgba(0, 150, 255, 1)",
+    linkHoverColor: "rgba(0, 120, 220, 1)",
+    borderColorLight: "rgba(255, 255, 255, 0.4)",
+    shadowColor: "rgba(0, 0, 0, 0.4)",
+    successColor: "rgba(67, 160, 71, 1)",
+    errorColor: "rgba(244, 67, 54, 1)",
+    warningColor: "rgba(255, 202, 40, 1)",
+    disabledBgColor: "rgba(180, 180, 180, 0.5)",
+    disabledTextColor: "rgba(120, 120, 120, 0.6)",
+    overlayColor: "rgba(0, 0, 0, 0.6)",
+
+    // Navbar styles
+    navbarBgColor: "rgba(20, 20, 20, 0.95)", //Yes
+    navbarTextColor: "rgba(220, 220, 220, 0.87)",
+    navbarLinkColor: "#FFA726",
+    navbarLinkHoverColor: "rgba(0, 120, 220, 1)",
+    navbarHeight: "60px",
+    navbarShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
+    navbarBorderBottom: "1px solid rgba(0, 0, 0, 0.3)",
+
+    // Card styles
+    cardBgColor: "rgba(30, 30, 30, 1)", //yes
+    cardSecondaryBgColor: "rgba(31,41,55, 1)", //yes
+    BenifitCardBgColor: "rgba(28,28,28, 1)", //yes
+    UdemyCardBgColor: "rgba(28,28,28, 1)", //yes
+    AlumniBgColor: "rgba(20, 20, 20, 0.95)", //Yes
+    topicsCardBg: "rgba(28,28,28, 1)", //Yes
+    cardTextColor: "rgba(220, 220, 220, 0.87)",
+    cardSecondryText: "#d5ebf4",
+    cardBorderColor: "rgba(80, 80, 80, 0.8)",
+
+    // Button styles
+    buttonBg: "rgba(20, 20, 20, 0.95)", //yes
+    buttonBgHover: "#e1e1e1",
+    buttonTextColor: "#ffffff",
+    buttonBorderColor: "#22d3ee",
+    buttonShadowColor: "rgba(14,165,233,0.6)",
+    buttonActiveBg: "#0091ff",
+    buttonDisabledBg: "#444547",
+    buttonDisabledTextColor: "#646464",
+    buttonCloseButtonColor: "#969696",
+
+    // MenuBar styles
+    MenuBarBgColor: "rgba(20, 20, 20, 1)", //yes
+    MenuBarBorderColor: "#4A5568",
+    MenuBarTextColor: "#E2E8F0",
+    MenuBarHoverBgColor: "#4A5568",
+    MenuBarHoverBorderColor: "#CBD5E0",
+
+    // youtube section colors
+    ytProfileBg: "#2b2a2a", //yes
+    ytCardBg: "#1b1a1a", //yes
+    ytTextColor: "#ededed", //yes
+    ytLinkColor: "#FF7043", //yes
+    ytLinkHoverColor: "#FF7043", //yes
+    ytBorderColor: "#3b3b3b", //yes
+
+    //other colors
+    cursorBg: "linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11))", //yes
+    cursorCardBg:
+      "linear-gradient(to right, rgba(249, 115, 22, 0.2), rgb(250, 250, 250, 0))",
+    ratingColor: "#cf9106", //yes
+    terminalBg: "#262626",
+    alumniPlanentBg: "rgba(238,239,239, 1)",
+  },
+  light: {
+    MainThemeColor: "rgba(255, 255, 255, 0.95)",
+    background:
+      "linear-gradient(162deg, rgba(230, 230, 250, 1) 0%, rgba(255, 255, 255, 1) 100%)",
+    secondryBg:
+      "linear-gradient(180deg, rgba(250, 250, 250, 0)  0%, rgba(250, 250, 250, 0)  50%, rgba(250, 250, 250, 1) 73%)", //Yes
+    text: "#1c1e21",
+    secondryText: "#3a3f44",
+    borderColor: "#99b3e6",
+    buttonColor: "#f8faf7",
+    buttonRemoveColorBg: "rgba(255, 100, 100, 0.8)",
+    buttonRemoveColorText: "rgba(30, 30, 30, 1)",
+    accentColor: "rgba(0, 120, 230, 1)",
+    linkColor: "rgba(0, 120, 230, 1)",
+    linkHoverColor: "rgba(0, 100, 200, 1)",
+    borderColorLight: "rgba(255, 255, 255, 0.5)",
+    shadowColor: "rgba(0, 0, 0, 0.08)",
+    successColor: "rgba(70, 165, 75, 1)",
+    errorColor: "rgba(229, 73, 70, 1)",
+    warningColor: "rgba(255, 185, 5, 1)",
+    disabledBgColor: "rgba(245, 245, 245, 0.6)",
+    disabledTextColor: "rgba(150, 150, 150, 0.7)",
+    overlayColor: "rgba(0, 0, 0, 0.04)",
+
+    // Navbar styles
+    navbarBgColor: "rgba(255, 255, 255, 0.95)",
+    navbarTextColor: "rgba(30, 30, 30, 0.87)",
+    navbarLinkColor: "#FFA726",
+    navbarLinkHoverColor: "rgba(0, 100, 200, 1)",
+
+    // Card styles
+    cardBgColor: "rgba(250, 250, 250, 1)",
+    cardSecondaryBgColor: "rgba(228,229,229, 1)",
+    BenifitCardBgColor: "rgba(238,239,239, 1)",
+    UdemyCardBgColor: "rgba(238,239,239, 1)",
+    AlumniBgColor: "rgba(255, 255, 255, 0.95)",
+    topicsCardBg: "rgba(238,239,239, 1)",
+    cardTextColor: "rgba(30, 30, 30, 0.87)",
+    cardSecondryText: "#37374c",
+    cardBorderColor: "rgba(190, 190, 200, 0.6)",//yes
+
+    // Button styles
+    buttonBg: "rgba(255, 255, 255, 1)",
+    buttonBgHover: "#0056b3",
+    buttonTextColor: "#ffffff",
+    buttonBorderColor: "#b4b4b4",
+    buttonShadowColor: "rgba(0, 0, 0, 0.5)",
+    buttonActiveBg: "#0056b3",
+    buttonDisabledBg: "#eaeaea",
+    buttonDisabledTextColor: "#a0a0a0",
+    buttonCloseButtonColor: "#646464",
+
+    // MenuBar button styles
+    MenuBarBgColor: "#F3F4F6",
+    MenuBarBorderColor: "#E5E7EB",
+    MenuBarTextColor: "#1F2937",
+    MenuBarHoverBgColor: "#E5E7EB",
+    MenuBarHoverBorderColor: "#D1D5DB",
+
+    // youtube section colors
+    ytProfileBg: "#dfe1e1",
+    ytCardBg: "#ededed",
+    ytTextColor: "#010101",
+    ytLinkColor: "#FFA726",
+    ytLinkHoverColor: "#FF7043",
+    ytBorderColor: "#d1d5db",
+
+    //Other color
+    cursorBg:
+      "linear-gradient(162deg, rgba(192, 79, 219, 1) 50%, rgba(255, 255, 255, 1) 100%)",
+    cursorCardBg:
+      "linear-gradient(162deg, rgba(192, 79, 219, 0.2) 0%, rgba(255, 255, 255, 0) 70%)",
+    ratingColor: "#cf9106",
+    terminalBg: "#fcfbfb",
+    alumniPlanentBg: "#83059d",
+  },
+};
+
+
+
