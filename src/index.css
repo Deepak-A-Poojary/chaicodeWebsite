@@ -70,6 +70,9 @@ body {
   --tweet-body-font-size: 0.9rem;
   max-width: 400px;
   min-height: 530px;
+  --tweet-bg-color: transparent;
+  --tweet-bg-color-hover: transparent;
+  border: none;
 }
 
 .react-tweet-theme ._root_g9tkv_1 ._image_g9tkv_43 {
@@ -100,6 +103,7 @@ body {
 .tweetCardThree {
   will-change: transform, opacity;
 }
+
 
 /* styles.css */
 @keyframes glow {
