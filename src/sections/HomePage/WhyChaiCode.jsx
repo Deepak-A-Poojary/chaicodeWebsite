@@ -35,19 +35,56 @@ const WhyChaiCode = () => {
         },
       }
     );
-  }, []); // Empty dependency array means this runs once after the initial render
+  }, []);
 
-  const headingText = "But Why ChaiCode ?";
-  const letters = headingText.split("");
+  const benefitsColumnOneData = [
+    {
+      title: "Comprehensive Curriculum",
+      description:
+        "Master key concepts and hands-on skills with clarity and confidence. Learn what truly matters, the right way, thorough, practical, and easy to understand.",
+    },
+    {
+      title: "You finish it",
+      description:
+        "Our cohorts are a collaborative journey, students learn together, stay motivated, and complete the course on time as a community.",
+    },
+    {
+      title: "Industry Guests",
+      description:
+        "We’re connected with industry experts and regularly bring them into our classes for engaging, fun, and insightful sessions with students.",
+    },
+  ];
+
+  const benefitsColumnThreeData = [
+    {
+      title: "Code and Chill",
+      description:
+        "Coding should be fun, not frightening. It might feel tough at first, but with time and practice, everything starts to click and fall into place.",
+    },
+    {
+      title: "Improve Communication",
+      description:
+        "One of the best ways to boost communication skills is through practice. Our peer classes make it happen where co-learners teach, share, and grow together.",
+    },
+    {
+      title: "Bounties",
+      description:
+        "Every cohort comes with exciting cash prizes and some even feature a MacBook giveaway! It’s our way of keeping the motivation high and the learning fun.",
+    },
+  ];
+
+  const letters = (headingText) => {
+    return headingText.split("");
+  };
   return (
-    <div className="flex flex-col items-center mt-10 p-5 px-10 xl:px-25">
+    <div className="flex flex-col items-center mt-10 p-5 px-5 xl:px-25">
       <h1
         ref={headingRef}
-        className="flex flex-wrap justify-center text-2xl md:text-5xl mb-2 md:mb-5 font-bold leading-snug text-center"
+        className="flex flex-wrap justify-center text-3xl md:text-5xl mb-2 md:mb-5 font-bold leading-snug text-center"
       >
-        {letters.map((letter, index) => (
+        {letters("But Why ChaiCode ?").map((letter, index) => (
           <span key={index} className="letter inline-block leading-8">
-            {letter === " " ? "\u00A0" : letter} {/* Preserve spaces */}
+            {letter === " " ? "\u00A0" : letter}
           </span>
         ))}
       </h1>
@@ -56,66 +93,30 @@ const WhyChaiCode = () => {
           id="columnOne"
           className="order-2 md:order-1 w-full flex flex-col gap-6"
         >
-          <div
-            className="rounded-md p-2 shadow-[0_10px_10px_rgba(0,0,0,0.1)]"
-            style={{ background: themeColors.BenifitCardBgColor }}
-          >
-            <h1
-              className="text-2xl font-semibold p-2"
-              style={{ color: theme == "dark" ? "#67e8f9" : "#033e45" }}
+          {benefitsColumnOneData.map((benefit, index) => (
+            <div
+              key={index}
+              className="rounded-md p-2 shadow-[0_10px_10px_rgba(0,0,0,0.1)]"
+              style={{ background: themeColors.BenifitCardBgColor }}
             >
-              Comprehensive Curriculum
-            </h1>
-            <p
-              style={{ color: theme == "dark" ? "#f6feff" : "#5d7072" }}
-              className=" text-sm leading-relaxed mb-6 p-2"
-            >
-              Master key concepts and hands-on skills with clarity and
-              confidence. Learn what truly matters, the right way, thorough,
-              practical, and easy to understand.
-            </p>
-          </div>
-          <div
-            className="rounded-md p-2 shadow-[0_10px_10px_rgba(0,0,0,0.1)]"
-            style={{ background: themeColors.BenifitCardBgColor }}
-          >
-            <h1
-              className="text-2xl font-semibold p-2"
-              style={{ color: theme == "dark" ? "#67e8f9" : "#033e45" }}
-            >
-              You finish it
-            </h1>
-            <p
-              style={{ color: theme == "dark" ? "#f6feff" : "#5d7072" }}
-              className=" text-sm leading-relaxed mb-6 p-2"
-            >
-              Our cohorts are a collaborative journey, students learn together,
-              stay motivated, and complete the course on time as a community.
-            </p>
-          </div>
-          <div
-            className="rounded-md p-2 shadow-[0_10px_10px_rgba(0,0,0,0.1)]"
-            style={{ background: themeColors.BenifitCardBgColor }}
-          >
-            <h1
-              className="text-2xl font-semibold p-2"
-              style={{ color: theme == "dark" ? "#67e8f9" : "#033e45" }}
-            >
-              Industry Guests
-            </h1>
-            <p
-              style={{ color: theme == "dark" ? "#f6feff" : "#5d7072" }}
-              className=" text-sm leading-relaxed mb-6 p-2"
-            >
-              We’re connected with industry experts and regularly bring them
-              into our classes for engaging, fun, and insightful sessions with
-              students.
-            </p>
-          </div>
+              <h1
+                className="text-2xl font-semibold p-2"
+                style={{ color: theme === "dark" ? "#67e8f9" : "#033e45" }}
+              >
+                {benefit.title}
+              </h1>
+              <p
+                style={{ color: theme === "dark" ? "#f6feff" : "#5d7072" }}
+                className=" text-sm leading-relaxed p-2"
+              >
+                {benefit.description}
+              </p>
+            </div>
+          ))}
         </div>
         <div
           id="columnTwo"
-          className="order-1 md:order-2 border p-5 rounded-lg "
+          className="order-1 md:order-2 border-2 p-5 rounded-lg "
           style={{ borderColor: themeColors.borderColor }}
         >
           <div>
@@ -153,63 +154,26 @@ const WhyChaiCode = () => {
           id="columnThree"
           className="order-3 md:order-3 w-full flex flex-col gap-6"
         >
-          <div
-            className="rounded-md p-2 shadow-[0_10px_10px_rgba(0,0,0,0.1)]"
-            style={{ background: themeColors.BenifitCardBgColor }}
-          >
-            <h1
-              className="text-2xl font-semibold p-2"
-              style={{ color: theme == "dark" ? "#67e8f9" : "#033e45" }}
+          {benefitsColumnThreeData.map((benefit, index) => (
+            <div
+              key={index}
+              className="rounded-md p-2 shadow-[0_10px_10px_rgba(0,0,0,0.1)]"
+              style={{ background: themeColors.BenifitCardBgColor }}
             >
-              Code and Chill
-            </h1>
-            <p
-              style={{ color: theme == "dark" ? "#f6feff" : "#5d7072" }}
-              className=" text-sm leading-relaxed mb-6 p-2"
-            >
-              Coding should be fun, not frightening. It might feel tough at
-              first, but with time and practice, everything starts to click and
-              fall into place.
-            </p>
-          </div>
-          <div
-            className="rounded-md p-2 shadow-[0_10px_10px_rgba(0,0,0,0.1)]"
-            style={{ background: themeColors.BenifitCardBgColor }}
-          >
-            <h1
-              className="text-2xl font-semibold p-2"
-              style={{ color: theme == "dark" ? "#67e8f9" : "#033e45" }}
-            >
-              Improve Communication
-            </h1>
-            <p
-              style={{ color: theme == "dark" ? "#f6feff" : "#5d7072" }}
-              className=" text-sm leading-relaxed mb-6 p-2"
-            >
-              One of the best ways to boost communication skills is through
-              practice. Our peer classes make it happen where co-learners teach,
-              share, and grow together.
-            </p>
-          </div>
-          <div
-            className="rounded-md p-2 shadow-[0_10px_10px_rgba(0,0,0,0.1)]"
-            style={{ background: themeColors.BenifitCardBgColor }}
-          >
-            <h1
-              className="text-2xl font-semibold p-2"
-              style={{ color: theme == "dark" ? "#67e8f9" : "#033e45" }}
-            >
-              Bounties
-            </h1>
-            <p
-              style={{ color: theme == "dark" ? "#f6feff" : "#5d7072" }}
-              className=" text-sm leading-relaxed mb-6 p-2"
-            >
-              Every cohort comes with exciting cash prizes and some even feature
-              a MacBook giveaway! It’s our way of keeping the motivation high
-              and the learning fun.
-            </p>
-          </div>
+              <h1
+                className="text-2xl font-semibold p-2"
+                style={{ color: theme === "dark" ? "#67e8f9" : "#033e45" }}
+              >
+                {benefit.title}
+              </h1>
+              <p
+                style={{ color: theme === "dark" ? "#f6feff" : "#5d7072" }}
+                className=" text-sm leading-relaxed p-2"
+              >
+                {benefit.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

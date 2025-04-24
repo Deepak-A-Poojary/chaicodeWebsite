@@ -10,14 +10,15 @@ const themeColors = {
     secondryBg:
       "linear-gradient(180deg,  rgba(20, 20, 20, 1)  33%, rgba(10, 10, 10, 1) 73%)",
     text: "#dcdcdc",
-    secondryText: "#c2cad0",
-    borderColor: "#5a6268",
+    secondryText: "#a3a9ae",
+    borderColor: "#4e545b",
 
     // Navbar styles
     navbarBgColor: "rgba(20, 20, 20, 0.95)",
 
     // Card styles
-    cardBgColor: "rgba(30, 30, 30, 1)",
+    TweetCardBgColor: "rgba(30, 30, 30, 1)",
+    cardBgColor: "rgba(38, 38, 38, 1)",
     cardSecondaryBgColor: "rgba(31,41,55, 1)",
     BenifitCardBgColor: "rgba(28,28,28, 1)",
     UdemyCardBgColor: "rgba(28,28,28, 1)",
@@ -26,7 +27,8 @@ const themeColors = {
     cardBorderColor: "rgba(80, 80, 80, 0.8)",
 
     // Button styles
-    buttonBg: "rgba(31,41,55, 1)",
+    buttonBg: "rgba(20, 20, 20, 0.95)",
+    downloadAppBtnBg: "rgba(31,41,55, 1)",
 
     // MenuBar styles
     MenuBarBgColor: "rgba(20, 20, 20, 1)",
@@ -55,13 +57,14 @@ const themeColors = {
     secondryBg:
       "linear-gradient(180deg, rgba(250, 250, 250, 0)  0%, rgba(250, 250, 250, 0)  50%, rgba(250, 250, 250, 1) 73%)",
     text: "#1c1e21",
-    secondryText: "#3a3f44",
-    borderColor: "#99b3e6",
+    secondryText: "#52525b",
+    borderColor: "#a5b3ce",
 
     // Navbar styles
     navbarBgColor: "rgba(255, 255, 255, 0.95)",
 
     // Card styles
+    TweetCardBgColor: "rgba(245, 245, 255, 1)",
     cardBgColor: "rgba(250, 250, 250, 1)",
     cardSecondaryBgColor: "rgba(228,229,229, 1)",
     BenifitCardBgColor: "rgba(238,239,239, 1)",
@@ -71,7 +74,8 @@ const themeColors = {
     cardBorderColor: "rgba(190, 190, 200, 0.6)",
 
     // Button styles
-    buttonBg: "rgba(235, 235, 235, 1)",
+    buttonBg: "rgba(255, 255, 255, 1)",
+    downloadAppBtnBg: "rgba(235, 235, 235, 1)",
 
     // MenuBar button styles
     MenuBarBgColor: "#F3F4F6",

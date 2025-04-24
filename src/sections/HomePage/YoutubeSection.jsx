@@ -76,7 +76,7 @@ function YoutubeSection() {
   ];
 
   return (
-    <div className="flex flex-col items-center font-['Outfit'] lg:p-10 ">
+    <div className="flex flex-col items-center font-['Outfit'] lg:p-10 p-6">
       <h2
         className="text-3xl lg:text-4xl font-bold font-['Outfit'] text-center"
         style={{
@@ -85,24 +85,26 @@ function YoutubeSection() {
       >
         Subscribe Now and Turn Your Screen Time into Skill Time.
       </h2>
-
       <div className="grid sm:grid-cols-1 lg:grid-cols-[35%_65%] p-2 md:p-5 lg:p-10 gap-10 items-center place-content-stretch">
         {/* Histesh sir Profile pic  */}
-        <div
-          className="relative w-full aspect-square translate-x-0 lg:-translate-x-4 border-2 rounded-full shadow-xl overflow-hidden"
-          style={{
-            borderColor: themeColors.cardBorderColor,
-            background: themeColors.ytCardBg,
-          }}
-        >
-          <img
-            className="translate-x-4"
-            src="https://hiteshchoudhary.b-cdn.net/coding-hero-v2/hc-laptop.png"
-            alt="youtube thumbnail"
-          />
+        <div className="relative w-full flex justify-center">
+          <div
+            className="w-[50%] lg:w-full object-center object-cover object aspect-square lg:-translate-x-4 border-2 rounded-full shadow-xl overflow-hidden"
+            style={{
+              borderColor: themeColors.cardBorderColor,
+              background: themeColors.ytCardBg,
+            }}
+          >
+            <img
+              className="translate-x-2 lg:translate-x-4"
+              src="https://hiteshchoudhary.b-cdn.net/coding-hero-v2/hc-laptop.png"
+              alt="youtube thumbnail"
+            />
+          </div>
         </div>
-        {/* Channles  */}
+        {/* Channles section */}
         <div className="flex flex-col gap-5">
+          {/* Hindi channel card - Chai aur code */}
           <Link
             // have use complete profile url, because sometimes redirect is not happing to exact profile in mobile
             to={"https://youtube.com/@chaiaurcode?si=W88GcJ7VZ_6rMubd"}
@@ -159,6 +161,7 @@ function YoutubeSection() {
               tea and write some code and some chit-chat.
             </p>
           </Link>
+          {/* English channel card - Hitesh Choudhary */}
           <Link
             // have use complete profile url, because sometimes redirect is not happing to exact profile in mobile
             to={"https://youtube.com/@hiteshcodelab?si=WWlF8VkVpxxThsw_"}
@@ -220,9 +223,9 @@ function YoutubeSection() {
         </div>
       </div>
       <div className="overflow-hidden w-dvw flex flex-col gap-10">
-        <TopicsOnCloud direction="left" topics={firstSectionData}/>
-        <TopicsOnCloud direction="right" topics={secondSectionData}/>
-        <TopicsOnCloud direction="left" topics={thirdSectionData}/>
+        <TopicsOnCloud direction="left" topics={firstSectionData} />
+        <TopicsOnCloud direction="right" topics={secondSectionData} />
+        <TopicsOnCloud direction="left" topics={thirdSectionData} />
       </div>
     </div>
   );

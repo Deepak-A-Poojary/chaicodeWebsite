@@ -36,13 +36,15 @@ const AlumniNetwork = () => {
   const containerRef = useRef(null);
   const topicRefs = useRef([]);
   const speedFactor = 0.2;
-  const { isMobile, isTablet } = useResponsive();
+  const { isMobile, isTablet, isSmall } = useResponsive();
   const sunRadius = isMobile ? 30 : 50;
   const orbitRadii = [50, 120, 190];
-  const width = isMobile ? 350 : isTablet ? 600 : 800;
-  const height = 400;
   const themeColors = useThemeColors();
   const theme = useStore((state) => state.theme);
+
+  //this width and height is used to size solor system container
+  const width = isMobile ? 350 : isTablet ? 500 : 800;
+  const height = 400;
 
   useEffect(() => {
     const centerX = width / 2;
@@ -80,9 +82,9 @@ const AlumniNetwork = () => {
       className="mt-10 grid grid-cols-1 p-5 md:grid-cols-2 w-full h-full bg-black overflow-hidden"
       style={{ background: themeColors.AlumniBgColor }}
     >
-      {/* Solor System */}
+      {/* Solor System theme */}
       <div
-        className="relative solarSystemContainer "
+        className="relative solarSystemContainer"
         style={{ width: `${width}px`, height: `${height}px` }}
         ref={containerRef}
       >
@@ -112,7 +114,7 @@ const AlumniNetwork = () => {
           })}
         </svg>
 
-        {/* Sun */}
+        {/* Sun (Alumni text) */}
         <div
           className="absolute flex justify-center items-center text-black font-bold text-sm z-10 "
           style={{
@@ -121,16 +123,14 @@ const AlumniNetwork = () => {
             left: `${width / 2 - sunRadius}px`,
             top: `${height / 2 - sunRadius}px`,
             borderRadius: "9999px",
-            backgroundColor: "radial-gradient(circle, '#facc15', 'black')", // Tailwind yellow-500
+            backgroundColor: "radial-gradient(circle, '#facc15', 'black')",
           }}
         >
-          <span className="absolute inset-0 rounded-full bg-yellow-500 animate-glow"></span>{" "}
-          {/* Glowing pseudo-element */}
-          <span className="relative z-10">Alumni</span>{" "}
-          {/* Ensure text is on top */}
+          <span className="absolute inset-0 rounded-full bg-yellow-500 animate-glow"></span>
+          <span className="relative z-10">Alumni</span>
         </div>
 
-        {/* Planets (Topics) */}
+        {/* Planets as Topics */}
         <div className="relative h-full w-full">
           {allTopics.map((topic, index) => (
             <div
@@ -148,6 +148,7 @@ const AlumniNetwork = () => {
           ))}
         </div>
       </div>
+      
       {/* Right Column for Alumni Text */}
       <div className="flex flex-col justify-center items-center text-center p-6 z-20 text-white">
         <h2

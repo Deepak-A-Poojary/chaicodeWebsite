@@ -60,10 +60,10 @@ const CohortCard = ({
         color: themeColors.text,
         borderColor: themeColors.borderColor,
       }}
-      className="opacity-0 p-2 backdrop-blur-sm border rounded-xl overflow-hidden relative group flex flex-col md:h-[650px] md:min-w-[470px]"
+      className="opacity-0 p-7 backdrop-blur-sm shadow-md rounded-xl overflow-hidden relative group flex flex-col md:h-[650px] md:min-w-[470px]"
     >
       {/* Video Section */}
-      <div className="relative aspect-video rounded-md bg-black/50 w-full overflow-hidden m-0">
+      <div className="relative aspect-video mb-2 rounded-md bg-black/50 w-full overflow-hidden m-0">
         {!iframeLoaded && (
           <div className="absolute inset-0 bg-gray-500/50 animate-pulse z-10 " />
         )}
@@ -90,7 +90,7 @@ const CohortCard = ({
       </div>
 
       {/* Content Section */}
-      <div className="p-5 flex-1 flex flex-col">
+      <div className=" flex-1 flex flex-col">
         <div>
           <h3 className="text-xl font-bold mb-2 line-clamp-1">{courseName}</h3>
           <p

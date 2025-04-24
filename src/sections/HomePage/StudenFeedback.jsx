@@ -79,7 +79,7 @@ const StudentFeedback = () => {
         Experience the power of learning – join our courses and elevate your
         skills today.
       </p>
-      <div className="flex gap-6 p-3 flex-wrap justify-center">
+      <div className="flex gap-6 p-10 w-full flex-wrap justify-center">
         {feedbackData.map((item, index) => (
           <div key={index} className="feedbackCard">
             <FeedbackCard
