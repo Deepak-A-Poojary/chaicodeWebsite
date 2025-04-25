@@ -221,16 +221,16 @@ const Footer = () => {
 
   return (
     <div
-      className="p-6 md:p-14 z-10 font-['outfit'] "
+      className="p-6 md:p-14 w-dvw z-10 font-['outfit'] "
       style={{
         background: themeColors.secondryBg,
         color: themeColors.text,
       }}
     >
-      <div className="container flex flex-col items-center ">
+      <div className="container flex flex-col items-center">
         <div className="flex justify-between w-full flex-col gap-5 md:flex-row">
           {/* Logo column */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-1 flex-col gap-3 ">
             <a className="flex h-10 gap-2" href="/">
               <div className="" style={{ transform: "scale(1.00161)" }}>
                 <img
@@ -398,7 +398,7 @@ const Footer = () => {
             </p>
           </div>
           {/* Links section */}
-          <div className="flex flex-col gap-5 md:flex-row justify-evenly">
+          <div className="flex flex-wrap gap-5 lg:gap-20 md:flex-row justify-between">
             {/* Prducts column */}
             <div className="">
               <h3
@@ -411,13 +411,13 @@ const Footer = () => {
                 {products.map((product) => (
                   <li key={product.name}>
                     <div>
-                      <a
+                      <Link
                         className="hover:text-orange-400 transition-colors"
-                        href={product.href}
+                        to={product.href}
                         style={{ color: themeColors.secondryText }}
                       >
                         {product.name}
-                      </a>
+                      </Link>
                     </div>
                   </li>
                 ))}
@@ -435,13 +435,13 @@ const Footer = () => {
                 {resources.map((resource) => (
                   <li key={resource.name}>
                     <div>
-                      <a
+                      <Link
                         className="text-gray-400 dark:text-gray-500 hover:text-orange-400 transition-colors"
-                        href={resource.href}
+                        to={resource.href}
                         style={{ color: themeColors.secondryText }}
                       >
                         {resource.name}
-                      </a>
+                      </Link>
                     </div>
                   </li>
                 ))}
@@ -458,7 +458,7 @@ const Footer = () => {
               <Link to="https://apps.apple.com/in/app/chaicode/id6504993143">
                 <button
                   data-slot="button"
-                  className="whitespace-nowrap text-sm font-medium flex items-center justify-evenly gap-4 p-4 w-44 rounded-xl mb-3"
+                  className="whitespace-nowrap text-sm font-medium flex items-center justify-evenly gap-2 p-4 w-44 rounded-xl mb-3"
                   style={{
                     background: themeColors.downloadAppBtnBg,
                     color: themeColors.text,
@@ -526,10 +526,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-16 relative overflow-hidden  w-full">
+        <div className="relative overflow-hidden w-full flex justify-center">
           <h2
-            className={`text-[3rem] md:text-[8rem] lg:text-[12rem] font-bold text-center tracking-tighter leading-none w-full mx-auto ${
-              theme === "dark" ? "text-gradient-orange" : "text-gradient-black"
+            className={`text-[4rem] sm:text-[7rem] my-5  md:text-[8rem] lg:text-[12rem] font-bold tracking-tighter leading-none ${
+              theme === "dark" ? "text-gradient-orange" : "text-gradient-purple"
             }`}
           >
             CHAICODE
