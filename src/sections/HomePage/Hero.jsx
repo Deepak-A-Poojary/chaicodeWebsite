@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useThemeColors } from "../../hooks/useThemeColors";
@@ -203,7 +203,7 @@ const Hero = () => {
 
   return (
     <div
-      className="pb-15 md:pb-20"
+      className="pb-15 md:pb-20 relative"
       id="heroSection"
       ref={heroRef}
       style={{
@@ -224,7 +224,6 @@ const Hero = () => {
           ref={cursorRef}
         ></div>
       </div>
-
       {/* Hero text contents */}
       <div className="z-1 flex flex-col items-center gap-10">
         <div
@@ -248,11 +247,11 @@ const Hero = () => {
         <div className="heroTextRef text-2xl text-center font-semibold">
           <AnimatedAuroraText
             text={"An unmatched Learning Experience for coding courses."}
-            className="md:h-16 md:text-2xl"
+            className="md:h-16 text-lg lg:text-2xl"
           />
         </div>
         <p
-          className="heroTextRef text-sm md:text-md text-center md:max-w-[60vw] font-semibold"
+          className="heroTextRef text-sm text-center md:max-w-[60vw] font-semibold"
           style={{ color: themeColors.secondryText }}
         >
           Content is everywhere, but we provide a learning experience that is
@@ -263,8 +262,12 @@ const Hero = () => {
       {/* extra tags */}
       <div className="flex justify-center mt-10 md:mt-15 gap-4 flex-wrap p-1">
         {buttonData.map((button, index) => (
-          <PixelArtButton key={index} text={button.text} svg={button.svg} 
-          className={'text-[10px] md:p-3 p-2 md:text-sm'}/>
+          <PixelArtButton
+            key={index}
+            text={button.text}
+            svg={button.svg}
+            className={"text-[10px] md:p-3 p-2 md:text-sm"}
+          />
         ))}
       </div>
       {/* Live cohort button */}
@@ -287,7 +290,8 @@ const Hero = () => {
           }
         />
       </div>
-      <div className="flex justify-center  mt-10 md:mt-15 ">
+      {/* Latest video section */}
+      <div className="flex justify-center z-1 mt-10 md:mt-15 ">
         <div
           className="self-center relative justify-center w-fit"
           id="latestVideo"

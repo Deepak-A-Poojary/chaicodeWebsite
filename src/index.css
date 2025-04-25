@@ -104,7 +104,6 @@ body {
   will-change: transform, opacity;
 }
 
-
 /* styles.css */
 @keyframes glow {
   0% {
@@ -132,9 +131,31 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-black {
+.text-gradient-purple {
   background: linear-gradient(
     162deg,
+    rgb(126, 2, 157) 50%,
+    rgb(203, 30, 247) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-fordark {
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255) 20%,
+    rgb(143, 141, 141)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-light {
+  background: linear-gradient(
+    to top,
     rgb(126, 2, 157) 50%,
     rgb(203, 30, 247) 100%
   );

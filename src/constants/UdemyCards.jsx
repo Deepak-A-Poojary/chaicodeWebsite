@@ -9,8 +9,8 @@ const UdemyCards = ({ courseData }) => {
   const containerRef = useRef(null);
   const [current, setCurrent] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
-  const { isMobile, isSmall, isMedium } = useResponsive(); // Assuming your hook provides isMedium
-  const slideWidth = isMobile ? 300 : isSmall ? 600 : 1000; // Adjusted slideWidth for isSmall
+  const { isMobile, isSmall, isTablet } = useResponsive();
+  const slideWidth = isMobile ? 300 : isSmall ? 600 : isTablet ? 800 : 1000;
   const totalSlides = courseData.length;
   const allSlides = [courseData[totalSlides - 1], ...courseData, courseData[0]];
   const intervalRef = useRef(null);
@@ -73,7 +73,7 @@ const UdemyCards = ({ courseData }) => {
 
   useGSAP(() => {
     gsap.set(containerRef.current, { x: -slideWidth * current });
-  }, [slideWidth]); // Re-run layout if slideWidth changes
+  }, [slideWidth]);
 
   useEffect(() => {
     if (courseData.length > 1) {
@@ -92,18 +92,21 @@ const UdemyCards = ({ courseData }) => {
 
   const handleTouchEnd = () => {
     const distance = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = isMobile ? 30 : 50; // Adjust swipe distance for mobile
+    const minSwipeDistance = isMobile ? 30 : 50;
     if (distance > minSwipeDistance) nextSlide();
     else if (distance < -minSwipeDistance) prevSlide();
   };
 
   return (
     <div
-      className="relative mx-auto rounded-2xl shadow-md"
+      className="relative mx-auto rounded-2xl shadow-md "
       style={{
         width: `${slideWidth}px`,
         background: themeColors.UdemyCardBgColor,
       }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Carousel container */}
       <div className="overflow-hidden rounded-lg shadow-lg">
@@ -111,9 +114,9 @@ const UdemyCards = ({ courseData }) => {
           ref={containerRef}
           className="flex"
           style={{ width: `${allSlides.length * slideWidth}px` }}
-          onTouchStart={isMobile ? handleTouchStart : null}
-          onTouchMove={isMobile ? handleTouchMove : null}
-          onTouchEnd={isMobile ? handleTouchEnd : null}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {allSlides.map((item, i) => (
             <div
@@ -174,7 +177,7 @@ const UdemyCards = ({ courseData }) => {
                   <ExploreTextButton
                     text="Check in Udemy"
                     className={`w-fit self-center md:self-auto text-[${
-                      isMobile ? '14px' : '15px'
+                      isMobile ? "14px" : "15px"
                     }]`} // Smaller text on mobile
                     to={"https://hitesh.ai/udemy"}
                   />

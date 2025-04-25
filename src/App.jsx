@@ -5,6 +5,7 @@ import HomeLayout from "./sections/HomeLayout";
 import Review from "./pages/Review";
 import LandingLayout from "./layouts/LandingLayout";
 import NotFound from "./components/ErrorBoundary/NotFound";
+import RefundPolicy from "./pages/RefundPolicy";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 
           {/* Catch-all 404 route */}
           <Route path="*" element={<NotFound />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
         </Routes>
       </LandingLayout>
     </ErrorBoundary>
