@@ -17,7 +17,7 @@ const themeColors = {
     navbarBgColor: "rgba(20, 20, 20, 0.95)",
 
     // Card styles
-    TweetCardBgColor: "rgba(30, 30, 30, 1)",
+    TweetCardBgColor: "rgba(40, 40, 40, 1)",
     cardBgColor: "rgba(38, 38, 38, 1)",
     cardSecondaryBgColor: "rgba(31,41,55, 1)",
     BenifitCardBgColor: "rgba(28,28,28, 1)",
@@ -29,6 +29,7 @@ const themeColors = {
     // Button styles
     buttonBg: "rgba(20, 20, 20, 0.95)",
     downloadAppBtnBg: "rgba(31,41,55, 1)",
+    buttonActiveBg: "#0091ff",
 
     // MenuBar styles
     MenuBarBgColor: "rgba(20, 20, 20, 1)",
@@ -48,6 +49,7 @@ const themeColors = {
     ratingColor: "#cf9106",
     terminalBg: "#262626",
     alumniPlanentBg: "rgba(238,239,239, 1)",
+    policyBtnColor: "#d97706",
   },
   light: {
     // Main
@@ -76,6 +78,7 @@ const themeColors = {
     // Button styles
     buttonBg: "rgba(255, 255, 255, 1)",
     downloadAppBtnBg: "rgba(235, 235, 235, 1)",
+    buttonActiveBg: "#0056b3",
 
     // MenuBar button styles
     MenuBarBgColor: "#F3F4F6",
@@ -96,6 +99,7 @@ const themeColors = {
     ratingColor: "#cf9106",
     terminalBg: "#fcfbfb",
     alumniPlanentBg: "#83059d",
+    policyBtnColor: "#d97706",
   },
 };
 

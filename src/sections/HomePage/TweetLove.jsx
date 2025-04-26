@@ -1,12 +1,14 @@
+import { useEffect, useMemo } from "react";
 import { useThemeColors } from "../../hooks/useThemeColors";
-import AnimatedAuroraText from "../../constants/AnimatedAuroraText";
-import TweetCard from "../../constants/TweetCard";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useResponsive from "../../hooks/useResponsive";
-import PixelArtButton from "../../constants/PixelArtButton";
-import Divider from "../../constants/Divider";
-import { useEffect, useMemo } from "react";
+import {
+  TweetCard,
+  AnimatedAuroraText,
+  Divider,
+  PixelArtButton,
+} from "../../components/CompIndex";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,10 +40,7 @@ const TweetLove = () => {
   const themeColors = useThemeColors();
   const { isMobile, isTablet, isDesktop } = useResponsive();
 
-  const randomTweetIds = useMemo(
-    () => getRandomTweetIds(3),
-    [useResponsive]
-  );
+  const randomTweetIds = useMemo(() => getRandomTweetIds(3), [useResponsive]);
 
   useEffect(() => {
     animateTweetCard(".tweetCards", {
@@ -49,7 +48,7 @@ const TweetLove = () => {
       duration: 1,
       delay: 0.5,
       opacity: 0,
-      stagger:0.4,
+      stagger: 0.4,
       scrollTrigger: {
         trigger: ".tweetCards",
         start: "top 90%",
@@ -74,13 +73,10 @@ const TweetLove = () => {
 
       <div
         id="tweetContainer"
-        className="min-h-screen flex md:flex-row flex-wrap flex-col items-center justify-center p-4 gap-10"
+        className=" h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-5 md:p-10 gap-5 lg:gap-10 justify-items-center"
       >
         {randomTweetIds.map((id, idx) => (
-          <div
-            key={id}
-            className={`tweetCards`}
-          >
+          <div key={id} className={`tweetCards`}>
             <TweetCard tId={id} />
           </div>
         ))}
