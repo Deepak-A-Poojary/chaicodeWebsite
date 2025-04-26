@@ -12,10 +12,10 @@ import {
   DocsIcon,
   ReviewIcon,
 } from "../components/customIcon/index";
-import ButtonText from "../constants/ButtonText";
 import logoWhite from "../../src/assets/chaicode-white.png";
 import logoBlack from "../../src/assets/chaicode-black.png";
 import logoForMobile from "../../src/assets/chai-gray.png";
+import { ButtonText } from "./CompIndex";
 
 gsap.registerPlugin(useGSAP);
 
@@ -252,12 +252,16 @@ function Navbar() {
                 }}
               >
                 {theme === "light" ? (
-                  <MoonSVG className="h-5 w-5 fill-current text-white dark:text-black" />
+                  <MoonSVG className="moonIcon h-5 w-5 fill-current text-white dark:text-black" />
                 ) : (
-                  <SunSVG className="h-5 w-5 fill-current text-black dark:text-white" />
+                  <SunSVG className="sunIcon h-5 w-5 fill-current text-black dark:text-white" />
                 )}
               </button>
-              <ButtonText className={"max-w-28"} text={"Login"} />
+              <ButtonText
+                className={"max-w-28"}
+                text={"Login"}
+                link="https://courses.chaicode.com/learn/account/signin"
+              />
             </section>
           </>
         )}
@@ -304,7 +308,11 @@ function Navbar() {
               >
                 {theme === "dark" ? "🌙 Dark" : "☀️ Light"}
               </button>
-              <ButtonText className={"w-40"} text={"Login"} />
+              <ButtonText
+                className={"w-40"}
+                text={"Login"}
+                link="https://courses.chaicode.com/learn/account/signin"
+              />
             </section>
           </div>
         </>

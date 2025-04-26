@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
-import AnimatedAuroraText from "../../constants/AnimatedAuroraText";
-import FeedbackCard from "../../constants/FeedbackCard";
-import Divider from "../../constants/Divider";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+import {
+  AnimatedAuroraText,
+  Divider,
+  FeedbackCard,
+} from "../../components/CompIndex";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,7 +82,7 @@ const StudentFeedback = () => {
         Experience the power of learning – join our courses and elevate your
         skills today.
       </p>
-      <div className="flex gap-6 p-10 w-full flex-wrap justify-center">
+      <div className="flex gap-6 px-10 w-full flex-wrap justify-center">
         {feedbackData.map((item, index) => (
           <div key={index} className="feedbackCard">
             <FeedbackCard

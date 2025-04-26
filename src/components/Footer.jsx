@@ -4,22 +4,10 @@ import useStore from "../store/themeStore";
 import blackLogo from "../assets/chaicode-black.png";
 import whiteLogo from "../assets/chaicode-white.png";
 import { Link } from "react-router-dom";
-import useResponsive from "../hooks/useResponsive";
 
 const Footer = () => {
   const themeColors = useThemeColors();
   const theme = useStore((state) => state.theme);
-  const headingRef = useRef();
-  const { isTablet } = useResponsive();
-
-  useEffect(() => {
-    if (headingRef.current) {
-      // Trigger reflow to force style application
-      headingRef.current.style.display = "none";
-      void headingRef.current.offsetHeight; // Force reflow
-      headingRef.current.style.display = "block";
-    }
-  }, [theme]);
 
   const products = [
     { name: "Courses", href: "https://courses.chaicode.com/learn" },
@@ -42,182 +30,6 @@ const Footer = () => {
     { name: "Pricing Policy", href: "/pricing-policy" },
     { name: "Refund Policy", href: "/refund-policy" },
   ];
-
-  const LogoForTabletSection = () => {
-    return (
-      <div className="flex border">
-        <div>
-          <a className="flex h-10 gap-2" href="/">
-            <div className="" style={{ transform: "scale(1.00161)" }}>
-              <img
-                alt="ChaiCode"
-                width={180}
-                height={22}
-                decoding="async"
-                data-nimg="1"
-                className="h-full w-auto"
-                style={{ color: "transparent" }}
-                src={theme == "dark" ? whiteLogo : blackLogo}
-              />
-            </div>
-          </a>
-          <div className="flex gap-4 ">
-            <a
-              href="https://www.youtube.com/@chaiaurcode"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-              style={{ color: themeColors.secondryText }}
-            >
-              {/* YouTube Icon */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-youtube h-5 w-5"
-              >
-                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
-                <path d="m10 15 5-3-5-3z"></path>
-              </svg>
-            </a>
-            {/* ... other social media links (Instagram, GitHub, Twitter, LinkedIn, Discord) ... */}
-            <a
-              href="https://www.instagram.com/hiteshchoudharyofficial/?hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-              style={{ color: themeColors.secondryText }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-instagram h-5 w-5"
-              >
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-              </svg>
-            </a>
-            <a
-              href="https://github.com/hiteshchoudhary"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-              style={{ color: themeColors.secondryText }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-github h-5 w-5"
-              >
-                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                <path d="M9 18c-4.51 2-5-2-7-2"></path>
-              </svg>
-            </a>
-            <a
-              href="https://x.com/hiteshdotcom"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-              style={{ color: themeColors.secondryText }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-twitter h-5 w-5"
-              >
-                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-              </svg>
-            </a>
-            <a
-              href="https://in.linkedin.com/in/hiteshchoudhary"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-              style={{ color: themeColors.secondryText }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-linkedin h-5 w-5"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect width="4" height="12" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a
-              href="https://hitesh.ai/discord"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-              style={{ color: themeColors.secondryText }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-message-square h-5 w-5"
-              >
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div>
-          <p className="" style={{ color: themeColors.secondryText }}>
-            Home for programmers
-          </p>
-          <p
-            className="text-gray-500 dark:text-gray-600 text-sm"
-            style={{ color: themeColors.secondryText }}
-          >
-            © 2025ChaiCode. All rights reserved.
-          </p>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div
@@ -248,13 +60,15 @@ const Footer = () => {
             <p className="" style={{ color: themeColors.secondryText }}>
               Home for programmers
             </p>
-            <div className="flex gap-4 ">
+            <div
+              className="flex gap-4 "
+              style={{ color: themeColors.secondryText }}
+            >
               <a
                 href="https://www.youtube.com/@chaiaurcode"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-                style={{ color: themeColors.secondryText }}
+                className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
               >
                 {/* YouTube Icon */}
                 <svg
@@ -278,8 +92,7 @@ const Footer = () => {
                 href="https://www.instagram.com/hiteshchoudharyofficial/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-                style={{ color: themeColors.secondryText }}
+                className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -302,8 +115,7 @@ const Footer = () => {
                 href="https://github.com/hiteshchoudhary"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-                style={{ color: themeColors.secondryText }}
+                className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -325,8 +137,7 @@ const Footer = () => {
                 href="https://x.com/hiteshdotcom"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-                style={{ color: themeColors.secondryText }}
+                className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -347,8 +158,7 @@ const Footer = () => {
                 href="https://in.linkedin.com/in/hiteshchoudhary"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-                style={{ color: themeColors.secondryText }}
+                className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -371,8 +181,7 @@ const Footer = () => {
                 href="https://hitesh.ai/discord"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 dark:text-gray-500 hover:text-orange-500 transition-colors"
-                style={{ color: themeColors.secondryText }}
+                className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -398,24 +207,23 @@ const Footer = () => {
             </p>
           </div>
           {/* Links section */}
-          <div className="flex flex-wrap gap-5 lg:gap-20 md:flex-row justify-between">
+          <div className="flex flex-wrap gap-5  lg:gap-20 md:flex-row justify-between ">
             {/* Prducts column */}
             <div className="">
-              <h3
-                className="text-white font-medium mb-4"
+              <p
+                className="text-white font-medium mb-4 w-28 duration-500 transition-all"
                 style={{ color: themeColors.text }}
               >
                 Products
-              </h3>
+              </p>
               <ul className="space-y-3">
                 {products.map((product) => (
-                  <li key={product.name}>
-                    <div>
-                      <Link
-                        className="hover:text-orange-400 transition-colors"
-                        to={product.href}
-                        style={{ color: themeColors.secondryText }}
-                      >
+                  <li
+                    key={product.name}
+                    style={{ color: themeColors.secondryText }}
+                  >
+                    <div className="hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1">
+                      <Link className="" to={product.href}>
                         {product.name}
                       </Link>
                     </div>
@@ -425,21 +233,20 @@ const Footer = () => {
             </div>
             {/* Resources column */}
             <div>
-              <h3
-                className="text-white font-medium mb-4"
+              <p
+                className="text-white font-medium mb-4 w-32"
                 style={{ color: themeColors.text }}
               >
                 Resources
-              </h3>
+              </p>
               <ul className="space-y-3">
                 {resources.map((resource) => (
-                  <li key={resource.name}>
-                    <div>
-                      <Link
-                        className="text-gray-400 dark:text-gray-500 hover:text-orange-400 transition-colors"
-                        to={resource.href}
-                        style={{ color: themeColors.secondryText }}
-                      >
+                  <li
+                    key={resource.name}
+                    style={{ color: themeColors.secondryText }}
+                  >
+                    <div className="hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1">
+                      <Link className="transition-colors" to={resource.href}>
                         {resource.name}
                       </Link>
                     </div>
@@ -449,16 +256,16 @@ const Footer = () => {
             </div>
             {/* App column */}
             <div className="">
-              <h3
+              <p
                 className="text-white font-medium mb-4"
                 style={{ color: themeColors.text }}
               >
                 App
-              </h3>
+              </p>
               <Link to="https://apps.apple.com/in/app/chaicode/id6504993143">
                 <button
                   data-slot="button"
-                  className="whitespace-nowrap text-sm font-medium flex items-center justify-evenly gap-2 p-4 w-44 rounded-xl mb-3"
+                  className="whitespace-nowrap text-sm font-medium flex items-center justify-evenly gap-2 p-4 w-44 rounded-xl mb-3 hover:-translate-y-1 duration-300 transition-transform cursor-pointer"
                   style={{
                     background: themeColors.downloadAppBtnBg,
                     color: themeColors.text,
@@ -493,7 +300,7 @@ const Footer = () => {
               <Link to="https://play.google.com/store/apps/details?id=com.chaicode.courses&pcampaignid=web_share">
                 <button
                   data-slot="button"
-                  className="whitespace-nowrap text-sm font-medium flex items-center justify-evenly gap-4 p-4 rounded-xl w-44"
+                  className="whitespace-nowrap text-sm font-medium flex items-center justify-evenly gap-4 p-4 rounded-xl w-44 hover:-translate-y-1 duration-300 transition-transform cursor-pointer"
                   style={{
                     background: themeColors.downloadAppBtnBg,
                     color: themeColors.text,

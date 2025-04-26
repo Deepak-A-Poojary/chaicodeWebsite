@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useThemeColors } from "../../hooks/useThemeColors";
 import { Link } from "react-router-dom";
-import TopicsOnCloud from "../../constants/TopicsOnCloud";
+import { TopicsOnCloud } from "../../components/CompIndex";
 
 function YoutubeSection() {
   const themeColors = useThemeColors();
@@ -222,7 +222,7 @@ function YoutubeSection() {
           </Link>
         </div>
       </div>
-      <div className="overflow-hidden w-dvw flex flex-col gap-10">
+      <div className="overflow-hidden w-dvw flex flex-col gap-5 md:gap-10">
         <TopicsOnCloud direction="left" topics={firstSectionData} />
         <TopicsOnCloud direction="right" topics={secondSectionData} />
         <TopicsOnCloud direction="left" topics={thirdSectionData} />

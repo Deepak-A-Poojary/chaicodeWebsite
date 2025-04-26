@@ -2,20 +2,24 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useThemeColors } from "../../hooks/useThemeColors";
 import useResponsive from "../../hooks/useResponsive";
-import AnimatedAuroraText from "../../constants/AnimatedAuroraText";
-import PixelArtButton from "../../constants/PixelArtButton";
 import { useLocation } from "react-router-dom";
 import useStore from "../../store/themeStore";
+import { PixelArtButton, AnimatedAuroraText } from "../../components/CompIndex";
 
 const NotFound = () => {
   const [displayText, setDisplayText] = useState("");
   const cursorRef = useRef(null);
-  const containerRef = useRef(null); // Ref for the container to append glitch text inside
+  const containerRef = useRef(null);
   const themeColors = useThemeColors();
   const theme = useStore((state) => state.theme);
   const { isMobile } = useResponsive();
   const location = useLocation();
   const missingPath = location?.pathname ?? "/unknown";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    return () => {};
+  }, [location.pathname]);
 
   const cleanedPath =
     `/${missingPath?.replace(/^\/+|\/+$/g, "")}` || "unknown-path";
@@ -24,18 +28,17 @@ const NotFound = () => {
     `> error 404: page '${cleanedPath}' not found`,
     "> suggestion: try navigating to home",
   ];
-  console.log("Current path:", location.pathname);
   const randomTexts = [
-    "const renderTweets = () => {};",
-    "function loadUserData() {}",
-    "let data = fetchData();",
-    "if (error) console.log('Error');",
-    "const animatePage = () => {}",
-    "let response = await fetch('/api');",
-    "const parseJSON = (str) => JSON.parse(str);",
-    "document.getElementById('root');",
-    "const addEventListeners = () => {}",
-    "let inputData = validateInput();",
+    "const render404 = () => console.warn('Aliens took it 👽');",
+    "function lostInSpace() { throw '404: User gone 🚀'; }",
+    "let data = null; // 404 snack 🥪",
+    "if (!pageFound) console.log('Not here 🔍');",
+    "const animate404 = () => console.log('Lost dreams 💫');",
+    "let res = await fetch('/missing'); // 🤷‍♂️",
+    "parse404 = str => str.includes('404') ? 'Nice try 😎' : str;",
+    "document.getElementById('404') || console.error('Poof 💨');",
+    "add404Handlers = () => alert('Try yelling 📣');",
+    "let cry = getCryingEmoji(); // 404 feels 😢",
   ];
 
   const generateRandomPosition = () => {
@@ -173,7 +176,11 @@ const NotFound = () => {
 
       {/* Home Link */}
       <div className="text-center z-10">
-        <PixelArtButton text="Return to home" className="text-xl p-3" to={"/"} />
+        <PixelArtButton
+          text="Return to home"
+          className="text-xl p-3"
+          to={"/"}
+        />
       </div>
     </div>
   );

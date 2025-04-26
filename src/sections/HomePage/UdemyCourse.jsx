@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import AnimatedAuroraText from "../../constants/AnimatedAuroraText";
-import UdemyCards from "../../constants/UdemyCards";
+import { UdemyCards, AnimatedAuroraText } from "../../components/CompIndex";
 
 function UdemyCourse() {
   const courseData = [

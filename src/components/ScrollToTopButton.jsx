@@ -18,12 +18,8 @@ const ScrollToTopButton = () => {
   }, []);
 
   const scrollToTop = () => {
-    // Smooth scroll to the top using GSAP ScrollToPlugin
-    gsap.to(window, {
-      scrollTo: 0,
-      duration: 1, // 1 second for smooth scrolling
-      ease: "power2.out", // Smooth easing
-    });
+    window.scrollTo(0, 0);
+    return () => {};
   };
 
   return (

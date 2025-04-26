@@ -70,7 +70,9 @@ const GsapCard = ({
           />
         </div>
         <div className="mr-2">
-          <h3 className="text-[1.1em]  md:text-lg font-bold mb-2 text-orange-400">{title}</h3>
+          <p className="text-[1.1em]  md:text-lg font-bold mb-2 text-orange-400">
+            {title}
+          </p>
           <p className="text-sm leading-relaxed font-['outfit']">
             {description}
           </p>

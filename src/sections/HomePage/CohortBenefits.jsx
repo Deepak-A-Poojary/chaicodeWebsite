@@ -1,6 +1,5 @@
 import React from "react";
-import AnimatedAuroraText from "../../constants/AnimatedAuroraText";
-import BenefitCard from "../../constants/BenefitCard";
+import { BenefitCard, AnimatedAuroraText } from "../../components/CompIndex";
 
 function CohortBenefits() {
   const benfitData = [

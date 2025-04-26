@@ -92,7 +92,7 @@ const CohortCard = ({
       {/* Content Section */}
       <div className=" flex-1 flex flex-col">
         <div>
-          <h3 className="text-xl font-bold mb-2 line-clamp-1">{courseName}</h3>
+          <p className="text-xl font-bold mb-2 line-clamp-1">{courseName}</p>
           <p
             className="text-sm mb-4 line-clamp-2 font-semibold"
             style={{ color: themeColors.secondryText }}

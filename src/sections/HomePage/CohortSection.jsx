@@ -1,8 +1,10 @@
 import React from "react";
-import AnimatedAuroraText from "../../constants/AnimatedAuroraText";
-import CohortCard from "../../constants/CohortCard";
-import ExploreTextButton from "../../constants/ExploreTextButton";
-import Divider from "../../constants/Divider";
+import {
+  ExploreTextButton,
+  CohortCard,
+  AnimatedAuroraText,
+  Divider,
+} from "../../components/CompIndex";
 
 function CohortSection() {
   const cohortCardsData = [
@@ -114,14 +116,14 @@ function CohortSection() {
       <div id="cohorts">
         <AnimatedAuroraText className="text-5xl" text={"Cohorts"} />
       </div>
-      <h4 className="text-[1rem]">Live training classes</h4>
+      <p className="text-[1rem]">Live training classes</p>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-dvw p-2 md:p-10 gap-6">
         {cohortCardsData.map((card, index) => (
           <CohortCard key={index} {...card} />
         ))}
       </div>
       <ExploreTextButton
-        className="px-20 py-6 flex-row-reverse "
+        className="md:px-20 md:py-6 mt-6 md:mt-0 flex-row-reverse "
         to={"https://courses.chaicode.com/learn/view-all?show=batch&type=17"}
         text={"View All Cohorts"}
         svg={

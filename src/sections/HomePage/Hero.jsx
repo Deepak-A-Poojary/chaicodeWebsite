@@ -2,12 +2,14 @@ import { useRef, useState, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useThemeColors } from "../../hooks/useThemeColors";
-import AnimatedText from "../../constants/AnimatedText";
-import AnimatedAuroraText from "../../constants/AnimatedAuroraText";
-import PixelArtButton from "../../constants/PixelArtButton";
-import ExploreTextButton from "../../constants/ExploreTextButton";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ScrollToTopButton from "../../constants/ScrollToTopButton";
+import {
+  ExploreTextButton,
+  AnimatedAuroraText,
+  AnimatedText,
+  PixelArtButton,
+  ScrollToTopButton,
+} from "../../components/CompIndex";
 
 gsap.registerPlugin(ScrollTrigger);
 

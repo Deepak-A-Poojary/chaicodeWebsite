@@ -1,12 +1,15 @@
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { Link } from "react-router-dom";
+import { useThemeColors } from "../../hooks/useThemeColors";
 
 const logos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function StudentProof() {
   const containerRef = useRef(null);
   const tweenRef = useRef(null);
+  const themeColors = useThemeColors();
 
   //Below code is used to animate the logo's
   useGSAP(() => {
@@ -51,14 +54,17 @@ function StudentProof() {
           className="flex gap-10 w-max px-4 logo-carousel group"
         >
           {[...logos, ...logos].map((logo, index) => (
-            <div
+            <Link
               key={index}
-              className="logo-card rounded-xl overflow-hidden relative cursor-pointer border-2 h-40 aspect-square border-amber-200 transition-all duration-300 group-hover:blur-[3px] hover:border-amber-600 hover:!blur-none hover:scale-102"
+              style={{
+                background: themeColors.topicsCardBg,
+              }}
+              className="rounded-xl min-w-40 min-h-40 overflow-hidden relative cursor-pointer border-2 h-10 p-6 border-transparent transition-transform duration-300 group-hover:blur-[3px] hover:border-amber-600 hover:!blur-none hover:scale-102"
             >
-              <div className="w-full h-full flex items-center justify-center text-xl font-bold">
-                Logo {logo}
+              <div className="w-full h-full flex items-center justify-center text-lg shadow">
+                Logo card {logo}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

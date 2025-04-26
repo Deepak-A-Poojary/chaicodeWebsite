@@ -1,8 +1,9 @@
 import { useRef } from "react";
 import gsap from "gsap";
+import { Link } from "react-router-dom";
 
-const ButtonText = ({ className = "", text ="text" }) => {
-  const lettersRef = useRef([]);  
+const ButtonText = ({ className = "", text = "text", link }) => {
+  const lettersRef = useRef([]);
 
   const handleHover = () => {
     gsap.fromTo(
@@ -19,7 +20,8 @@ const ButtonText = ({ className = "", text ="text" }) => {
   };
 
   return (
-    <div
+    <Link
+      to={link}
       onMouseEnter={handleHover}
       className={`px-4 flex font-semibold rounded-md wrap-normal py-2 cursor-pointer justify-center duration-250 bg-amber-700 transition-all hover:bg-amber-800 text-white ${className}`}
     >
@@ -28,7 +30,7 @@ const ButtonText = ({ className = "", text ="text" }) => {
           {char}
         </span>
       ))}
-    </div>
+    </Link>
   );
 };
 

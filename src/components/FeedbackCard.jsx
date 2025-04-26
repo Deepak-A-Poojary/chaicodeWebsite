@@ -44,7 +44,7 @@ const FeedbackCard = ({ name, avatar, rating, feedback }) => {
           className="w-12 h-12 rounded-full object-cover"
         />
         <div>
-          <h4 className="text-lg font-semibold ">{name}</h4>
+          <p className="text-lg font-semibold ">{name}</p>
           <div className="flex">{renderStars()}</div>
         </div>
       </div>

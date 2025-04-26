@@ -21,8 +21,6 @@ const UdemyCards = ({ courseData }) => {
     Array(allSlides.length).fill(false)
   );
 
-  console.log();
-
   const handleIframeLoad = (index) => {
     setIframeLoaded((prev) => {
       const updated = [...prev];
