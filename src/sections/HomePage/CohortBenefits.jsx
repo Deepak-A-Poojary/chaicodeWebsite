@@ -1,5 +1,11 @@
 import React from "react";
 import { BenefitCard, AnimatedAuroraText } from "../../components/CompIndex";
+import Coding_hostels from "../../assets/CodingBenifits/photo-1504384308090-c894fdcc538d.webp";
+import Revision_classes from "../../assets/CodingBenifits/photo-1515378791036-0648a3ef77b2.webp";
+import Peer_Code_Reviews from "../../assets/CodingBenifits/photo-1522071820081-009f0129c71c.webp";
+import Bounties from "../../assets/CodingBenifits/photo-1526304640581-d334cdbbf45e.webp";
+import Taught_by_Professionals from "../../assets/CodingBenifits/photo-1544531585-9847b68c8c86.webp";
+import Leet_Lab from "../../assets/CodingBenifits/photo-1555949963-ff9fe0c870eb.webp";
 
 function CohortBenefits() {
   const benfitData = [
@@ -8,48 +14,42 @@ function CohortBenefits() {
       description:
         "Our cohorts are being taught by top industry experts and educators",
       codeSnippet: "class Teacher extends Professional { /* ... */ }",
-      imageUrl:
-        "https://www.chaicode.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1544531585-9847b68c8c86%3Fw%3D500%26h%3D500%26fit%3Dcrop&w=640&q=75",
+      imageUrl: Taught_by_Professionals,
     },
     {
       title: "Bounties",
       description:
         "Earn rewards, from Cash to MacBook. Keeps you motivated to work hard",
       codeSnippet: "const reward = solveChallenge(difficulty)",
-      imageUrl:
-        "https://www.chaicode.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1526304640581-d334cdbbf45e%3Fw%3D500%26h%3D500%26fit%3Dcrop&w=640&q=75",
+      imageUrl: Bounties,
     },
     {
       title: "Coding hostels",
       description:
         "There is nothing like late night discussion with fellow learners and solving bugs",
       codeSnippet: "while(night) { solveProblems(together) }",
-      imageUrl:
-        "https://www.chaicode.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1504384308090-c894fdcc538d%3Fw%3D500%26h%3D500%26fit%3Dcrop&w=640&q=75",
+      imageUrl: Coding_hostels,
     },
     {
       title: "Peer Code Reviews",
       description:
         "With Our internal tools like Masterji, every code assignment gets feedback to improve your code",
       codeSnippet: "// TODO: Refactor this for better performance",
-      imageUrl:
-        "https://www.chaicode.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1522071820081-009f0129c71c%3Fw%3D500%26h%3D500%26fit%3Dcrop&w=640&q=75",
+      imageUrl: Peer_Code_Reviews,
     },
     {
       title: "Leet Lab",
       description:
         "Our in-house built LeetCode style platform that helps you to understand foundation of programming language",
       codeSnippet: "function optimizeSolution(algorithm) { /* ... */ }",
-      imageUrl:
-        "https://www.chaicode.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1555949963-ff9fe0c870eb%3Fw%3D500%26h%3D500%26fit%3Dcrop&w=640&q=75",
+      imageUrl: Leet_Lab,
     },
     {
       title: "Revision classes",
       description:
         "We have so many peer classes by fellow learners that you get so many chances to learn that topic",
       codeSnippet: "for(let i = 0; i < concepts.length; i++) { revise() }",
-      imageUrl:
-        "https://www.chaicode.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1515378791036-0648a3ef77b2%3Fw%3D500%26h%3D500%26fit%3Dcrop&w=640&q=75",
+      imageUrl: Revision_classes,
     },
   ];
 
