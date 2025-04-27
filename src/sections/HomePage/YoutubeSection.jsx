@@ -5,6 +5,14 @@ import { TopicsOnCloud } from "../../components/CompIndex";
 
 function YoutubeSection() {
   const themeColors = useThemeColors();
+  const hindiChannel = {
+    sub: 617,
+    videos: 556,
+  };
+  const englishChannel = {
+    sub: 989,
+    videos: 1.6,
+  };
 
   const firstSectionData = [
     {
@@ -170,13 +178,15 @@ function YoutubeSection() {
 
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 items-center text-center">
               <p className={`text-lg font-semibold self-start`}>
-                <span className={`text-amber-500`}>📈 600K</span>
+                <span className={`text-amber-500`}>📈 {hindiChannel.sub}K</span>
                 <span className={`ml-1 text-sm font-normal opacity-60`}>
                   subscribers
                 </span>
               </p>
               <p className={`text-lg font-semibold self-start`}>
-                <span className={`text-amber-500`}>🎥 545</span>
+                <span className={`text-amber-500`}>
+                  🎥 {hindiChannel.videos}
+                </span>
                 <span className={`ml-1 text-sm font-normal opacity-60`}>
                   videos
                 </span>
@@ -227,13 +237,17 @@ function YoutubeSection() {
 
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 items-center text-center">
               <p className={`text-lg font-semibold self-start`}>
-                <span className={`text-amber-500`}>📈 987K</span>
+                <span className={`text-amber-500`}>
+                  📈 {englishChannel.sub}K
+                </span>
                 <span className={`ml-1 text-sm font-normal opacity-60`}>
                   subscribers
                 </span>
               </p>
               <p className={`text-lg font-semibold self-start`}>
-                <span className={`text-amber-500`}>🎥 1.6K</span>
+                <span className={`text-amber-500`}>
+                  🎥{englishChannel.videos}K
+                </span>
                 <span className={`ml-1 text-sm font-normal opacity-60`}>
                   videos
                 </span>
