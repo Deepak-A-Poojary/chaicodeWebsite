@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import useResponsive from "../hooks/useResponsive"; // Importing your custom hook
+import useResponsive from "../hooks/useResponsive";
 import { useGSAP } from "@gsap/react";
 
 const AnimatedText = ({ text, className }) => {
   const containerRef = useRef(null);
   const { isMobile } = useResponsive();
 
-  useGSAP(() => {
+  useEffect(() => {
     const letters = containerRef.current.querySelectorAll(".letter");
 
     gsap.fromTo(

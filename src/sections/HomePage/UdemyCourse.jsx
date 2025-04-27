@@ -21,7 +21,7 @@ function UdemyCourse() {
       image:
         "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
       iFrameUrl: "//www.youtube.com/embed/9boMnm5X9ak",
-      rating: 4.8,
+      rating: 4.2,
       originalMRP: 699,
       discountedPrice: 449,
     },

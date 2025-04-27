@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
 const AnimatedAuroraText = ({ text, className }) => {
   const textRef = useRef(null);
 
-  useGSAP(() => {
+  useEffect(() => {
     const tween = gsap.to(textRef.current, {
       backgroundPosition: "200% 50%",
       duration: 10,

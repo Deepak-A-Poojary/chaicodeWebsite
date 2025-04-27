@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useThemeColors } from "../hooks/useThemeColors";
 import { Link } from "react-router-dom";
@@ -11,7 +11,6 @@ function PixelArtButton({ text = "text", svg, className, to }) {
   const theme = useStore((state) => state.theme);
 
   const borderColor = theme === "dark" ? "#f59e0b" : "#a855f7";
-
 
   // to make a glow effect
   useGSAP(() => {

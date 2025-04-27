@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import { gsap } from "gsap";
 import useResponsive from "../hooks/useResponsive";
 import { useGSAP } from "@gsap/react";
@@ -29,19 +29,23 @@ const UdemyCards = ({ courseData }) => {
     });
   };
 
-  const renderStars = (rating) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <span
-        key={i}
-        className="text-lg"
-        style={{
-          color: i < rating ? themeColors.ratingColor : themeColors.text,
-        }}
-      >
-        {i < rating ? "★" : "☆"}
-      </span>
-    ));
-  };
+  const renderStars = useMemo(
+    () => (rating) => {
+      const { ratingColor, text } = themeColors;
+      return Array.from({ length: 5 }, (_, i) => (
+        <span
+          key={i}
+          className="text-lg"
+          style={{
+            color: i < rating ? ratingColor : text,
+          }}
+        >
+          {i < rating ? "★" : "☆"}
+        </span>
+      ));
+    },
+    [themeColors.ratingColor, themeColors.text]
+  );
 
   const goToSlide = (index) => {
     if (isAnimating) return;

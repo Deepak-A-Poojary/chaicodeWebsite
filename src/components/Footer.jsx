@@ -1,4 +1,3 @@
-import React, { useRef, useEffect } from "react";
 import { useThemeColors } from "../hooks/useThemeColors";
 import useStore from "../store/themeStore";
 import blackLogo from "../assets/chaicode-black.png";

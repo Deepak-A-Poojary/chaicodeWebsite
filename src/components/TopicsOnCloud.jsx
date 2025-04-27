@@ -1,13 +1,10 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { Link } from "react-router-dom";
 import { useThemeColors } from "../hooks/useThemeColors";
 
-function TopicsOnCloud(
-  { topics = [1, 2, 3, 4, 5], direction = "left" },
-  animationSpeed = 30
-) {
+function TopicsOnCloud({ topics, direction = "left", animationSpeed = 60 }) {
   const containerRef = useRef(null);
   const tweenRef = useRef(null);
   const themeColors = useThemeColors();

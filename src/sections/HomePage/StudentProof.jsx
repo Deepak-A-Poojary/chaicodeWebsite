@@ -1,17 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { Link } from "react-router-dom";
 import { useThemeColors } from "../../hooks/useThemeColors";
-
-const logos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function StudentProof() {
   const containerRef = useRef(null);
   const tweenRef = useRef(null);
   const themeColors = useThemeColors();
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null); // Ref for the section to observe
+  const sectionRef = useRef(null);
 
   // Intersection Observer to control visibility and start animation
   useEffect(() => {
@@ -20,7 +17,7 @@ function StudentProof() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            observer.unobserve(sectionRef.current); // Observe only once
+            observer.unobserve(sectionRef.current);
           }
         });
       },
@@ -37,7 +34,7 @@ function StudentProof() {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
-      tweenRef.current?.kill(); // Kill animation on unmount
+      tweenRef.current?.kill();
     };
   }, []);
 
@@ -59,7 +56,7 @@ function StudentProof() {
         tweenRef.current?.kill();
       };
     }
-  }, [isVisible]); // Re-run effect when isVisible changes
+  }, [isVisible]);
 
   // Hover effect handlers
   const handleMouseEnter = () => {
@@ -72,7 +69,7 @@ function StudentProof() {
 
   return (
     <div
-      ref={sectionRef} // Attach ref to the main section
+      ref={sectionRef}
       className="text-center flex flex-col items-center gap-10 font-semibold mt-5 p-5"
     >
       <p className="text-md md:text-xl px-5 md:max-w-[60%] ">
@@ -89,7 +86,7 @@ function StudentProof() {
             ref={containerRef}
             className="flex gap-10 w-max px-4 logo-carousel group"
           >
-            {[...logos, ...logos].map((logo, index) => (
+            {[...Array(10).keys(), ...Array(10).keys()].map((logo, index) => (
               <Link
                 key={index}
                 style={{
@@ -98,7 +95,7 @@ function StudentProof() {
                 className="rounded-xl min-w-40 min-h-40 overflow-hidden relative cursor-pointer border-2 h-10 p-6 border-transparent transition-transform duration-300 group-hover:blur-[3px] hover:border-amber-600 hover:!blur-none hover:scale-102"
               >
                 <div className="w-full h-full flex items-center justify-center text-lg shadow">
-                  Logo card {logo}
+                  Logo card {logo + 1}
                 </div>
               </Link>
             ))}

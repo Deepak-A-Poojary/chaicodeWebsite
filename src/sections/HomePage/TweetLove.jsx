@@ -20,10 +20,6 @@ const TWEET_IDS = [
   "1907045909394788416",
 ];
 
-const getRandomTweetIds = (count = 3) => {
-  return [...TWEET_IDS].sort(() => 0.5 - Math.random()).slice(0, count);
-};
-
 const animateTweetCard = (selector, options) => {
   gsap.from(selector, {
     ...options,
@@ -38,9 +34,10 @@ const animateTweetCard = (selector, options) => {
 
 const TweetLove = () => {
   const themeColors = useThemeColors();
-  const { isMobile, isTablet, isDesktop } = useResponsive();
 
-  const randomTweetIds = useMemo(() => getRandomTweetIds(3), [useResponsive]);
+  const randomTweetIds = useMemo(() => {
+    return [...TWEET_IDS].sort(() => 0.5 - Math.random()).slice(0, 3);
+  }, []);
 
   useEffect(() => {
     animateTweetCard(".tweetCards", {

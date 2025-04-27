@@ -1,36 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useThemeColors } from "../../hooks/useThemeColors";
 import useResponsive from "../../hooks/useResponsive";
 import { useLocation } from "react-router-dom";
 import useStore from "../../store/themeStore";
 import { PixelArtButton, AnimatedAuroraText } from "../../components/CompIndex";
-
-const randomTexts = [
-  "const render404 = () => console.warn('Aliens took it 👽');",
-  "function lostInSpace() { throw '404: User gone 🚀'; }",
-  "let data = null; // 404 snack 🥪",
-  "if (!pageFound) console.log('Not here 🔍');",
-  "const animate404 = () => console.log('Lost dreams 💫');",
-  "let res = await fetch('/missing'); // 🤷‍♂️",
-  "parse404 = str => str.includes('404') ? 'Nice try 😎' : str;",
-  "document.getElementById('404') || console.error('Poof 💨');",
-  "add404Handlers = () => alert('Try yelling 📣');",
-  "let cry = getCryingEmoji(); // 404 feels 😢",
-  "try { page.load() } catch(e) { console.error('Page eloped ✈️'); }",
-  "const lost = true; if (lost) console.log('404 found confusion 🤯');",
-  "await rescue404(); // sending backup 🛟",
-  "let signal = weak(); // Can't reach the page 📡",
-  "404Handler.register('OopsFactory'); // Oops overload 😅",
-  "if (404) console.warn('Oops... Wrong portal 🌀');",
-  "const map = new TreasureMap(); map.find('404'); // X not found 🗺️",
-  "System.out.println('404: Human error 👤');",
-  "upload('new_page') || console.error('Still 404 🚫');",
-  "throw new Error('Lost in 404 wilderness 🌲');",
-  "console.info('Page packed its bags 🎒');",
-  "statusCheck().then(res => res || 'Lost signal 🔦');",
-  "class Lost404 extends Error {}; // professional missing 😎",
-];
 
 const NotFound = () => {
   const [displayText, setDisplayText] = useState("");
@@ -41,6 +15,32 @@ const NotFound = () => {
   const theme = useStore((state) => state.theme);
   const { isMobile } = useResponsive();
   const location = useLocation();
+
+  const randomTexts = [
+    "const render404 = () => console.warn('Aliens took it 👽');",
+    "function lostInSpace() { throw '404: User gone 🚀'; }",
+    "let data = null; // 404 snack 🥪",
+    "if (!pageFound) console.log('Not here 🔍');",
+    "const animate404 = () => console.log('Lost dreams 💫');",
+    "let res = await fetch('/missing'); // 🤷‍♂️",
+    "parse404 = str => str.includes('404') ? 'Nice try 😎' : str;",
+    "document.getElementById('404') || console.error('Poof 💨');",
+    "add404Handlers = () => alert('Try yelling 📣');",
+    "let cry = getCryingEmoji(); // 404 feels 😢",
+    "try { page.load() } catch(e) { console.error('Page eloped ✈️'); }",
+    "const lost = true; if (lost) console.log('404 found confusion 🤯');",
+    "await rescue404(); // sending backup 🛟",
+    "let signal = weak(); // Can't reach the page 📡",
+    "404Handler.register('OopsFactory'); // Oops overload 😅",
+    "if (404) console.warn('Oops... Wrong portal 🌀');",
+    "const map = new TreasureMap(); map.find('404'); // X not found 🗺️",
+    "System.out.println('404: Human error 👤');",
+    "upload('new_page') || console.error('Still 404 🚫');",
+    "throw new Error('Lost in 404 wilderness 🌲');",
+    "console.info('Page packed its bags 🎒');",
+    "statusCheck().then(res => res || 'Lost signal 🔦');",
+    "class Lost404 extends Error {}; // professional missing 😎",
+  ];
 
   const missingPath = location?.pathname ?? "/unknown";
   const cleanedPath =
