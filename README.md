@@ -9,7 +9,6 @@ A responsive, accessible, and aesthetically clean web project built using **Reac
 - **Last date:** 2nd May 2025
 - **Tech Stack Restriction:** Only React.js and TailwindCSS allowed
 - **Assets Location:** Discord server notice board (shared by Anirudh)
-<!-- - **Design Reference:** [Wireframe on Eraser](https://app.eraser.io/workspace/OVKKJzx4PRQBL7rScVg8) -->
 
 ---
 
