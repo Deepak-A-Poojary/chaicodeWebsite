@@ -307,7 +307,7 @@ const Hero = () => {
             onLoad={() => setIframeLoaded(true)}
             loading="lazy"
             className="flex relative justify-center rounded md:rounded-xl w-[80dvw] md:w-[764px] aspect-video"
-            src="https://www.youtube.com/embed/VNb_LawBBWU?si=_N7VN-ZwBQ6CIMRP"
+            src="https://www.youtube-nocookie.com/embed/VNb_LawBBWU?si=_N7VN-ZwBQ6CIMRP"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"

@@ -25,7 +25,7 @@ function CohortSection() {
       discountedPrice: "6999",
       originalMRP: "8999",
       iframeUrl:
-        "https://www.youtube.com/embed/Kjd-SWpe1do?si=C7EcI04LrASSoWL5",
+        "https://www.youtube-nocookie.com/embed/Kjd-SWpe1do?si=C7EcI04LrASSoWL5",
       courseLink:
         "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
     },
@@ -46,7 +46,7 @@ function CohortSection() {
       discountedPrice: 4999,
       originalMRP: 7999,
       iframeUrl:
-        "https://www.youtube.com/embed/VNb_LawBBWU?si=y2C5L_ox2Ud4fcKy",
+        "https://www.youtube-nocookie.com/embed/VNb_LawBBWU?si=y2C5L_ox2Ud4fcKy",
       courseLink: "https://hitesh.ai/genai-cohort",
     },
     {
@@ -66,7 +66,7 @@ function CohortSection() {
       discountedPrice: 4999,
       originalMRP: 7999,
       iframeUrl:
-        "https://www.youtube.com/embed/oBLpqSHc3lA?si=7feP-LCqdtyU_UrB",
+        "https://www.youtube-nocookie.com/embed/oBLpqSHc3lA?si=7feP-LCqdtyU_UrB",
       courseLink: "https://hitesh.ai/devops-cohort",
     },
     {
@@ -86,7 +86,7 @@ function CohortSection() {
       discountedPrice: 6999,
       originalMRP: 8999,
       iframeUrl:
-        "https://www.youtube.com/embed/yG8JMlldoCE?si=smBhLZEaYi1eMUe5",
+        "https://www.youtube-nocookie.com/embed/yG8JMlldoCE?si=smBhLZEaYi1eMUe5",
       courseLink: "https://hitesh.ai/cohort",
     },
     {
@@ -106,7 +106,7 @@ function CohortSection() {
       discountedPrice: 299,
       originalMRP: 599,
       iframeUrl:
-        "https://www.youtube.com/embed/Fw3FezexzV0?si=YBk5Zu-J-fhhqVAK",
+        "https://www.youtube-nocookie.com/embed/Fw3FezexzV0?si=YBk5Zu-J-fhhqVAK",
       courseLink: "https://courses.chaicode.com/learn/batch/Coding-Hero-2025",
     },
   ];
