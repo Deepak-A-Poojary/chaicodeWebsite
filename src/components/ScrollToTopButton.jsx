@@ -1,9 +1,4 @@
 import { useEffect, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-// Register the plugin
-gsap.registerPlugin(ScrollToPlugin);
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);

@@ -112,13 +112,9 @@ function Navbar() {
 
   //When click on logo go back to top
 
-  const handleLogoClick = () => {
-    // Smooth scroll to the top using GSAP ScrollToPlugin
-    gsap.to(window, {
-      scrollTo: 0,
-      duration: 1, // 1 second for smooth scrolling
-      ease: "power2.out", // Smooth easing
-    });
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+    return () => {};
   };
 
   const NavLinks = () => (
@@ -209,20 +205,22 @@ function Navbar() {
         style={{ background: themeColors.navbarBgColor }}
         ref={navbarRef}
       >
-        <Link to="/" onClick={handleLogoClick}>
+        <Link to="/" onClick={scrollToTop}>
           {isMobile ? (
             <img
               id="logo"
+              loading="lazy"
               src={logoForMobile}
               alt="logo"
-              className="h-10 w-auto"
+              className="h-10 w-fit"
             />
           ) : (
             <img
               id="logo"
+              loading="lazy"
               src={imgColor === "black" ? logoBlack : logoWhite}
               alt="logo"
-              className="h-10 w-auto"
+              className="h-10 "
             />
           )}
         </Link>
