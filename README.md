@@ -13,7 +13,7 @@ A responsive, accessible, and aesthetically clean web project built using **Reac
 
 ---
 
-## 🔗 Live Demo 
+## 🔗 Live Demo
 
 🚀 [View Deployed Project](https://chaicode-website.vercel.app/)
 
@@ -21,7 +21,7 @@ A responsive, accessible, and aesthetically clean web project built using **Reac
 
 ## 📂 GitHub Repository
 
-🔗 [GitHub Repo](git@github.com:Deepak-A-Poojary/chaicodeWebsite.git)
+🔗 [GitHub Repo](https://github.com/Deepak-A-Poojary/chaicodeWebsite)
 
 ---
 
@@ -50,7 +50,7 @@ Additional dependencies and devDependencies can be found in the `package.json` f
 - Custom 404 Page
 - Custom ErrorBoundry page
 - Clean, minimal UI with smooth micro-interactions
-- Lighthouse performance score above 80
+- Lighthouse performance score above 90
 - Thoughtful UX touches
 
 ---
@@ -78,8 +78,6 @@ Additional dependencies and devDependencies can be found in the `package.json` f
 ├── .gitignore              # Git ignore file
 ├── index.html              # Main HTML file
 ├── package.json            # Project dependencies and scripts
-├── postcss.config.js       # PostCSS configuration
-├── tailwind.config.js      # TailwindCSS configuration
 ├── vite.config.js          # Vite configuration
 └── README.md               # Project documentation
 ```
@@ -88,8 +86,8 @@ Additional dependencies and devDependencies can be found in the `package.json` f
 
 ## 🧪 Lighthouse Scores
 
-| Metric         | Score  |
-| -------------- | ------ |
+| Metric         | Score |
+| -------------- | ----- |
 | Performance    | ✅ 90 |
 | Accessibility  | ✅ 91 |
 | Best Practices | ✅ 78 |
