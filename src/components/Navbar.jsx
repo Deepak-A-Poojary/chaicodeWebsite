@@ -207,17 +207,10 @@ function Navbar() {
       >
         <Link to="/" onClick={scrollToTop}>
           {isMobile ? (
-            <img
-              id="logo"
-              loading="lazy"
-              src={logoForMobile}
-              alt="logo"
-              className="h-10 w-fit"
-            />
+            <img id="logo" src={logoForMobile} alt="logo" className="h-10 " />
           ) : (
             <img
               id="logo"
-              loading="lazy"
               src={imgColor === "black" ? logoBlack : logoWhite}
               alt="logo"
               className="h-10 "

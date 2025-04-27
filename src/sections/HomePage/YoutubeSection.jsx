@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useThemeColors } from "../../hooks/useThemeColors";
 import { Link } from "react-router-dom";
 import { TopicsOnCloud } from "../../components/CompIndex";
@@ -74,6 +74,39 @@ function YoutubeSection() {
       link: "https://youtu.be/1i8R-iJiEi8?si=thrl9KPScKkWyTNk",
     },
   ];
+
+  const TopicSection = ({ children }) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setIsVisible(true);
+              observer.unobserve(containerRef.current); // Observe only once
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      if (containerRef.current) {
+        observer.observe(containerRef.current);
+      }
+
+      return () => {
+        if (containerRef.current) {
+          observer.unobserve(containerRef.current);
+        }
+      };
+    }, []);
+
+    return <div ref={containerRef}>{isVisible && children}</div>;
+  };
 
   return (
     <div className="flex flex-col items-center font-['Outfit'] lg:p-10 p-6">
@@ -222,11 +255,13 @@ function YoutubeSection() {
           </Link>
         </div>
       </div>
-      <div className="overflow-hidden w-dvw flex flex-col gap-5 md:gap-10">
-        <TopicsOnCloud direction="left" topics={firstSectionData} />
-        <TopicsOnCloud direction="right" topics={secondSectionData} />
-        <TopicsOnCloud direction="left" topics={thirdSectionData} />
-      </div>
+      <TopicSection>
+        <div className="overflow-hidden w-dvw flex flex-col gap-5 md:gap-10">
+          <TopicsOnCloud direction="left" topics={firstSectionData} />
+          <TopicsOnCloud direction="right" topics={secondSectionData} />
+          <TopicsOnCloud direction="left" topics={thirdSectionData} />
+        </div>
+      </TopicSection>
     </div>
   );
 }
