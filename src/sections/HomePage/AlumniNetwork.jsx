@@ -80,12 +80,12 @@ const AlumniNetwork = () => {
 
   return (
     <div
-      className="mt-10 grid grid-cols-1 p-5 md:grid-cols-2 w-full h-full bg-black overflow-hidden"
+      className="mt-10 grid grid-cols-1 md:grid-cols-2 w-full h-full bg-black overflow-hidden"
       style={{ background: themeColors.AlumniBgColor }}
     >
       {/* Solor System theme */}
       <div
-        className="relative solarSystemContainer"
+        className="relative solarSystemContainer translate-x-2"
         style={{ width: `${width}px`, height: `${height}px` }}
         ref={containerRef}
       >

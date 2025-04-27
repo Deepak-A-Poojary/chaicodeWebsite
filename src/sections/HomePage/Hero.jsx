@@ -8,7 +8,6 @@ import {
   AnimatedAuroraText,
   AnimatedText,
   PixelArtButton,
-  ScrollToTopButton,
 } from "../../components/CompIndex";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -94,7 +93,7 @@ const Hero = () => {
     };
   }, []);
 
-  //Extra tags data 
+  //Extra tags data
   const buttonData = [
     {
       text: "Peer learning",
@@ -214,7 +213,6 @@ const Hero = () => {
         color: themeColors.text,
       }}
     >
-      <ScrollToTopButton />
       {/* This is a background cursor animation div */}
       <div className="absolute w-[100vw] h-2/1 overflow-hidden">
         <div
@@ -228,7 +226,7 @@ const Hero = () => {
         ></div>
       </div>
       {/* Hero text contents */}
-      <div className="z-1 flex flex-col items-center gap-10">
+      <div className="z-1 flex flex-col p-2 items-center gap-10">
         <div
           className="heroTextRef text-[12px] mt-10 md:text-[14px] font-semibold flex gap-1 border-2 p-2 px-5 rounded-md"
           style={{

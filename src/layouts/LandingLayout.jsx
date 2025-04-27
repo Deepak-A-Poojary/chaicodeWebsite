@@ -3,13 +3,14 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useThemeColors } from "../hooks/useThemeColors";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 const LandingLayout = ({ children }) => {
   const themeColors = useThemeColors();
 
   return (
     <div
-      className="min-h-screen w-dvw flex flex-col transition-colors duration-500"
+      className="min-h-screen w-dvw flex flex-col transition-colors duration-500 "
       style={{
         background: themeColors.background,
         color: themeColors.text,
@@ -18,6 +19,7 @@ const LandingLayout = ({ children }) => {
       <Navbar />
       <main className="flex-grow">{children}</main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 };

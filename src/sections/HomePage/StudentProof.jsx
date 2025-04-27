@@ -47,7 +47,7 @@ function StudentProof() {
 
       tweenRef.current = gsap.to(container, {
         xPercent: 0,
-        duration: 20,
+        duration: 50,
         repeat: -1,
         ease: "linear",
       });
@@ -70,9 +70,9 @@ function StudentProof() {
   return (
     <div
       ref={sectionRef}
-      className="text-center flex flex-col items-center gap-10 font-semibold mt-5 p-5"
+      className="text-center flex flex-col items-center gap-10 font-semibold mt-5"
     >
-      <p className="text-md md:text-xl px-5 md:max-w-[60%] ">
+      <p className="text-md md:text-xl px-5 md:max-w-[60%] p-5">
         Our students are not only working at top tech companies, but are also
         becoming founders of funded startups and creators of innovative products
       </p>

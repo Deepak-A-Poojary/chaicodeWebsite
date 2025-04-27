@@ -116,8 +116,8 @@ function CohortSection() {
       <div id="cohorts">
         <AnimatedAuroraText className="text-5xl" text={"Cohorts"} />
       </div>
-      <p className="text-[1rem]">Live training classes</p>
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-dvw p-2 md:p-10 gap-6">
+      <p className="text-[1rem] ">Live training classes</p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-dvw p-5 md:p-10 gap-6">
         {cohortCardsData.map((card, index) => (
           <CohortCard key={index} {...card} />
         ))}

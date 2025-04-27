@@ -90,10 +90,10 @@ Additional dependencies and devDependencies can be found in the `package.json` f
 
 | Metric         | Score  |
 | -------------- | ------ |
-| Performance    | ✅ 75+ |
-| Accessibility  | ✅ 90+ |
-| Best Practices | ✅ 75+ |
-| SEO            | ✅ 90+ |
+| Performance    | ✅ 90 |
+| Accessibility  | ✅ 91 |
+| Best Practices | ✅ 78 |
+| SEO            | ✅ 92 |
 
 > Scores may vary slightly depending on environment and network conditions.
 
