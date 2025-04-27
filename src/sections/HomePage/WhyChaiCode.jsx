@@ -80,7 +80,7 @@ const WhyChaiCode = () => {
   };
   return (
     <div className="flex flex-col items-center mt-10 p-5 px-5 xl:px-25">
-      <h1
+      <p
         ref={headingRef}
         className="flex flex-wrap justify-center text-3xl md:text-5xl mb-2 md:mb-5 font-bold leading-snug text-center"
       >
@@ -89,7 +89,7 @@ const WhyChaiCode = () => {
             {letter === " " ? "\u00A0" : letter}
           </span>
         ))}
-      </h1>
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 xl:gap-10 items-center mt-5">
         <div
           id="columnOne"

@@ -12,9 +12,9 @@ import {
   DocsIcon,
   ReviewIcon,
 } from "../components/customIcon/index";
-import logoWhite from "../../src/assets/chaicode-white.png";
-import logoBlack from "../../src/assets/chaicode-black.png";
-import logoForMobile from "../../src/assets/chai-gray.png";
+import logoWhite from "../../src/assets/chaicode-white.svg";
+import logoBlack from "../../src/assets/chaicode-black.svg";
+import logoForMobile from "../../src/assets/chai-gray.svg";
 import { ButtonText } from "./CompIndex";
 
 gsap.registerPlugin(useGSAP);
