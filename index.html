@@ -9,15 +9,31 @@
       content="Learn programming with ChaiCode - Your ultimate destination for coding education"
     />
     <title>Chaicode.com</title>
+
+    <!-- Preconnect early -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload font CSS early -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Outfit:wght@100..900&family=Pacifico&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+    />
+
+    <!-- Load fonts with media trick (non-blocking load) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Outfit:wght@100..900&family=Pacifico&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
+      media="all"
     />
+
+    <!-- Prefetch others -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="dns-prefetch" href="https://yt3.googleusercontent.com" />
     <link rel="dns-prefetch" href="https://react-tweet.vercel.app" />
+
+    <!-- Preload important images -->
     <link rel="preload" as="image" href="/assets/chaicode-white.svg" />
     <link rel="preload" as="image" href="/assets/chaicode-black.svg" />
     <link rel="preload" as="image" href="/assets/chai-gray.svg" />
