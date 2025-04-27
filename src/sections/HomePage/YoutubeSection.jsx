@@ -109,7 +109,7 @@ function YoutubeSection() {
   };
 
   return (
-    <div className="flex flex-col items-center font-['Outfit'] lg:p-10 p-6">
+    <div className="flex flex-col items-center font-['Outfit'] lg:p-10 p-2">
       <h2
         className="text-3xl lg:text-4xl font-bold font-['Outfit'] text-center"
         style={{
