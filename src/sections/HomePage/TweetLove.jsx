@@ -75,9 +75,9 @@ const TweetLove = () => {
         id="tweetContainer"
         className=" h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-5 md:p-10 gap-5 lg:gap-10 justify-items-center"
       >
-        {randomTweetIds.map((id, idx) => (
+        {randomTweetIds.map((id) => (
           <div key={id} className={`tweetCards`}>
-            <TweetCard tId={id} />
+            <TweetCard tweetId={id} />
           </div>
         ))}
       </div>

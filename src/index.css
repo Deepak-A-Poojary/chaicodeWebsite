@@ -138,6 +138,17 @@ body {
   will-change: transform, opacity;
 }
 
+._likeIcon_n2anf_27 {
+  color: blue !important;
+  height: 20px !important;
+  width: 20px !important;
+}
+._verified_lvyh0_1{
+  height: 20px !important;
+  width: 20px !important;
+}
+
+
 /* Animation used in Alumni network */
 @keyframes glow {
   0% {
