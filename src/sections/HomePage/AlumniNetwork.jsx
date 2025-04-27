@@ -46,6 +46,7 @@ const AlumniNetwork = () => {
   const width = isMobile ? 350 : isTablet ? 500 : 800;
   const height = 400;
 
+  // This is used to animate the solar system
   useEffect(() => {
     const centerX = width / 2;
     const centerY = height / 2;
