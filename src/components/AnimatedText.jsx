@@ -19,7 +19,7 @@ const AnimatedText = ({ text, className }) => {
         stagger: 0.07,
         ease: "power3.out",
         duration: 0.6,
-        delay: 1,
+        delay: 0,
       }
     );
   }, [text]);
