@@ -94,6 +94,7 @@ const Hero = () => {
     };
   }, []);
 
+  //Extra tags data 
   const buttonData = [
     {
       text: "Peer learning",

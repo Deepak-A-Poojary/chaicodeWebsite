@@ -37,7 +37,6 @@ function ExploreTextButton({
     >
       {svg}
 
-      {/* Blurred Radial Overlay */}
       <div
         ref={overlayRef}
         className="absolute top-1/2 left-1/2 w-40 h-40 z-0 rounded-full pointer-events-none"

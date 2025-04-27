@@ -3,6 +3,7 @@ import { useThemeColors } from "../hooks/useThemeColors";
 const FeedbackCard = ({ name, avatar, rating, feedback }) => {
   const themeColors = useThemeColors();
 
+  // below code helps to display the star with color based on the prop "rating" which return no. btw 1-5
   const renderStars = () => {
     return Array.from({ length: 5 }, (_, i) =>
       i < rating ? (

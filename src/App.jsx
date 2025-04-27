@@ -18,7 +18,6 @@ function App() {
           <Route path="/" element={<HomeLayout />} />
           <Route path="/Reviews" element={<Review />} />
 
-          {/* Catch-all 404 route */}
           <Route path="*" element={<NotFound />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/pricing-policy" element={<PricingPolicy />} />

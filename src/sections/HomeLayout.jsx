@@ -10,7 +10,7 @@ import AlumniNetworkCard from "./HomePage/AlumniNetwork";
 import WhyChaiCode from "./HomePage/WhyChaiCode";
 import YoutubeSection from "./HomePage/YoutubeSection";
 
-// I have design all section sepearetly, because we can organise the position/ order of these sections
+// Made each part separate so we can easily change position or re-order them
 const sections = [
   Hero,
   TweetLove,

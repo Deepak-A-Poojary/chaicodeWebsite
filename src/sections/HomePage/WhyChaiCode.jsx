@@ -73,6 +73,8 @@ const WhyChaiCode = () => {
     },
   ];
 
+  
+
   const letters = (headingText) => {
     return headingText.split("");
   };

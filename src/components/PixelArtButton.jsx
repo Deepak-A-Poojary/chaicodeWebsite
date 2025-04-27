@@ -12,6 +12,8 @@ function PixelArtButton({ text = "text", svg, className, to }) {
 
   const borderColor = theme === "dark" ? "#f59e0b" : "#a855f7";
 
+
+  // to make a glow effect
   useGSAP(() => {
     const button = buttonRef.current;
 
