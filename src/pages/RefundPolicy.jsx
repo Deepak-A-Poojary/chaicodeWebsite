@@ -146,7 +146,7 @@ const RefundPolicy = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-[35%_65%] mt-10 px-0 md:px-20 gap-8">
         {/* topics */}
-        <div className="rounded-md shadow-md hidden md:block">
+        <div className="rounded-md hidden md:block">
           <ul
             ref={listRef}
             className="flex flex-col text-start gap-3 sticky top-20 p-4"
