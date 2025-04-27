@@ -40,7 +40,7 @@ function Review() {
             key={index}
             className={`tweetCards flex justify-center w-full items-center`}
           >
-            <TweetCard tId={tweet} />
+            <TweetCard tweetId={tweet} />
           </div>
         ))}
       </div>
