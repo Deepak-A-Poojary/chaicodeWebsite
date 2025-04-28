@@ -6,7 +6,7 @@ import useThemeStore from "../store/themeStore";
 
 const Footer = () => {
   const themeColors = useThemeColors();
-  const theme = useThemeStore(state => state.theme)
+  const theme = useThemeStore((state) => state.theme);
 
   const products = [
     { name: "Courses", href: "https://courses.chaicode.com/learn" },
