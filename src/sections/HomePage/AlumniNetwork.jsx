@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import useResponsive from "../../hooks/useResponsive";
 import { Link } from "react-router-dom";
 import { useThemeColors } from "../../hooks/useThemeColors";
-import useStore from "../../store/themeStore";
+import useThemeStore from "../../store/themeStore";
 
 const allTopics = [
   "Jobs",
@@ -40,7 +40,7 @@ const AlumniNetwork = () => {
   const sunRadius = isMobile ? 30 : 50;
   const orbitRadii = [50, 120, 190];
   const themeColors = useThemeColors();
-  const theme = useStore((state) => state.theme);
+  const theme = useThemeStore((state) => state.theme);
 
   //this width and height is used to size solor system container
   const width = isMobile ? 350 : isTablet ? 500 : 800;

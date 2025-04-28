@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { useThemeColors } from "../../hooks/useThemeColors";
 import useResponsive from "../../hooks/useResponsive";
 import { useLocation } from "react-router-dom";
-import useStore from "../../store/themeStore";
+import useThemeStore from "../../store/themeStore";
 import { PixelArtButton, AnimatedAuroraText } from "../../components/CompIndex";
 
 const NotFound = () => {
@@ -12,7 +12,7 @@ const NotFound = () => {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
   const themeColors = useThemeColors();
-  const theme = useStore((state) => state.theme);
+  const theme = useThemeStore((state) => state.theme);
   const { isMobile } = useResponsive();
   const location = useLocation();
 

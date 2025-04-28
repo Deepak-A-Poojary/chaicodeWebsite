@@ -1,5 +1,5 @@
 import React from "react";
-import useStore from "../store/themeStore";
+import useThemeStore from "../store/themeStore";
 import TweetCard from "../components/TweetCard";
 
 // Only ids are enoguh to render the tweets
@@ -19,7 +19,7 @@ const TWEET_IDS = [
 ];
 
 function Review() {
-  const theme = useStore((state) => state.theme);
+  const theme = useThemeStore((state) => state.theme);
 
   return (
     <div className="min-h-dvh md:p-10  text-center font-['outfit'] relative">

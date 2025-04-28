@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import useStore from "../store/themeStore";
+import useThemeStore from "../store/themeStore";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { HashLink } from "react-router-hash-link";
@@ -9,7 +9,7 @@ import { Link, useLocation } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const PrivacyPolicy = () => {
-  const theme = useStore((state) => state.theme);
+  const theme = useThemeStore((state) => state.theme);
   const [activeLink, setActiveLink] = useState("#privacy-policy-0");
   const themeColors = useThemeColors();
   const listRef = useRef(null);

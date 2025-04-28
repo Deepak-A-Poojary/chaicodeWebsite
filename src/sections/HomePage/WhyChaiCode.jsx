@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useThemeColors } from "../../hooks/useThemeColors";
-import useStore from "../../store/themeStore";
+import useThemeStore from "../../store/themeStore";
 import profile from "../../assets/profile.png";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const WhyChaiCode = () => {
   const themeColors = useThemeColors();
-  const theme = useStore((state) => state.theme);
+  const theme = useThemeStore((state) => state.theme);
   const headingRef = useRef(null);
 
   useGSAP(() => {

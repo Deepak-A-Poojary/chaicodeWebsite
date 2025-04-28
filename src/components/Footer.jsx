@@ -1,12 +1,12 @@
 import { useThemeColors } from "../hooks/useThemeColors";
-import useStore from "../store/themeStore";
 import blackLogo from "../assets/chaicode-black.svg";
 import whiteLogo from "../assets/chaicode-white.svg";
 import { Link } from "react-router-dom";
+import useThemeStore from "../store/themeStore";
 
 const Footer = () => {
   const themeColors = useThemeColors();
-  const theme = useStore((state) => state.theme);
+  const theme = useThemeStore(state => state.theme)
 
   const products = [
     { name: "Courses", href: "https://courses.chaicode.com/learn" },

@@ -112,7 +112,7 @@ const getSystemTheme = () => {
 };
 
 // Create the Zustand store
-const useStore = create((set, get) => {
+const useThemeStore = create((set, get) => {
   const initialTheme =
     typeof window !== "undefined"
       ? localStorage.getItem("theme") || getSystemTheme()
@@ -144,4 +144,4 @@ const useStore = create((set, get) => {
   };
 });
 
-export default useStore;
+export default useThemeStore;

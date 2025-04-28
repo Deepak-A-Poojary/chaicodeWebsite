@@ -3,12 +3,12 @@ import gsap from "gsap";
 import { useThemeColors } from "../hooks/useThemeColors";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
-import useStore from "../store/themeStore";
+import useThemeStore from "../store/themeStore";
 
 function PixelArtButton({ text = "text", svg, className, to }) {
   const buttonRef = useRef(null);
   const themeColors = useThemeColors();
-  const theme = useStore((state) => state.theme);
+  const theme = useThemeStore((state) => state.theme);
 
   const borderColor = theme === "dark" ? "#f59e0b" : "#a855f7";
 

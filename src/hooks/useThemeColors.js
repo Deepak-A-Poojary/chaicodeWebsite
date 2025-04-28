@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import useStore from "../store/themeStore";
+import useThemeStore from "../store/themeStore";
 
 export const useThemeColors = () => {
-  const theme = useStore((state) => state.theme);
-  const getCurrentThemeColors = useStore(
+  const theme = useThemeStore((state) => state.theme);
+  const getCurrentThemeColors = useThemeStore(
     (state) => state.getCurrentThemeColors
   );
 
