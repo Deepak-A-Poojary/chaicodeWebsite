@@ -175,13 +175,13 @@ function YoutubeSection() {
             <p className={`text-lg font-medium opacity-70`}>@chaiaurcode</p>
 
             <div className="flex flex-col sm:flex-row gap-2 relative sm:gap-6 items-center text-center ">
-              <p className={`text-lg font-semibold self-start`}>
+              <p className={`text-lg font-semibold self-start md:self-center`}>
                 <span className={`text-amber-500`}>📈 {hindiChannel.sub}K</span>
                 <span className={`ml-1 text-sm font-normal opacity-60`}>
                   subscribers
                 </span>
               </p>
-              <p className={`text-lg font-semibold self-start`}>
+              <p className={`text-lg font-semibold self-start md:self-center`}>
                 <span className={`text-amber-500`}>
                   🎥 {hindiChannel.videos}
                 </span>
