@@ -7,7 +7,34 @@ import {
 } from "../../components/CompIndex";
 
 function CohortSection() {
+  
   const cohortCardsData = [
+    {
+      courseName: "DSA with C++ 1.0",
+      courseDescription: "Master DSA with C++ through 200 curated problems",
+      courseStartDate: "Starts May 03, 2025",
+      courseDuration: "1-3 months",
+      terminalCode: `
+  #include <iostream>
+  #include <vector>
+  #include <algorithm>
+  
+  int main() {
+    std::vector<int> nums = {4, 2, 5, 1};
+    std::sort(nums.begin(), nums.end());
+    for(int num : nums) std::cout << num << " ";
+    return 0;
+  }
+      `,
+      terminalCodeLang: "C++",
+      keywordData: ["DSA", "C++", "LeetCode", "+1"],
+      discountedPrice: "5999",
+      originalMRP: "5999",
+      iframeUrl:
+        "https://www.youtube-nocookie.com/embed/dz5C-r0Z9AA?si=Pvcuzh_aghi-F5CA",
+      courseLink:
+        "https://courses.chaicode.com/learn/batch/about?bundleId=230409",
+    },
     {
       courseName: "Full Stack Data Science 1.0",
       courseDescription: "From Python basics to project deployment",

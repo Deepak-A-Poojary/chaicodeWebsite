@@ -3,6 +3,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useThemeColors } from "../hooks/useThemeColors";
 import { useGSAP } from "@gsap/react";
+import useThemeStore from "../store/themeStore";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +22,7 @@ const CohortCard = ({
 }) => {
   const cardRef = useRef(null);
   const themeColors = useThemeColors();
+  const theme = useThemeStore((state) => state.theme);
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
   // Used to animate entry of cards
@@ -51,6 +53,121 @@ const CohortCard = ({
   const discontInPercentage = Math.round(
     ((originalMRP - discountedPrice) / originalMRP) * 100
   );
+
+  //This function will return Live/Yet to start/ comming soon/ Live End based on courseStartDate and Duration
+  function getCourseStatus(courseStartDate, courseDuration) {
+    // Handle special strings
+    if (courseStartDate === "Starts Constantly going") {
+      return "Live";
+    }
+    if (courseStartDate === "Coming soon") {
+      return "Coming soon";
+    }
+
+    // Parse start date
+    const startDate = new Date(courseStartDate.replace("Starts ", ""));
+
+    // Extract duration in months
+    const durationMatch = courseDuration.match(/\d+(-\d+)?/);
+    let durationMonths = 0;
+
+    if (durationMatch) {
+      const range = durationMatch[0].split("-");
+      durationMonths = parseInt(range[range.length - 1]); // handle "1-2" or "2"
+    }
+
+    // Calculate end date
+    const endDate = new Date(startDate);
+    endDate.setMonth(endDate.getMonth() + durationMonths);
+
+    // 5. Get current time
+    const now = new Date();
+
+    // 6. Determine course status
+    if (now < startDate) {
+      return "Yet to Start";
+    } else if (now >= startDate && now < endDate) {
+      return "Live";
+    } else {
+      return "Live Ended";
+    }
+  }
+
+  /// this will display the status of course in card (live/ Yet to start / Commning soon)
+  const CourseStateDisplay = () => {
+    const status = getCourseStatus(
+      courseStartDate,
+      courseDuration
+    ).toLowerCase();
+
+    if (status === "live") {
+      return (
+        <div className="flex items-center">
+          <div className="w-3 h-3 bg-red-500 rounded-full mr-2 scale-110 animate-pulse"></div>
+          <span className="text-xs font-semibold text-red-500">LIVE</span>
+        </div>
+      );
+    }
+
+    if (status === "coming soon") {
+      return (
+        <div className="flex items-center">
+          <div
+            className={`w-3 h-3 rounded-full mr-1 animate-pulse ${
+              theme === "light" ? "bg-purple-700" : "bg-purple-500"
+            }`}
+          ></div>
+          <span
+            className={`text-xs font-medium ${
+              theme === "light" ? "text-purple-700" : "text-purple-500"
+            }`}
+          >
+            Coming Soon
+          </span>
+        </div>
+      );
+    }
+
+    if (status === "yet to start") {
+      return (
+        <div className="flex items-center">
+          <div
+            className={`w-3 h-3 rounded-full mr-1 animate-pulse ${
+              theme === "light" ? "bg-green-700" : "bg-green-500"
+            }`}
+          ></div>
+          <span
+            className={`text-xs font-medium ${
+              theme === "light" ? "text-green-700" : "text-green-500"
+            }`}
+          >
+            Yet to
+          </span>
+        </div>
+      );
+    }
+
+    if (status === "live ended") {
+      return (
+        <div className="flex items-center">
+          <div
+            className={`w-3 h-3 rounded-full mr-1 animate-pulse ${
+              theme === "light" ? "bg-gray-700" : "bg-gray-300"
+            }`}
+          ></div>
+          <span
+            className={`text-xs font-medium ${
+              theme === "light" ? "text-gray-700" : "text-gray-300"
+            }`}
+          >
+            Live Ended
+          </span>
+        </div>
+      );
+    }
+
+    return null;
+  };
 
   return (
     <div
@@ -147,9 +264,8 @@ const CohortCard = ({
             </div>
           </div>
 
-          <div className="absolute top-0 right-4 z-20 flex items-center">
-            <div className="w-3 h-3 bg-red-500 rounded-full mr-2 scale-110 animate-pulse"></div>
-            <span className="text-xs font-semibold text-red-500">LIVE</span>
+          <div className="absolute top-0 right-4 z-20">
+            <CourseStateDisplay />
           </div>
           <a href={courseLink}>
             <button className="inline-flex cursor-pointer items-center justify-center gap-2 text-sm font-medium w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white py-3 mb-2 h-auto rounded-lg">
