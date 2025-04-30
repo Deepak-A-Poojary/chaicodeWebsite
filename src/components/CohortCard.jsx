@@ -141,7 +141,7 @@ const CohortCard = ({
               theme === "light" ? "text-green-700" : "text-green-500"
             }`}
           >
-            Yet to
+            Yet to Start
           </span>
         </div>
       );
