@@ -1,18 +1,19 @@
-import React from "react";
-import Hero from "./HomePage/Hero";
-import TweetLove from "./HomePage/TweetLove";
-import CohortSection from "./HomePage/CohortSection";
-import StudentProof from "./HomePage/StudentProof";
-import StudenFeedback from "./HomePage/StudenFeedback";
-import UdemyCourse from "./HomePage/UdemyCourse";
-import CohortBenefits from "./HomePage/CohortBenefits";
-import AlumniNetworkCard from "./HomePage/AlumniNetwork";
-import WhyChaiCode from "./HomePage/WhyChaiCode";
-import YoutubeSection from "./HomePage/YoutubeSection";
+import React, { lazy, Suspense } from "react";
+import Hero from "./HomePage/Hero"; // Load this eagerly – it's critical
 
-// Made each part separate so we can easily change position or re-order them
+// Lazy load each section
+const TweetLove = lazy(() => import("./HomePage/TweetLove"));
+const CohortSection = lazy(() => import("./HomePage/CohortSection"));
+const StudentProof = lazy(() => import("./HomePage/StudentProof"));
+const StudenFeedback = lazy(() => import("./HomePage/StudenFeedback"));
+const UdemyCourse = lazy(() => import("./HomePage/UdemyCourse"));
+const CohortBenefits = lazy(() => import("./HomePage/CohortBenefits"));
+const AlumniNetworkCard = lazy(() => import("./HomePage/AlumniNetwork"));
+const WhyChaiCode = lazy(() => import("./HomePage/WhyChaiCode"));
+const YoutubeSection = lazy(() => import("./HomePage/YoutubeSection"));
+
+// Use the array as before
 const sections = [
-  Hero,
   TweetLove,
   CohortSection,
   CohortBenefits,
@@ -26,11 +27,14 @@ const sections = [
 
 function HomeLayout() {
   return (
-    <>
-      {sections.map((Section, idx) => (
-        <Section key={idx} />
-      ))}
-    </>
+    <div>
+      <Hero />
+      <Suspense fallback={<div className="min-h-screen">Loading...</div>}>
+        {sections.map((Section, idx) => (
+          <Section key={idx} />
+        ))}
+      </Suspense>
+    </div>
   );
 }
 
