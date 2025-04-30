@@ -2,23 +2,17 @@ import { useEffect, useMemo } from "react";
 import { useThemeColors } from "../../hooks/useThemeColors";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import useResponsive from "../../hooks/useResponsive";
 import {
   TweetCard,
   AnimatedAuroraText,
   Divider,
   PixelArtButton,
 } from "../../components/CompIndex";
+import { TWEET_IDS_FOR_TWEETLOVE } from "../../constants/contentData";
 
 gsap.registerPlugin(ScrollTrigger);
 
 // Only ids are enoguh to render the tweets
-const TWEET_IDS = [
-  "1906393735203836076",
-  "1906390359841640771",
-  "1905574126112153860",
-  "1907045909394788416",
-];
 
 const animateTweetCard = (selector, options) => {
   gsap.from(selector, {
@@ -36,7 +30,9 @@ const TweetLove = () => {
   const themeColors = useThemeColors();
 
   const randomTweetIds = useMemo(() => {
-    return [...TWEET_IDS].sort(() => 0.5 - Math.random()).slice(0, 3);
+    return [...TWEET_IDS_FOR_TWEETLOVE]
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 3);
   }, []);
 
   useEffect(() => {

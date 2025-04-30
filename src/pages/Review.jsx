@@ -1,22 +1,7 @@
 import React from "react";
 import useThemeStore from "../store/themeStore";
 import TweetCard from "../components/TweetCard";
-
-// Only ids are enoguh to render the tweets
-const TWEET_IDS = [
-  "1906393735203836076",
-  "1907045909394788416",
-  "1910405500635664554",
-  "1910400980593574204",
-  "1910371930860929195",
-  "1910275278686822749",
-  "1910136352450166834",
-  "1906390359841640771",
-  "1905574126112153860",
-  "1910028187192435136",
-  "1910028067134636214",
-  "1909991433211203701",
-];
+import { TWEET_IDS_FOR_REVIEWS } from "../constants/index";
 
 function Review() {
   const theme = useThemeStore((state) => state.theme);
@@ -35,7 +20,7 @@ function Review() {
         their learning journey.
       </p>
       <div className=" h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-5 md:p-10 gap-10 justify-items-center">
-        {TWEET_IDS.map((tweet, index) => (
+        {TWEET_IDS_FOR_REVIEWS.map((tweet, index) => (
           <div
             key={index}
             className={`tweetCards flex justify-center w-full items-center`}

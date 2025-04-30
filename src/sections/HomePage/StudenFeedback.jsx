@@ -8,55 +8,11 @@ import {
   Divider,
   FeedbackCard,
 } from "../../components/CompIndex";
+import { STUDENT_FEEDBACK } from "../../constants/studentData";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const StudentFeedback = () => {
-  const feedbackData = [
-    {
-      name: "Aarav Sharma",
-      avatar: "https://i.pravatar.cc/150?img=32",
-      rating: 5,
-      feedback:
-        "This course exceeded my expectations! The content was well-structured and easy to follow.",
-    },
-    {
-      name: "Ishita Verma",
-      avatar: "https://i.pravatar.cc/150?img=47",
-      rating: 4,
-      feedback:
-        "Really enjoyed the hands-on projects. Helped me apply what I learned right away!",
-    },
-    {
-      name: "Rohan Mehta",
-      avatar: "https://i.pravatar.cc/150?img=15",
-      rating: 5,
-      feedback:
-        "Brilliant teaching style and the concepts were explained with great clarity. Highly recommended!",
-    },
-    {
-      name: "Simran Kapoor",
-      avatar: "https://i.pravatar.cc/150?img=25",
-      rating: 4,
-      feedback:
-        "I loved the interactive approach. The instructor made learning fun and effective.",
-    },
-    {
-      name: "Devansh Patel",
-      avatar: "https://i.pravatar.cc/150?img=38",
-      rating: 5,
-      feedback:
-        "Well-paced course with a lot of practical tips. It definitely helped boost my skills.",
-    },
-    {
-      name: "Priya Nair",
-      avatar: "https://i.pravatar.cc/150?img=12",
-      rating: 5,
-      feedback:
-        "The best part was the real-world examples. It made complex topics easier to grasp.",
-    },
-  ];
-
   useGSAP(() => {
     gsap.from(".feedbackCard", {
       y: 100,
@@ -83,7 +39,7 @@ const StudentFeedback = () => {
         skills today.
       </p>
       <div className="flex gap-6 px-10 w-full flex-wrap justify-center">
-        {feedbackData.map((item, index) => (
+        {STUDENT_FEEDBACK.map((item, index) => (
           <div key={index} className="feedbackCard">
             <FeedbackCard
               name={item.name}
