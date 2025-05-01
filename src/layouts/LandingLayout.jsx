@@ -10,7 +10,7 @@ const LandingLayout = ({ children }) => {
 
   return (
     <div
-      className="min-h-screen w-dvw flex flex-col transition-colors duration-500"
+      className="min-h-screen w-dvw flex flex-col"
       style={{
         background: themeColors.background,
         color: themeColors.text,
