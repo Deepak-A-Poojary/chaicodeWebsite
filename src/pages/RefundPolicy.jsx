@@ -153,13 +153,17 @@ const RefundPolicy = () => {
           >
             <div
               ref={barRef}
-              className="bg-amber-600 absolute left-2 rounded w-[5px] followBar"
+              className="bg-amber-600 absolute left-2 rounded w-[5px] followBar translate-x-2"
               style={{ height: barHeight }}
             ></div>
             {refund_policy_details.map((item, index) => (
               <li
                 key={index}
-                className="cursor-pointer font-semibold transition-colors duration-200"
+                className={`cursor-pointer font-semibold transition-all duration-200 ${
+                  activeLink === `#refund-policy-${index}`
+                    ? "translate-x-2.5"
+                    : "translate-x-0"
+                }`}
               >
                 <HashLink
                   className="hover:!opacity-100"

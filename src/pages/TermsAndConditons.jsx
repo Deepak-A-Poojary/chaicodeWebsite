@@ -317,24 +317,21 @@ const TermsAndConditons = () => {
           >
             <div
               ref={barRef}
-              className="bg-amber-600 absolute left-2 rounded w-[5px] followBar"
+              className="bg-amber-600 absolute left-2 rounded w-[5px] followBar translate-x-2"
               style={{ height: barHeight }}
             ></div>
             {terms_of_service_details.map((item, index) => (
               <li
                 key={index}
-                className="cursor-pointer hover:!opacity-100 font-semibold transition-colors duration-200"
-                style={{
-                  color:
-                    activeLink === `#terms_policy-${index}`
-                      ? themeColors.policyBtnColor
-                      : themeColors.secondryText,
-                  opacity: activeLink === `#terms_policy-${index}` ? 1 : 0.5,
-                }}
+                className={`cursor-pointer font-semibold transition-all duration-200 ${
+                  activeLink === `#terms_policy-${index}`
+                    ? "translate-x-2.5"
+                    : "translate-x-0"
+                }`}
               >
                 <HashLink
                   smooth
-                  className=" transition-colors duration-200"
+                  className="hover:!opacity-100"
                   scroll={(el) => {
                     const yOffset = -90;
                     const y =
@@ -343,6 +340,13 @@ const TermsAndConditons = () => {
                       yOffset;
 
                     window.scrollTo({ top: y, behavior: "smooth" });
+                  }}
+                  style={{
+                    color:
+                      activeLink === `#terms_policy-${index}`
+                        ? themeColors.policyBtnColor
+                        : themeColors.secondryText,
+                    opacity: activeLink === `#terms_policy-${index}` ? 1 : 0.5,
                   }}
                   to={`#terms_policy-${index}`}
                 >

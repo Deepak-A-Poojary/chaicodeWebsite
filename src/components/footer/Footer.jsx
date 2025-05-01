@@ -264,7 +264,7 @@ const Footer = () => {
               <Link to="https://apps.apple.com/in/app/chaicode/id6504993143">
                 <button
                   data-slot="button"
-                  className="whitespace-nowrap text-sm font-medium flex items-center justify-evenly gap-2 p-4 w-44 rounded-xl mb-3 hover:-translate-y-1 duration-300 transition-transform cursor-pointer"
+                  className="whitespace-nowrap text-sm font-medium grid grid-cols-[10%_90%] items-center gap-6 p-4 w-44 rounded-xl mb-3 hover:opacity-80 hover:scale-103 duration-300 transition-transform cursor-pointer"
                   style={{
                     background: themeColors.downloadAppBtnBg,
                     color: themeColors.text,
@@ -299,7 +299,7 @@ const Footer = () => {
               <Link to="https://play.google.com/store/apps/details?id=com.chaicode.courses&pcampaignid=web_share">
                 <button
                   data-slot="button"
-                  className="whitespace-nowrap text-sm font-medium flex items-center justify-evenly gap-4 p-4 rounded-xl w-44 hover:-translate-y-1 duration-300 transition-transform cursor-pointer"
+                  className="whitespace-nowrap text-sm font-medium grid grid-cols-[10%_90%] items-center gap-6 p-4 rounded-xl w-44 hover:opacity-90 hover:scale-103 duration-300 transition-all cursor-pointer"
                   style={{
                     background: themeColors.downloadAppBtnBg,
                     color: themeColors.text,
