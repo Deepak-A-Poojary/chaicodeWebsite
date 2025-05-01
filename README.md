@@ -46,8 +46,11 @@ Additional dependencies and devDependencies can be found in the `package.json` f
 
 - Fully responsive across mobile, tablet, and desktop
 - Matches wireframe design precisely
+- Included all policy pages with animation
+- Added review page for tweets from students 
 - Custom 404 Page
 - Custom ErrorBoundry page
+- All buttons are animation and actionable.
 - Clean, minimal UI with smooth micro-interactions
 - Lighthouse performance score above 90
 - Thoughtful UX touches
