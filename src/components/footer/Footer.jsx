@@ -15,10 +15,10 @@ const Footer = () => {
   const handleMouseEnter = (e, sectionRef) => {
     const item = e.currentTarget;
     const topPosition = item.offsetTop;
-    const height = item.offsetHeight;
+    const height = item.offsetHeight - 3;
 
     gsap.to(sectionRef.current, {
-      top: topPosition + 4,
+      top: topPosition + 6,
       height: height - 8,
       opacity: 1,
       duration: 0.3,
@@ -240,7 +240,7 @@ const Footer = () => {
               >
                 Products
               </p>
-              <ul className="space-y-3 relative">
+              <ul className="relative">
                 <div
                   ref={productBarRef}
                   className="bg-amber-600 absolute -left-1 w-[5px] rounded opacity-0 hover:translate-x-2"
@@ -255,7 +255,7 @@ const Footer = () => {
                     onMouseLeave={() => handleMouseLeave(productBarRef)}
                   >
                     <Link
-                      className="block hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1"
+                      className="block py-1 hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1"
                       to={product.href}
                     >
                       {product.name}
@@ -272,7 +272,7 @@ const Footer = () => {
               >
                 Resources
               </p>
-              <ul className="space-y-3 relative w-40">
+              <ul className="relative w-40">
                 <div
                   ref={resourceBarRef}
                   className="bg-amber-600 absolute -left-1 w-[5px] rounded opacity-0 hover:translate-x-2"
@@ -287,7 +287,7 @@ const Footer = () => {
                     onMouseLeave={() => handleMouseLeave(resourceBarRef)}
                   >
                     <Link
-                      className="block hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1"
+                      className="block py-1 hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1"
                       to={resource.href}
                     >
                       {resource.name}
