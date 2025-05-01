@@ -120,6 +120,16 @@ body {
   object-position: 50% 50%;
 }
 
+.react-tweet-theme ._twitterIcon_nqq4j_90 {
+  transform: rotate(0deg);
+  transition-property: opacity, display, transform !important;
+  transition-duration: 0.5s !important;
+}
+
+.react-tweet-theme ._twitterIcon_nqq4j_90:hover {
+  transform: rotate(180deg);
+}
+
 .tweetCard .react-tweet-theme ._root_g9tkv_1 {
   max-height: 200px;
 }
@@ -140,11 +150,10 @@ body {
   height: 20px !important;
   width: 20px !important;
 }
-._verified_lvyh0_1{
+._verified_lvyh0_1 {
   height: 20px !important;
   width: 20px !important;
 }
-
 
 /* Animation used in Alumni network */
 @keyframes glow {
