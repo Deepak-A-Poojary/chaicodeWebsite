@@ -45,10 +45,10 @@ const Hero = () => {
     };
   }, []);
 
-  // Below code used to animate main text (Consistency and Community)
+  // Below code used to animate main text
   useGSAP(() => {
     const fromTween = gsap.from(".heroTextRef", {
-      y: 20,
+      y: 5,
       opacity: 0,
       duration: 0.5,
       delay: 0.5,
@@ -58,9 +58,9 @@ const Hero = () => {
       },
     });
     const toTween = gsap.to(".heroTextRef", {
-      y: 10,
+      y: 5,
       duration: 0.5,
-      delay: 0.9,
+      delay: 1,
       stagger: {
         from: "start",
         amount: 0.5,
