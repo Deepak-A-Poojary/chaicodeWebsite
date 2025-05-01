@@ -23,7 +23,7 @@ function YoutubeSection() {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               setIsVisible(true);
-              observer.unobserve(containerRef.current); // Observe only once
+              observer.unobserve(containerRef.current);
             }
           });
         },
