@@ -1,8 +1,8 @@
-import { useThemeColors } from "../hooks/useThemeColors";
-import blackLogo from "../assets/chaicode-black.svg";
-import whiteLogo from "../assets/chaicode-white.svg";
+import { useThemeColors } from "../../hooks/useThemeColors";
+import blackLogo from "../../assets/chaicode-black.svg";
+import whiteLogo from "../../assets/chaicode-white.svg";
 import { Link } from "react-router-dom";
-import useThemeStore from "../store/themeStore";
+import useThemeStore from "../../store/themeStore";
 
 const Footer = () => {
   const themeColors = useThemeColors();

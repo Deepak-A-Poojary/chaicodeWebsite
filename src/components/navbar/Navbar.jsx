@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import useThemeStore from "../store/themeStore";
-import { useThemeColors } from "../hooks/useThemeColors";
-import useResponsive from "../hooks/useResponsive";
+import useThemeStore from "../../store/themeStore";
+import { useThemeColors } from "../../hooks/useThemeColors";
+import useResponsive from "../../hooks/useResponsive";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import {
@@ -11,10 +11,10 @@ import {
   BookIcon,
   DocsIcon,
   ReviewIcon,
-} from "../components/customIcon/index";
-import logoWhite from "../../src/assets/chaicode-white.svg";
-import logoBlack from "../../src/assets/chaicode-black.svg";
-import { ButtonText } from "./CompIndex";
+} from "../../components/customIcon/index";
+import logoWhite from "/src/assets/chaicode-white.svg";
+import logoBlack from "/src/assets/chaicode-black.svg";
+import { ButtonText } from "../CompIndex";
 
 gsap.registerPlugin(useGSAP);
 
@@ -57,7 +57,7 @@ const MoonSVG = (props) => (
 function Navbar() {
   const themeColors = useThemeColors();
   const toggleTheme = useThemeStore((state) => state.toggleTheme);
-  const theme = useThemeStore(state => state.theme)
+  const theme = useThemeStore((state) => state.theme);
   const imgColor = theme === "light" ? "black" : "white";
   const [activeLink, setActiveLink] = useState(false);
   const location = useLocation();
