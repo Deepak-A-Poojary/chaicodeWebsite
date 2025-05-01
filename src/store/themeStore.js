@@ -115,7 +115,7 @@ const getSystemTheme = () => {
 const useThemeStore = create((set, get) => {
   const initialTheme =
     typeof window !== "undefined"
-      ? localStorage.getItem("theme") || getSystemTheme()
+      ? localStorage.getItem("themeForChai") || getSystemTheme()
       : "light";
 
   return {
@@ -127,7 +127,7 @@ const useThemeStore = create((set, get) => {
       const currentTheme = get().theme;
       const newTheme = currentTheme === "dark" ? "light" : "dark";
 
-      localStorage.setItem("theme", newTheme);
+      localStorage.setItem("themeForChai", newTheme);
       document.documentElement.classList.toggle("dark", newTheme === "dark");
 
       set({
