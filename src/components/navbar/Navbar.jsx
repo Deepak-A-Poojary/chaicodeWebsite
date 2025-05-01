@@ -62,6 +62,9 @@ function Navbar() {
   const [activeLink, setActiveLink] = useState(false);
   const location = useLocation();
 
+  console.log(theme);
+  
+
   const navbarRef = useRef(null);
   const sidebarRef = useRef(null);
   const { isMobile } = useResponsive();

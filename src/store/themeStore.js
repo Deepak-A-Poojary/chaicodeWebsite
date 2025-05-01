@@ -113,12 +113,10 @@ const getSystemTheme = () => {
 
 // Create the Zustand store
 const useThemeStore = create((set, get) => {
-  // const initialTheme =
-  //   typeof window !== "undefined"
-  //     ? localStorage.getItem("theme") || getSystemTheme()
-  //     : "light";
-
-  const initialTheme = "grey";
+  const initialTheme =
+    typeof window !== "undefined"
+      ? localStorage.getItem("theme") || getSystemTheme()
+      : "light";
 
   return {
     theme: initialTheme,
