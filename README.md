@@ -65,6 +65,7 @@ Additional dependencies and devDependencies can be found in the `package.json` f
 ├── src/
 │   ├── assets/             # Images, logos, and other static assets
 │   ├── components/         # Reusable React components
+│   ├── constants/          # Centralized static data and config (e.g. course data, reviews, tweet IDs)
 │   ├── hooks/              # Custom React hooks
 │   ├── layouts/            # Main page layouts
 │   ├── pages/              # Individual page components
@@ -87,7 +88,7 @@ Additional dependencies and devDependencies can be found in the `package.json` f
 
 | Metric         | Score |
 | -------------- | ----- |
-| Performance    | ✅ 90 |
+| Performance    | ✅ 95 |
 | Accessibility  | ✅ 91 |
 | Best Practices | ✅ 78 |
 | SEO            | ✅ 92 |
