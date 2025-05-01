@@ -3,10 +3,35 @@ import blackLogo from "../../assets/chaicode-black.svg";
 import whiteLogo from "../../assets/chaicode-white.svg";
 import { Link } from "react-router-dom";
 import useThemeStore from "../../store/themeStore";
+import { useRef } from "react";
+import gsap from "gsap";
 
 const Footer = () => {
   const themeColors = useThemeColors();
   const theme = useThemeStore((state) => state.theme);
+  const productBarRef = useRef(null);
+  const resourceBarRef = useRef(null);
+
+  const handleMouseEnter = (e, sectionRef) => {
+    const item = e.currentTarget;
+    const topPosition = item.offsetTop;
+    const height = item.offsetHeight;
+
+    gsap.to(sectionRef.current, {
+      top: topPosition + 4,
+      height: height - 8,
+      opacity: 1,
+      duration: 0.3,
+      ease: "power2.out",
+    });
+  };
+
+  const handleMouseLeave = (sectionRef) => {
+    gsap.to(sectionRef.current, {
+      opacity: 0,
+      duration: 0.3,
+    });
+  };
 
   const products = [
     { name: "Courses", href: "https://courses.chaicode.com/learn" },
@@ -206,7 +231,7 @@ const Footer = () => {
             </p>
           </div>
           {/* Links section */}
-          <div className="flex flex-wrap gap-5  lg:gap-20 md:flex-row justify-between ">
+          <div className="flex flex-wrap gap-5 lg:gap-20 md:flex-row justify-between ">
             {/* Prducts column */}
             <div className="">
               <p
@@ -215,40 +240,58 @@ const Footer = () => {
               >
                 Products
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-3 relative">
+                <div
+                  ref={productBarRef}
+                  className="bg-amber-600 absolute -left-1 w-[5px] rounded opacity-0 hover:translate-x-2"
+                  style={{ top: 0, height: "10px" }}
+                ></div>
                 {products.map((product) => (
                   <li
                     key={product.name}
+                    className="relative"
                     style={{ color: themeColors.secondryText }}
+                    onMouseEnter={(e) => handleMouseEnter(e, productBarRef)}
+                    onMouseLeave={() => handleMouseLeave(productBarRef)}
                   >
-                    <div className="hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1">
-                      <Link className="" to={product.href}>
-                        {product.name}
-                      </Link>
-                    </div>
+                    <Link
+                      className="block hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1"
+                      to={product.href}
+                    >
+                      {product.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
             {/* Resources column */}
-            <div>
+            <div className="">
               <p
                 className="text-white font-medium mb-4 w-32"
                 style={{ color: themeColors.text }}
               >
                 Resources
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-3 relative w-40">
+                <div
+                  ref={resourceBarRef}
+                  className="bg-amber-600 absolute -left-1 w-[5px] rounded opacity-0 hover:translate-x-2"
+                  style={{ top: 0, height: "10px" }}
+                ></div>
                 {resources.map((resource) => (
                   <li
                     key={resource.name}
+                    className="relative"
                     style={{ color: themeColors.secondryText }}
+                    onMouseEnter={(e) => handleMouseEnter(e, resourceBarRef)}
+                    onMouseLeave={() => handleMouseLeave(resourceBarRef)}
                   >
-                    <div className="hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1">
-                      <Link className="transition-colors" to={resource.href}>
-                        {resource.name}
-                      </Link>
-                    </div>
+                    <Link
+                      className="block hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1"
+                      to={resource.href}
+                    >
+                      {resource.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
