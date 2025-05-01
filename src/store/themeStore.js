@@ -43,7 +43,7 @@ const themeColors = {
     ytBorderColor: "#3b3b3b",
 
     //other colors
-    cursorBg: "linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11))",
+    cursorBg: "linear-gradient(to right, rgb(215, 73, 0), rgb(245, 158, 11))",
     cursorCardBg:
       "linear-gradient(to right, rgba(249, 115, 22, 0.2), rgb(250, 250, 250, 0))",
     ratingColor: "#cf9106",

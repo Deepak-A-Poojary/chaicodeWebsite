@@ -26,8 +26,8 @@ const Hero = () => {
       if (cursorRef.current) {
         const offset = 50; // Half of 500px
         gsap.to(cursorRef.current, {
-          x: e.clientX - offset,
-          y: e.clientY - offset,
+          x: e.clientX - offset - 200,
+          y: e.clientY - offset - 270,
           duration: 1,
           ease: "power2.out",
         });
@@ -214,7 +214,7 @@ const Hero = () => {
       }}
     >
       {/* This is a background cursor animation div */}
-      <div className="absolute w-[100vw] h-2/1 overflow-hidden">
+      <div className="absolute  w-[100vw] h-2/1 overflow-hidden">
         <div
           className="sticky pointer-events-none w-[500px] h-[500px] rounded-full opacity-10 blur-[100px] top-0 left-0"
           style={{
