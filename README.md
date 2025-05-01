@@ -36,7 +36,7 @@ The project utilizes the following technologies and libraries as per the `packag
 - **React Tweet**: For embedding tweets in the application
 - **Zustand**: Lightweight state management library
 - **GSAP/React**: For creating animations and transitions
-- **Vercel / Netlify**: Deployment and hosting platforms
+- **Vercel**: Deployment and hosting platforms
 
 Additional dependencies and devDependencies can be found in the `package.json` file.
 
