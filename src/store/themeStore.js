@@ -28,7 +28,7 @@ const themeColors = {
 
     // Button styles
     buttonBg: "rgba(20, 20, 20, 0.95)",
-    downloadAppBtnBg: "rgba(31,41,55, 1)",
+    downloadAppBtnBg: "rgb(197, 85, 0)",
     buttonActiveBg: "#0091ff",
 
     // MenuBar styles
@@ -77,7 +77,7 @@ const themeColors = {
 
     // Button styles
     buttonBg: "rgba(255, 255, 255, 1)",
-    downloadAppBtnBg: "rgba(235, 235, 235, 1)",
+    downloadAppBtnBg: "rgba(126, 2, 157,1)",
     buttonActiveBg: "#0056b3",
 
     // MenuBar button styles

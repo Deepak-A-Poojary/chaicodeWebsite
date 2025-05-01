@@ -304,73 +304,69 @@ const Footer = () => {
               >
                 App
               </p>
-              <Link to="https://apps.apple.com/in/app/chaicode/id6504993143">
-                <button
-                  data-slot="button"
-                  className="whitespace-nowrap text-sm font-medium grid grid-cols-[10%_90%] items-center gap-6 p-4 w-44 rounded-xl mb-3 hover:opacity-80 hover:scale-103 duration-300 transition-transform cursor-pointer"
-                  style={{
-                    background: themeColors.downloadAppBtnBg,
-                    color: themeColors.text,
-                  }}
+              <Link
+                to="https://apps.apple.com/in/app/chaicode/id6504993143"
+                data-slot="button"
+                className="whitespace-nowrap text-sm font-medium grid grid-cols-[10%_90%] items-center gap-6 p-4 w-44 rounded-xl mb-3 cursor-pointer hover:opacity-85"
+                style={{
+                  background: themeColors.downloadAppBtnBg,
+                  color: themeColors.text,
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-download h-5 w-5 flex-shrink-0 text-white"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-download h-5 w-5 flex-shrink-0"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" x2="12" y1="15" y2="3"></line>
-                  </svg>
-                  <div className="flex flex-col items-start justify-center">
-                    <span className="text-xs leading-tight">
-                      Download on the
-                    </span>
-                    <span className="text-lg font-bold leading-tight">
-                      App Store
-                    </span>
-                  </div>
-                </button>
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" x2="12" y1="15" y2="3"></line>
+                </svg>
+                <div className="flex flex-col items-start justify-center text-white">
+                  <span className="text-xs leading-tight">Download on the</span>
+                  <span className="text-lg font-bold leading-tight">
+                    App Store
+                  </span>
+                </div>
               </Link>
-              <Link to="https://play.google.com/store/apps/details?id=com.chaicode.courses&pcampaignid=web_share">
-                <button
-                  data-slot="button"
-                  className="whitespace-nowrap text-sm font-medium grid grid-cols-[10%_90%] items-center gap-6 p-4 rounded-xl w-44 hover:opacity-90 hover:scale-103 duration-300 transition-all cursor-pointer"
-                  style={{
-                    background: themeColors.downloadAppBtnBg,
-                    color: themeColors.text,
-                  }}
+              <Link
+                to="https://play.google.com/store/apps/details?id=com.chaicode.courses&pcampaignid=web_share"
+                data-slot="button"
+                className="whitespace-nowrap text-sm font-medium grid grid-cols-[10%_90%] items-center gap-6 p-4 rounded-xl w-44 hover:opacity-85"
+                style={{
+                  background: themeColors.downloadAppBtnBg,
+                  color: "#FFFFF",
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-download h-5 w-5 flex-shrink-0 text-white"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-download h-5 w-5 flex-shrink-0"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" x2="12" y1="15" y2="3"></line>
-                  </svg>
-                  <div className="flex flex-col items-start justify-center">
-                    <span className="text-xs leading-tight">Get it on</span>
-                    <span className="text-lg font-bold leading-tight">
-                      Google Play
-                    </span>
-                  </div>
-                </button>
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" x2="12" y1="15" y2="3"></line>
+                </svg>
+                <div className="flex flex-col items-start justify-center text-white">
+                  <span className="text-xs  leading-tight">Get it on</span>
+                  <span className="text-lg font-bold leading-tight">
+                    Google Play
+                  </span>
+                </div>
               </Link>
             </div>
           </div>
