@@ -177,6 +177,7 @@ const UdemyCards = ({ courseData }) => {
                     </div>
                   </div>
                   <ExploreTextButton
+                    label={`visit to view ${item.title}`}
                     text="Check in Udemy"
                     className={`w-fit self-center md:self-auto text-[${
                       isMobile ? "14px" : "15px"

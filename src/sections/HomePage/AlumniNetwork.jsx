@@ -170,6 +170,7 @@ const AlumniNetwork = () => {
 
         <div className="flex space-x-4">
           <Link
+            aria-label="visit alumni network page"
             to={"http://alumni.chaicode.com/"}
             className="bg-blue-600 text-white px-4 py-2 rounded-md"
           >

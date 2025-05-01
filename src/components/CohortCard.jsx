@@ -267,7 +267,7 @@ const CohortCard = ({
           <div className="absolute top-0 right-4 z-20">
             <CourseStateDisplay />
           </div>
-          <a href={courseLink}>
+          <a href={courseLink} label={`visit to view details of ${courseName}`}>
             <button className="inline-flex cursor-pointer items-center justify-center gap-2 text-sm font-medium w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white py-3 mb-2 h-auto rounded-lg">
               Learn More
             </button>

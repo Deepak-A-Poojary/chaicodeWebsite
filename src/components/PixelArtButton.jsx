@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import useThemeStore from "../store/themeStore";
 
-function PixelArtButton({ text = "text", svg, className, to }) {
+function PixelArtButton({ text = "text", svg, className, to, label }) {
   const buttonRef = useRef(null);
   const themeColors = useThemeColors();
   const theme = useThemeStore((state) => state.theme);
@@ -74,6 +74,7 @@ function PixelArtButton({ text = "text", svg, className, to }) {
     <div className="flex justify-center hover:scale-102 transition-transform duration-500">
       <Link
         to={to}
+        aria-label={label}
         ref={buttonRef}
         style={{
           background: themeColors.buttonBg,

@@ -70,6 +70,7 @@ function StudentProof() {
         >
           {[...STUDENT_PROOF, ...STUDENT_PROOF].map((student, index) => (
             <Link
+              aria-label={`visit to view ${student.name} page`}
               key={index}
               to={student.URL}
               style={{

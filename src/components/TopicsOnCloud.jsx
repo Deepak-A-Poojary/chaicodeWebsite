@@ -60,6 +60,7 @@ function TopicsOnCloud({ topics, direction = "left", animationSpeed = 60 }) {
         >
           {[...topics, ...topics].map((video, index) => (
             <Link
+              aria-label={`visit to watch ${video.name} video in youtube`}
               to={video.link}
               key={index}
               style={{

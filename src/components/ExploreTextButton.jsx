@@ -7,6 +7,7 @@ function ExploreTextButton({
   svg,
   className,
   to,
+  label,
 }) {
   const overlayRef = useRef(null);
 
@@ -30,6 +31,7 @@ function ExploreTextButton({
 
   return (
     <Link
+      aria-label={label}
       to={to}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

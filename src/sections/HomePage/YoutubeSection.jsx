@@ -124,6 +124,7 @@ function YoutubeSection() {
 
               {/* have use complete profile url, because sometimes redirect is not happing to exact profile in mobile */}
               <Link
+                aria-label="visit Chai aur Code youtube page"
                 className="self-start inline-flex w-fit cursor-pointer items-center justify-center gap-2 text-sm font-medium bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white py-2 px-8 h-auto rounded-lg duration-300 transition-colors"
                 to={"https://youtube.com/@chaiaurcode?si=W88GcJ7VZ_6rMubd"}
               >
@@ -187,6 +188,7 @@ function YoutubeSection() {
               </p>
               {/* have use complete profile url, because sometimes redirect is not happing to exact profile in mobile */}
               <Link
+                aria-label="visit Hitesh Choudhary youtube page"
                 className="self-start inline-flex w-fit cursor-pointer items-center justify-center gap-2 text-sm font-medium bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white py-2 px-8 h-auto rounded-lg duration-300 transition-colors"
                 to={"https://youtube.com/@hiteshcodelab?si=WWlF8VkVpxxThsw_"}
               >

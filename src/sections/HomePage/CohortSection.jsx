@@ -20,6 +20,7 @@ function CohortSection() {
         ))}
       </div>
       <ExploreTextButton
+        label="visit to view all courses"
         className="md:px-20 md:py-6 mt-6 md:mt-0 flex-row-reverse "
         to={"https://courses.chaicode.com/learn/view-all?show=batch&type=17"}
         text={"View All Cohorts"}

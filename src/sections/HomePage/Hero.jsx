@@ -274,6 +274,7 @@ const Hero = () => {
       {/* Live cohort button */}
       <div className="flex justify-center mt-10 md:*:mt-5 gap-4">
         <ExploreTextButton
+          label="visit to view all course sections"
           to={"https://courses.chaicode.com/learn/view-all?show=batch&type=17"}
           svg={
             <svg

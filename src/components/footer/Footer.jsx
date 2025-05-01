@@ -90,6 +90,7 @@ const Footer = () => {
             >
               <a
                 href="https://www.youtube.com/@chaiaurcode"
+                aria-label="visit chaiaurcode youtube channel"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
@@ -114,6 +115,7 @@ const Footer = () => {
               {/* ... other social media links (Instagram, GitHub, Twitter, LinkedIn, Discord) ... */}
               <a
                 href="https://www.instagram.com/hiteshchoudharyofficial/?hl=en"
+                aria-label="visit instagram page"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
@@ -137,6 +139,7 @@ const Footer = () => {
               </a>
               <a
                 href="https://github.com/hiteshchoudhary"
+                aria-label="visit github page"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
@@ -159,6 +162,7 @@ const Footer = () => {
               </a>
               <a
                 href="https://x.com/hiteshdotcom"
+                aria-label="visit hiteshchoudhary x.com page "
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
@@ -180,6 +184,7 @@ const Footer = () => {
               </a>
               <a
                 href="https://in.linkedin.com/in/hiteshchoudhary"
+                aria-label="visit linkedin page"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
@@ -203,6 +208,7 @@ const Footer = () => {
               </a>
               <a
                 href="https://hitesh.ai/discord"
+                aria-label="visit discord page"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 transition-all hover:-translate-y-1 dark:text-gray-500 hover:text-orange-500 "
@@ -255,6 +261,7 @@ const Footer = () => {
                     onMouseLeave={() => handleMouseLeave(productBarRef)}
                   >
                     <Link
+                      aria-label={`visit ${product.name} page`}
                       className="block py-1 hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1"
                       to={product.href}
                     >
@@ -287,6 +294,7 @@ const Footer = () => {
                     onMouseLeave={() => handleMouseLeave(resourceBarRef)}
                   >
                     <Link
+                      aria-label={`visit ${resource.name} page`}
                       className="block py-1 hover:text-[#d97706] hover:font-semibold transition-transform duration-200 ease-in-out hover:translate-x-1"
                       to={resource.href}
                     >
@@ -305,6 +313,7 @@ const Footer = () => {
                 App
               </p>
               <Link
+                aria-label="visit to download chaicode app from apple store"
                 to="https://apps.apple.com/in/app/chaicode/id6504993143"
                 data-slot="button"
                 className="whitespace-nowrap text-sm font-medium grid grid-cols-[10%_90%] items-center gap-6 p-4 w-44 rounded-xl mb-3 cursor-pointer hover:opacity-85"
@@ -337,6 +346,7 @@ const Footer = () => {
                 </div>
               </Link>
               <Link
+                aria-label="visit to download chaicode app from google play store"
                 to="https://play.google.com/store/apps/details?id=com.chaicode.courses&pcampaignid=web_share"
                 data-slot="button"
                 className="whitespace-nowrap text-sm font-medium grid grid-cols-[10%_90%] items-center gap-6 p-4 rounded-xl w-44 hover:opacity-85"

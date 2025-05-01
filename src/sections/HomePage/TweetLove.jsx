@@ -79,6 +79,7 @@ const TweetLove = () => {
         to="https://courses.chaicode.com/learn/view-all?show=batch&type=17"
         text="Join Cohorts Live Classes"
         className="text-md mt-5 md:mt-0 md:text-xl p-5"
+        label="visit to view all courses"
         svg={
           <svg
             xmlns="http://www.w3.org/2000/svg"

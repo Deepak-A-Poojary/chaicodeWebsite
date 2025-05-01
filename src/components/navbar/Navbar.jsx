@@ -231,6 +231,7 @@ function Navbar() {
             </nav>
             <section className="flex gap-3 font-semibold">
               <button
+                aria-label="Theme switch button"
                 className="px-3 rounded-md py-2 cursor-pointer text-center duration-500 transition-all hover:text-[#f9ba32] text-nowrap"
                 onClick={toggleTheme}
                 style={{
@@ -244,6 +245,7 @@ function Navbar() {
                 )}
               </button>
               <ButtonText
+                label="visit login page of chaicode.com"
                 className={"max-w-28"}
                 text={"Login"}
                 link="https://courses.chaicode.com/learn/account/signin"
@@ -286,6 +288,7 @@ function Navbar() {
               <button
                 className="px-4 py-2 w-40 cursor-pointer border rounded-md hover:text-[#f9ba32]"
                 onClick={toggleTheme}
+                aria-label="Theme switch button"
                 style={{
                   color: themeColors.text,
                   background: themeColors.MainThemeColor,
@@ -295,6 +298,7 @@ function Navbar() {
                 {theme === "dark" ? "🌙 Dark" : "☀️ Light"}
               </button>
               <ButtonText
+                label="visit login page of chaicode.com"
                 className={"w-40"}
                 text={"Login"}
                 link="https://courses.chaicode.com/learn/account/signin"
