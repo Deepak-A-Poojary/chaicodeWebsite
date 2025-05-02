@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useThemeStore from "../store/themeStore";
 import TweetCard from "../components/TweetCard";
 import { TWEET_IDS_FOR_REVIEWS } from "../constants/index";
 
 function Review() {
   const theme = useThemeStore((state) => state.theme);
+
+  // Below ensure to page starts from top whenerever its visited
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    return () => {};
+  }, [location.pathname]);
 
   return (
     <div className="min-h-dvh md:p-10  text-center font-['outfit'] relative">
