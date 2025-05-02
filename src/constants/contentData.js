@@ -1,4 +1,4 @@
-// 🐦 Tweets
+// Only ids are enoguh to render the tweets
 export const TWEET_IDS_FOR_TWEETLOVE = [
   "1906393735203836076",
   "1906390359841640771",

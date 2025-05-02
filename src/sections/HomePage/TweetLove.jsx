@@ -12,8 +12,6 @@ import { TWEET_IDS_FOR_TWEETLOVE } from "../../constants/contentData";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Only ids are enoguh to render the tweets
-
 const animateTweetCard = (selector, options) => {
   gsap.from(selector, {
     ...options,

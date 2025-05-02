@@ -45,9 +45,10 @@ Additional dependencies and devDependencies can be found in the `package.json` f
 ## 🎨 Features
 
 - Fully responsive across mobile, tablet, and desktop
+- Supports light and dark themes with smooth transitions
 - Matches wireframe design precisely
 - Included all policy pages with animation
-- Added review page for tweets from students 
+- Added review page for tweets from students
 - Custom 404 Page
 - Custom ErrorBoundry page
 - All buttons are animation and actionable.
@@ -99,6 +100,10 @@ Additional dependencies and devDependencies can be found in the `package.json` f
 > Scores may vary slightly depending on environment and network conditions.
 
 ---
+
+## 🚀 Future Improvements & Ideas
+
+- **Custom Settings Panel:** Create a (`siteSettings.js`) file to manage global theme defaults, animation speeds, delays, layout widths, and branding. This allows for quick customization without modifying the core codebase.
 
 ## 📌 Important Notes
 
