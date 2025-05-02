@@ -1,14 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
-import useResponsive from "../hooks/useResponsive";
 import { useGSAP } from "@gsap/react";
+import useThemeStore from "../store/themeStore";
 
 const AnimatedText = ({ text, className }) => {
-  const containerRef = useRef(null);
-  const { isMobile } = useResponsive();
+  const headingRef = useRef(null);
+  const theme = useThemeStore((state) => state.theme);
 
-  useEffect(() => {
-    const letters = containerRef.current.querySelectorAll(".letter");
+  useGSAP(() => {
+    const letters = headingRef.current.querySelectorAll(".letter");
 
     gsap.fromTo(
       letters,
@@ -18,35 +18,43 @@ const AnimatedText = ({ text, className }) => {
         opacity: 1,
         stagger: 0.07,
         ease: "power3.out",
-        duration: 0.6,
-        delay: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: headingRef.current,
+          scroller: "body",
+          start: "top 80%",
+          end: "top 50%",
+          once: true,
+        },
       }
     );
-  }, [text]);
+  }, []);
 
-  const words = text.split(" ");
-
-  return (
-    <div className={`flex justify-center items-center h-full ${className}`}>
-      <h1
-        ref={containerRef}
-        className={`flex flex-wrap justify-center ${
-          isMobile ? "flex-col text-center" : "flex-row text-left "
-        } font-bold leading-snug`}
-      >
-        {words.map((word, wordIndex) => (
+  const renderAnimatedText = (text) => {
+    return text.split(" ").map((word, wordIndex) => (
+      <span key={wordIndex} className="word inline-block mr-2 ">
+        {word.split("").map((letter, letterIndex) => (
           <span
-            key={wordIndex}
-            className={` ${isMobile ? "flex justify-center" : "mr-4"}`}
+            key={letterIndex}
+            className={`letter font-['Outfit'] inline-block ${
+              theme == "dark"
+                ? "title-text-gradien-fordark "
+                : "title-text-gradien-forlight"
+            }`}
           >
-            {word.split("").map((char, charIndex) => (
-              <span key={charIndex} className="letter inline-block leading-8">
-                {char}
-              </span>
-            ))}
+            {letter}
           </span>
         ))}
-      </h1>
+      </span>
+    ));
+  };
+
+  return (
+    <div
+      ref={headingRef}
+      className={`flex flex-wrap justify-center text-4xl md:text-6xl font-bold leading-snug text-center ${className}`}
+    >
+      {renderAnimatedText(text)}
     </div>
   );
 };

@@ -31,6 +31,31 @@ body {
   min-height: 100vh;
 }
 
+/* Hero section color gradient theme  */
+
+/* used in Refund policy */
+.title-text-gradien-fordark {
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255) 20%,
+    rgb(143, 141, 141)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-text-gradien-forlight {
+  background: linear-gradient(
+    to bottom,
+    rgb(82, 1, 96) 20%,
+    rgb(171, 96, 188) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Theme animation */
 .moonIcon {
   animation: keyframes-fill 0.5s;
