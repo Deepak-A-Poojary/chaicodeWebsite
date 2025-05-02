@@ -19,18 +19,13 @@ const AnimatedText = ({ text, className }) => {
         stagger: 0.07,
         ease: "power3.out",
         duration: 1,
-      }
-    );
-    gsap.fromTo(
-      letters,
-      {
-        filter: "blur(15px)",
-      },
-      {
-        filter: "blur(0px)",
-        stagger: 0.07,
-        ease: "power3.out",
-        duration: 0.7,
+        scrollTrigger: {
+          trigger: headingRef.current,
+          scroller: "body",
+          start: "top 80%",
+          end: "top 50%",
+          once: true,
+        },
       }
     );
   }, []);
